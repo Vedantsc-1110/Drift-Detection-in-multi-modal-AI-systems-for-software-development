@@ -1,0 +1,19 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:F2025 a ctx:Filing ;
+    rdfs:label "ACME-2025-10K" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "edgar-parser" ;
+    prov:wasGeneratedBy ctx:EdgarExtractor ;
+    prov:hadPrimarySource <file:///edgar/F2025> .
+
+ctx:F2025-Risk a ctx:Section ;
+    rdfs:label "Order system outage risk" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "edgar-parser" ;
+    prov:wasGeneratedBy ctx:EdgarExtractor ;
+    prov:hadPrimarySource <file:///edgar/F2025> .

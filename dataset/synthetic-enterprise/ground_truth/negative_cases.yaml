@@ -1,0 +1,93 @@
+# Negative / hallucination ground truth. Each case MUST be classified as
+# UNSUPPORTED | NOT_FOUND | PARTIALLY_SUPPORTED by future extractors.
+cases:
+  - negative_id: NEG-01
+    statement: "The OFBiz service createOrderItem creates order lines."
+    why_unsupported: "Verified absent from outputs-deps/order-facts.jsonl (467 services contain appendOrderItem and createOrderItemAssoc but no createOrderItem). D05 explicitly documents this absence."
+    expected_classification: NOT_FOUND
+    related_documents: [D05, S05]
+  - negative_id: NEG-02
+    statement: "The base entity OrderSuperHeader stores consolidated orders."
+    why_unsupported: "No such entity in applications/datamodel/entitydef/order-entitymodel.xml (112 entities, none with this name)."
+    expected_classification: NOT_FOUND
+    related_documents: [R01, D01]
+  - negative_id: NEG-03
+    statement: "storeOrder guarantees payment authorization."
+    why_unsupported: "storeOrder description is 'Creates order entities'; authorization is a separate SYNTHETIC P02 control with no OFBiz source. R04 and D04 explicitly mark this UNSUPPORTED."
+    expected_classification: UNSUPPORTED
+    related_documents: [R04, D04, P02]
+  - negative_id: NEG-04
+    statement: "The OrderRiskScore entity exists in OFBiz for fraud screening."
+    why_unsupported: "Deferred SYNTHETIC concept in D01/S05; verified absent from order-entitymodel.xml."
+    expected_classification: NOT_FOUND
+    related_documents: [D01, S05]
+  - negative_id: NEG-05
+    statement: "issueImmediatelyFulfilledOrder is defined in the OFBiz order component."
+    why_unsupported: "It is defined in applications/product/servicedef/services_facility.xml, outside the order plus order-entitymodel.xml scope; the deterministic graph reports it as dangling (UNRESOLVED), never as an order service."
+    expected_classification: UNSUPPORTED
+    related_documents: [R03, D03, P05, S04]
+  - negative_id: NEG-06
+    statement: "OrderHeader has the composite primary key orderId plus orderItemSeqId."
+    why_unsupported: "OrderHeader PK is orderId only; the composite key belongs to OrderItem. Confusing the two is a PK hallucination."
+    expected_classification: UNSUPPORTED
+    related_documents: [R01]
+  - negative_id: NEG-07
+    statement: "Invoking sendOrderConfirmation proves the customer received the email."
+    why_unsupported: "OFBiz proves the service exists, not delivery. R02 marks guaranteed-delivery claims UNSUPPORTED; at most PARTIALLY_SUPPORTED (service exists, delivery unproven)."
+    expected_classification: PARTIALLY_SUPPORTED
+    related_documents: [R02, D02, S01]
+  - negative_id: NEG-08
+    statement: "The 10,000 order-approval threshold is encoded in OFBiz."
+    why_unsupported: "P01 thresholds are SYNTHETIC policy with no OFBiz source; no service or entity encodes them."
+    expected_classification: UNSUPPORTED
+    related_documents: [P01, R01]
+  - negative_id: NEG-09
+    statement: "E-201 is an OFBiz error code for missing partyId."
+    why_unsupported: "E-201 is a SYNTHETIC S02 triage code; OFBiz defines no exception codes."
+    expected_classification: NOT_FOUND
+    related_documents: [S02, R02]
+  - negative_id: NEG-10
+    statement: "OrderItem has the single primary key orderId."
+    why_unsupported: "OrderItem PK is composite (orderId plus orderItemSeqId); single-key claim drops half the key."
+    expected_classification: UNSUPPORTED
+    related_documents: [R01]
+  - negative_id: NEG-11
+    statement: "The service balanceOrderItemsWithNegativeReservations is available in the order scope."
+    why_unsupported: "Verified absent from outputs-deps/order-facts.jsonl (467 services); any reference is out-of-scope or nonexistent in this extraction."
+    expected_classification: NOT_FOUND
+    related_documents: [D03]
+  - negative_id: NEG-12
+    statement: "storeOrder accepts exactly 10 input parameters."
+    why_unsupported: "storeOrder has 56 IN/INOUT inputs and 3 outputs (verified in Q-SVC-003/Q-SVC-004); '10 inputs' contradicts the service definition."
+    expected_classification: UNSUPPORTED
+    related_documents: [R02, D02]
+  - negative_id: NEG-13
+    statement: "A customer quote automatically becomes an order with no conversion step."
+    why_unsupported: "R05 requires an explicit conversion service (e.g. createOrderFromShoppingCart) or documented procedure; automatic conversion has no OFBiz or corpus support."
+    expected_classification: UNSUPPORTED
+    related_documents: [R05, D05]
+  - negative_id: NEG-14
+    statement: "OFBiz enforces the P04 customer-data visibility rules."
+    why_unsupported: "P04 rules are SYNTHETIC policy; OFBiz proves OrderContactMech exists but encodes no visibility enforcement in scope. At most PARTIALLY_SUPPORTED (structures exist)."
+    expected_classification: PARTIALLY_SUPPORTED
+    related_documents: [P04, R05, D05]
+  - negative_id: NEG-15
+    statement: "The daily 06:00 reconciliation schedule is defined in OFBiz."
+    why_unsupported: "The schedule is SYNTHETIC (S03/D04); no OFBiz service encodes a 06:00 timer."
+    expected_classification: NOT_FOUND
+    related_documents: [S03, D04]
+  - negative_id: NEG-16
+    statement: "ShoppingList is an OFBiz service for saved assortments."
+    why_unsupported: "ShoppingList is a base ENTITY in order-entitymodel.xml, not a service; category confusion."
+    expected_classification: UNSUPPORTED
+    related_documents: [R05, D05]
+  - negative_id: NEG-17
+    statement: "cancelOrderItem cancels an entire order including already-shipped lines."
+    why_unsupported: "P03 restricts cancellation to unreleased lines (released lines need consent or become returns via createReturnHeader); blanket whole-order claim overstates the service."
+    expected_classification: PARTIALLY_SUPPORTED
+    related_documents: [P03, S02, D01]
+  - negative_id: NEG-18
+    statement: "findOrders creates new orders."
+    why_unsupported: "findOrders is a lookup service; creation is via storeOrder/createOrderHeader. Function confusion."
+    expected_classification: UNSUPPORTED
+    related_documents: [R01, D01, S01]

@@ -1,0 +1,11 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:nightly_sync a ctx:Task ;
+    rdfs:label "Nightly sync calling findOrders" ;
+    ctx:definedIn <file:///airflow/dag_orders_etl.py> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:PythonAstExtractor ;
+    prov:hadPrimarySource <file:///airflow/dag_orders_etl.py> .

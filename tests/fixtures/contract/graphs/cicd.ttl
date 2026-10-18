@@ -1,0 +1,25 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:CI a ctx:Workflow ;
+    rdfs:label "CI" ;
+    ctx:definedIn <file:///cicd/.github/workflows/ci.yml> ;
+    ctx:atLine 1 ;
+    prov:hadPrimarySource <file:///cicd/.github/workflows/ci.yml> ;
+    prov:wasGeneratedBy ctx:YamlExtractor ;
+    ctx:sourceLocation "ci.yml:1" ;
+    ctx:sourceHash "dddddeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddd" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:CI_test a ctx:Job ;
+    rdfs:label "test" ;
+    ctx:definedIn <file:///cicd/.github/workflows/ci.yml> ;
+    ctx:atLine 13 ;
+    prov:hadPrimarySource <file:///cicd/.github/workflows/ci.yml> ;
+    prov:wasGeneratedBy ctx:YamlExtractor ;
+    ctx:sourceLocation "ci.yml:13" ;
+    ctx:sourceHash "dddddeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddd" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

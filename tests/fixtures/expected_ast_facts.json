@@ -1,0 +1,63 @@
+{
+  "java": {
+    "file": "tests/fixtures/java/OrderServices.java",
+    "imports": [
+      {"import": "org.apache.ofbiz.party.PartyServices", "line": 3},
+      {"import": "java.util.Map", "line": 4}
+    ],
+    "classes": [
+      {"name": "OrderServices", "line": 6}
+    ],
+    "methods": [
+      {
+        "class": "OrderServices",
+        "name": "createOrder",
+        "params": [{"name": "orderTypeId", "type": "String"}],
+        "return_type": "Map<String, Object>",
+        "line": 7
+      },
+      {
+        "class": "OrderServices",
+        "name": "validateOrder",
+        "params": [{"name": "orderTypeId", "type": "String"}],
+        "return_type": "void",
+        "line": 13
+      }
+    ],
+    "calls": [
+      {"caller_method": "createOrder", "callee": "getParty", "receiver": "PartyServices", "line": 8},
+      {"caller_method": "createOrder", "callee": "validateOrder", "receiver": "", "line": 9},
+      {"caller_method": "validateOrder", "callee": "println", "receiver": "System.out", "line": 14}
+    ]
+  },
+  "groovy": {
+    "file": "tests/fixtures/groovy/OrderHelper.groovy",
+    "imports": [
+      {"import": "org.apache.ofbiz.party.PartyServices", "line": 3}
+    ],
+    "classes": [
+      {"name": "OrderHelper", "line": 5}
+    ],
+    "methods": [
+      {
+        "class": "OrderHelper",
+        "name": "approveOrder",
+        "params": [{"name": "orderId", "type": "String"}],
+        "return_type": "Map",
+        "line": 6
+      },
+      {
+        "class": "OrderHelper",
+        "name": "logApproval",
+        "params": [{"name": "orderId", "type": "String"}],
+        "return_type": "void",
+        "line": 12
+      }
+    ],
+    "calls": [
+      {"caller_method": "approveOrder", "callee": "getParty", "receiver": "PartyServices", "line": 7},
+      {"caller_method": "approveOrder", "callee": "logApproval", "receiver": "", "line": 8},
+      {"caller_method": "logApproval", "callee": "println", "receiver": "System.out", "line": 13}
+    ]
+  }
+}

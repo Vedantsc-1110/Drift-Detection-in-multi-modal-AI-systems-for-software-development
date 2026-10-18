@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/services.xsd">
+    <description>Party component services (synthetic fixture modeled on OFBiz 24.09).</description>
+    <service name="createPerson" engine="java"
+        location="org.apache.ofbiz.party.party.PartyServices" invoke="createPerson"
+        auth="true">
+        <description>Create a new person record.</description>
+        <attribute name="firstName" type="String" mode="IN" optional="true"/>
+        <attribute name="lastName" type="String" mode="IN" optional="true"/>
+        <attribute name="partyId" type="String" mode="OUT" optional="false"/>
+    </service>
+</services>

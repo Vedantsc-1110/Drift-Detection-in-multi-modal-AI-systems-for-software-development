@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/services.xsd">
+    <description>Order component services (synthetic fixture modeled on OFBiz 24.09).</description>
+    <service name="createOrder" engine="java"
+        location="org.apache.ofbiz.order.order.OrderServices" invoke="createOrder"
+        default-entity-name="OrderHeader" auth="true" validate="true">
+        <description>Create a new order header and initial items.</description>
+        <attribute name="orderTypeId" type="String" mode="IN" optional="false"/>
+        <attribute name="orderId" type="String" mode="OUT" optional="false"/>
+    </service>
+    <service name="cancelOrderItem" engine="groovy"
+        location="component://order/groovyScripts/OrderServices.groovy" invoke="cancelOrderItem"
+        auth="true">
+        <description>Cancel a single order item via Groovy script.</description>
+        <attribute name="orderId" type="String" mode="IN" optional="false"/>
+        <attribute name="orderItemSeqId" type="String" mode="IN" optional="false"/>
+        <attribute name="cancelQuantity" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="success" type="Boolean" mode="OUT" optional="true"/>
+    </service>
+</services>

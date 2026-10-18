@@ -1,0 +1,45 @@
+dataset_name: Enterprise Context Identification Dataset
+version: "1.0"
+components:
+  - name: Apache OFBiz
+    type: enterprise_software
+    source: Apache OFBiz
+    version: 24.09.07
+    location: dataset/apache-ofbiz-24.09.07 (read-only, not redistributed in dist/)
+    status: primary_dataset
+    scope:
+      - applications/order/
+      - applications/datamodel/entitydef/order-entitymodel.xml
+    baseline:
+      services: 467
+      base_entities: 112
+      view_entities: 55
+      relations: 567
+      ecas: 111
+      facts: 10204
+      rdf_triples: 117788
+  - name: Synthetic Enterprise Documents
+    type: controlled_synthetic_corpus
+    location: dataset/synthetic-enterprise/
+    document_count: 20
+    status: semantic_evaluation_dataset
+document_counts:
+  requirements: 5
+  designs: 5
+  policies: 5
+  sops: 5
+  total: 20
+ground_truth:
+  fact_mappings: dataset/synthetic-enterprise/ground_truth/fact-mappings.yaml
+  facts: 72
+  negative_cases: dataset/synthetic-enterprise/ground_truth/negative_cases.yaml
+  negatives: 18
+creation_methodology: "OFBiz pinned read-only at 24.09.07 with explicit order scope; fictional Meridian Retail Group defined; 20 titles fixed across 4 types; bodies written against identifiers verified in outputs-deps/order-facts.jsonl; out-of-scope refs labeled UNRESOLVED; ambiguities and unsupported claims planted deliberately; deterministic generator (scripts/build_synthetic_corpus.py)."
+ground_truth_methodology: "Facts record statement, subject/predicate/object, support_type DIRECT/INDIRECT/SYNTHETIC/UNRESOLVED, OFBiz file+location where applicable, and honesty notes. Negatives record why_unsupported plus expected UNSUPPORTED/NOT_FOUND/PARTIALLY_SUPPORTED."
+ofbiz_scope: "applications/order plus applications/datamodel/entitydef/order-entitymodel.xml; 467 services, 112 base entities, 55 views, 567 relations, 111 ECAs, 10204 facts, 117788 triples; SHACL 0 violations."
+limitations:
+  - "Synthetic business content only; thresholds, timers, roles, codes fictional."
+  - "OFBiz linkage limited to order scope; product/party masters unresolved by design."
+  - "Java/Groovy bodies unparsed; implementedBy source-stated only."
+  - "Business meaning not yet evaluated (probabilistic layer future work)."
+license_notes: "Apache OFBiz under Apache License 2.0 (see LICENSES_AND_SOURCES.md). Synthetic corpus is original fictional research content. No real personal data."

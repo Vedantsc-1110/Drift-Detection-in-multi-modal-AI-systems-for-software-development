@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <description>Accounting entities (synthetic fixture modeled on OFBiz 24.09).</description>
+    <entity entity-name="Invoice" package-name="org.apache.ofbiz.accounting.invoice" title="Invoice">
+        <field name="invoiceId" type="id"/>
+        <field name="invoiceTypeId" type="id"/>
+        <field name="statusId" type="id"/>
+        <prim-key field="invoiceId"/>
+        <relation type="one" fk-name="INVOICE_TYPE" title="Type" rel-entity-name="InvoiceType">
+            <key-map field-name="invoiceTypeId" rel-field-name="invoiceTypeId"/>
+        </relation>
+        <relation type="many" title="Items" rel-entity-name="InvoiceItem">
+            <key-map field-name="invoiceId" rel-field-name="invoiceId"/>
+        </relation>
+    </entity>
+</entitymodel>

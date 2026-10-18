@@ -1,0 +1,1156 @@
+{
+  "component": "order",
+  "extractor": "ofbiz-context-extractor 0.1.0",
+  "meta": {
+    "evaluation_hash": "b553dd42942264785fb5aa0e76d6a17f4989280f0a9389c7c3c4a3d3804bfc9f",
+    "facts": "outputs-deps/order-facts.jsonl",
+    "facts_count": 10204,
+    "graph": "outputs-deps/order-graph.ttl",
+    "manifest": "outputs-deps/order-manifest.json",
+    "store": "stores/order-deps",
+    "triples": 117788,
+    "unresolved": "outputs-deps/order-unresolved.json",
+    "unresolved_count": 386
+  },
+  "metrics": {
+    "answer_coverage": 0.8667,
+    "correct": 13,
+    "direct_count": 12,
+    "direct_coverage": 0.8,
+    "incorrect": 0,
+    "inferred_count": 0,
+    "inferred_coverage": 0.0,
+    "partial": 0,
+    "provenance_coverage": 1.0,
+    "provenance_covered": 15,
+    "resolved_correctness": 1.0,
+    "total": 15,
+    "unresolved": 2,
+    "unresolved_count": 3,
+    "unresolved_fact_coverage": 0.2
+  },
+  "repository": "apache-ofbiz-24.09.07",
+  "results": [
+    {
+      "category": "component",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/ofbiz-component.xml",
+        "line": 23,
+        "method": "xml-attribute-read",
+        "xpath": "/ofbiz-component"
+      },
+      "expected": {
+        "component": "order"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "components": [
+          "datamodel",
+          "order"
+        ]
+      },
+      "id": "Q-COMP-001",
+      "note": "Component node present.",
+      "question": "What component is being analyzed?",
+      "source_files": [
+        "applications/order/ofbiz-component.xml"
+      ],
+      "source_locations": [
+        {
+          "xpath": "/ofbiz-component[@name='order']"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "component",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "manifest:scope",
+        "line": null,
+        "method": "scope",
+        "xpath": null
+      },
+      "expected": {
+        "components": [
+          "datamodel",
+          "order"
+        ],
+        "dependency_files": [
+          "applications/datamodel/entitydef/order-entitymodel.xml",
+          "applications/datamodel/ofbiz-component.xml"
+        ],
+        "include_dependencies": true
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "components": [
+          "datamodel",
+          "order"
+        ],
+        "dependency_files": [
+          "applications/datamodel/entitydef/order-entitymodel.xml",
+          "applications/datamodel/ofbiz-component.xml"
+        ],
+        "include_dependencies": true
+      },
+      "id": "Q-COMP-002",
+      "note": "Scope matches manifest + graph.",
+      "question": "Which source/datamodel components are included in the current extraction scope?",
+      "source_files": [
+        "applications/order/ofbiz-component.xml",
+        "applications/datamodel/ofbiz-component.xml",
+        "applications/datamodel/entitydef/order-entitymodel.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/datamodel/ofbiz-component.xml",
+          "xpath": "/ofbiz-component[@name='datamodel']"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "entity",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "line": 418,
+        "method": "xml-attribute-read",
+        "xpath": "/entitymodel/entity[16]"
+      },
+      "expected": {
+        "entity": "OrderHeader",
+        "is_base": true,
+        "kind": "Entity"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "classes": [
+          "Entity"
+        ],
+        "entity": "OrderHeader",
+        "exists": true
+      },
+      "id": "Q-DATA-001",
+      "note": "Base Entity node present (not a view).",
+      "question": "Does OrderHeader exist as a BASE entity?",
+      "source_files": [
+        "applications/datamodel/entitydef/order-entitymodel.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+          "line": 418,
+          "xpath": "/entitymodel/entity[16]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "entity",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "line": 419,
+        "method": "xml-attribute-read",
+        "xpath": "/entitymodel/entity[16]/field[1]"
+      },
+      "expected": {
+        "entity": "OrderHeader",
+        "primary_keys": [
+          "orderId"
+        ]
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "entity": "OrderHeader",
+        "primary_keys": [
+          "orderId"
+        ]
+      },
+      "id": "Q-DATA-002",
+      "note": "PK sets identical.",
+      "question": "What are the primary key fields of OrderHeader?",
+      "source_files": [
+        "applications/datamodel/entitydef/order-entitymodel.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+          "line": 419,
+          "xpath": "/entitymodel/entity[16]/field[1]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "entity",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "line": 523,
+        "method": "xml-attribute-read",
+        "xpath": "/entitymodel/entity[19]"
+      },
+      "expected": {
+        "entity": "OrderItem",
+        "is_base": true,
+        "kind": "Entity"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "classes": [
+          "Entity"
+        ],
+        "entity": "OrderItem",
+        "exists": true
+      },
+      "id": "Q-DATA-003",
+      "note": "Base Entity node present (not a view).",
+      "question": "Does OrderItem exist as a BASE entity?",
+      "source_files": [
+        "applications/datamodel/entitydef/order-entitymodel.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+          "xpath": "/entitymodel/entity[@entity-name='OrderItem']"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "relation",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "line": 450,
+        "method": "xml-attribute-read",
+        "xpath": "/entitymodel/entity[16]/relation[1]"
+      },
+      "expected": {
+        "resolved_relations": [
+          {
+            "fk_name": "ORDER_HDR_TYPE",
+            "target": "OrderType",
+            "type": "one"
+          },
+          {
+            "target": "OrderTypeAttr",
+            "type": "many"
+          },
+          {
+            "fk_name": "ORDER_HDR_AOSHLST",
+            "target": "ShoppingList",
+            "type": "one"
+          }
+        ],
+        "subject": "OrderHeader",
+        "unresolved_targets": [
+          "Enumeration",
+          "Facility",
+          "BillingAccount",
+          "ProductStore",
+          "UserLogin",
+          "StatusItem",
+          "Uom",
+          "WebSite"
+        ]
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "relation_nodes": 12,
+        "resolved_targets": [
+          "OrderType",
+          "OrderTypeAttr",
+          "ShoppingList"
+        ],
+        "subject": "OrderHeader",
+        "unresolved_targets": [
+          "BillingAccount",
+          "Enumeration",
+          "Facility",
+          "NoteData",
+          "ProductStore",
+          "ShipmentReceipt",
+          "StatusItem",
+          "Uom",
+          "UserLogin",
+          "WebSite",
+          "WorkEffort"
+        ]
+      },
+      "id": "Q-DATA-004",
+      "note": "Resolved + unresolved subsets verified.",
+      "question": "What relationships connect relevant Order entities (OrderHeader subject)?",
+      "source_files": [
+        "applications/datamodel/entitydef/order-entitymodel.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+          "line": 450,
+          "xpath": "/entitymodel/entity[16]/relation[1]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "eca",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/entitydef/eecas.xml",
+        "line": 24,
+        "method": "xml-attribute-read",
+        "xpath": "/entity-eca/eca[1]"
+      },
+      "expected": {
+        "action_mode": "sync",
+        "action_service": "issueImmediatelyFulfilledOrder",
+        "conditions": [
+          {
+            "field": "statusId",
+            "operator": "equals",
+            "value": "ORDER_COMPLETED"
+          },
+          {
+            "field": "needsInventoryIssuance",
+            "operator": "equals",
+            "value": "Y"
+          }
+        ],
+        "event": "return",
+        "operation": "create-store",
+        "trigger_entity": "OrderHeader"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "UNRESOLVED",
+      "graph_answer": {
+        "action_service": "issueImmediatelyFulfilledOrder",
+        "conditions": [
+          {
+            "field": "needsInventoryIssuance",
+            "operator": "equals",
+            "value": "Y"
+          },
+          {
+            "field": "statusId",
+            "operator": "equals",
+            "value": "ORDER_COMPLETED"
+          }
+        ],
+        "eca": "1",
+        "eca_uri": "http://example.org/ofbiz/0.1/eca/0b23d547aab3/1",
+        "event": "return",
+        "operation": "create-store",
+        "triggers_edge_present": false,
+        "unresolved_reported": true
+      },
+      "id": "Q-ECA-001",
+      "note": "ECA+conditions resolved; action 'issueImmediatelyFulfilledOrder' outside scope (reported, not minted).",
+      "question": "What happens when OrderHeader is created (create-store, return) with statusId=ORDER_COMPLETED and needsInventoryIssuance=Y?",
+      "source_files": [
+        "applications/order/entitydef/eecas.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/entitydef/eecas.xml",
+          "line": 24,
+          "xpath": "/entity-eca/eca[1]"
+        },
+        {
+          "file": "applications/order/entitydef/eecas.xml",
+          "line": 27,
+          "xpath": "/entity-eca/eca[1]/action"
+        }
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "category": "eca",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/entitydef/eecas.xml",
+        "line": 24,
+        "method": "xml-attribute-read",
+        "xpath": "/entity-eca/eca[1]"
+      },
+      "expected": {
+        "eca_class": "EntityECA",
+        "event": "return",
+        "operation": "create-store",
+        "trigger_entity": "OrderHeader"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "matches": [
+          {
+            "class": "EntityECA",
+            "eca": "1",
+            "event": "return",
+            "operation": "create-store"
+          }
+        ]
+      },
+      "id": "Q-ECA-002",
+      "note": "ECA rule identified.",
+      "question": "Which ECA rule represents the OrderHeader create-store behavior?",
+      "source_files": [
+        "applications/order/entitydef/eecas.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/entitydef/eecas.xml",
+          "line": 24,
+          "xpath": "/entity-eca/eca[1]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "eca",
+      "evidence": {
+        "extraction_type": "unresolved",
+        "file": "applications/order/entitydef/eecas.xml",
+        "line": 27,
+        "xpath": "/entity-eca/eca[1]/action"
+      },
+      "expected": {
+        "action_service": "issueImmediatelyFulfilledOrder",
+        "defined_in": "applications/product/servicedef/services_facility.xml",
+        "in_scope": false
+      },
+      "expected_fact_type": "UNRESOLVED",
+      "fact_type": "UNRESOLVED",
+      "graph_answer": {
+        "action_service": "issueImmediatelyFulfilledOrder",
+        "node_classes": [],
+        "node_exists": false,
+        "unresolved_reported": true,
+        "unresolved_via": [
+          "eca-action"
+        ]
+      },
+      "id": "Q-ECA-003",
+      "note": "Reference stated in eecas.xml; target outside scope (correctly not minted).",
+      "question": "Which service does the OrderHeader ECA action reference?",
+      "source_files": [
+        "applications/order/entitydef/eecas.xml",
+        "applications/product/servicedef/services_facility.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/entitydef/eecas.xml",
+          "line": 27,
+          "xpath": "/entity-eca/eca[1]/action"
+        }
+      ],
+      "status": "UNRESOLVED"
+    },
+    {
+      "category": "provenance",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "method": "xml-attribute-read",
+        "xpath": "/services/service[10]"
+      },
+      "expected": {
+        "extraction_type": "direct",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "service": "storeOrder",
+        "xpath": "/services/service[10]"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "artifact_type": "service-def",
+        "extraction_type": "direct",
+        "file": "applications/order/servicedef/services.xml",
+        "line": "108",
+        "service": "storeOrder",
+        "sha256_present": true,
+        "xpath": "/services/service[10]"
+      },
+      "id": "Q-PROV-001",
+      "note": "Full source evidence present.",
+      "question": "Can the graph provide source evidence for the storeOrder service fact?",
+      "source_files": [
+        "applications/order/servicedef/services.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/servicedef/services.xml",
+          "line": 108,
+          "xpath": "/services/service[10]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "scope",
+      "evidence": {
+        "extraction_type": "unresolved",
+        "file": "unresolved-report",
+        "line": null,
+        "xpath": null
+      },
+      "expected": {
+        "unresolved_targets": [
+          {
+            "kind": "service",
+            "name": "issueImmediatelyFulfilledOrder",
+            "via": "eca-action"
+          },
+          {
+            "kind": "entity",
+            "name": "AccommodationSpot"
+          },
+          {
+            "kind": "entity",
+            "name": "ItemIssuance"
+          },
+          {
+            "kind": "entity",
+            "name": "CommunicationEvent"
+          },
+          {
+            "kind": "entity",
+            "name": "StatusItem"
+          }
+        ]
+      },
+      "expected_fact_type": "UNRESOLVED",
+      "fact_type": "UNRESOLVED",
+      "graph_answer": {
+        "targets": [
+          {
+            "kind": "service",
+            "minted": false,
+            "name": "issueImmediatelyFulfilledOrder",
+            "ok": true,
+            "references": 1,
+            "unresolved_reported": true
+          },
+          {
+            "kind": "entity",
+            "minted": false,
+            "name": "AccommodationSpot",
+            "ok": true,
+            "references": 8,
+            "unresolved_reported": true
+          },
+          {
+            "kind": "entity",
+            "minted": false,
+            "name": "ItemIssuance",
+            "ok": true,
+            "references": 6,
+            "unresolved_reported": true
+          },
+          {
+            "kind": "entity",
+            "minted": false,
+            "name": "CommunicationEvent",
+            "ok": true,
+            "references": 10,
+            "unresolved_reported": true
+          },
+          {
+            "kind": "entity",
+            "minted": false,
+            "name": "StatusItem",
+            "ok": true,
+            "references": 32,
+            "unresolved_reported": true
+          }
+        ],
+        "unresolved_total": 386
+      },
+      "id": "Q-SCOPE-001",
+      "note": "All expected out-of-scope refs reported, none minted.",
+      "question": "Which known dependencies remain unresolved because they are outside the current scope?",
+      "source_files": [
+        "applications/order/entitydef/eecas.xml",
+        "applications/order/servicedef/services_requirement.xml",
+        "applications/order/servicedef/services_reservations.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/entitydef/eecas.xml",
+          "line": 27,
+          "xpath": "/entity-eca/eca[1]/action"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "service",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "method": "xml-attribute-read",
+        "xpath": "/services/service[10]"
+      },
+      "expected": {
+        "description": "Creates order entities",
+        "service": "storeOrder"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "description": "Creates order entities",
+        "service": "storeOrder"
+      },
+      "id": "Q-SVC-001",
+      "note": "Verbatim description matches.",
+      "question": "What is the purpose/description of storeOrder?",
+      "source_files": [
+        "applications/order/servicedef/services.xml"
+      ],
+      "source_locations": [
+        {
+          "child": "description",
+          "file": "applications/order/servicedef/services.xml",
+          "line": 108,
+          "xpath": "/services/service[10]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "service",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "method": "xml-attribute-read",
+        "xpath": "/services/service[10]"
+      },
+      "expected": {
+        "engine": "java",
+        "implementation_class": "org.apache.ofbiz.order.order.OrderServices",
+        "method": "createOrder",
+        "service": "storeOrder"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "engine": "java",
+        "implementation_class": "org.apache.ofbiz.order.order.OrderServices",
+        "method": "createOrder",
+        "method_uri": "http://example.org/ofbiz/0.1/method/org.apache.ofbiz.order.order.OrderServices#createOrder",
+        "service": "storeOrder"
+      },
+      "id": "Q-SVC-002",
+      "note": "Source-stated binding matches (not code-verified).",
+      "question": "What implements storeOrder according to the service definition?",
+      "source_files": [
+        "applications/order/servicedef/services.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/servicedef/services.xml",
+          "line": 108,
+          "xpath": "/services/service[10]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "service",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "method": "xml-attribute-read",
+        "xpath": "/services/service[10]"
+      },
+      "expected": {
+        "count": 56,
+        "inputs": [
+          "affiliateId",
+          "agreementId",
+          "autoOrderShoppingListId",
+          "billFromVendorPartyId",
+          "billToCustomerPartyId",
+          "billingAccountId",
+          "currencyUom",
+          "distributorId",
+          "endUserCustomerPartyId",
+          "externalId",
+          "firstAttemptOrderId",
+          "grandTotal",
+          "internalCode",
+          "isRushOrder",
+          "orderAdditionalPartyRoleMap",
+          "orderAdjustments",
+          "orderAttributes",
+          "orderContactMechs",
+          "orderDate",
+          "orderId",
+          "orderInternalNotes",
+          "orderItemAssociations",
+          "orderItemAttributes",
+          "orderItemContactMechs",
+          "orderItemGroups",
+          "orderItemPriceInfos",
+          "orderItemShipGroupInfo",
+          "orderItemSurveyResponses",
+          "orderItems",
+          "orderName",
+          "orderNotes",
+          "orderPaymentInfo",
+          "orderProductPromoCodes",
+          "orderProductPromoUses",
+          "orderTerms",
+          "orderTypeId",
+          "originFacilityId",
+          "originOrderId",
+          "partyId",
+          "placingCustomerPartyId",
+          "priority",
+          "productStoreId",
+          "salesChannelEnumId",
+          "shipFromVendorPartyId",
+          "shipToCustomerPartyId",
+          "shippingAmount",
+          "supplierAgentPartyId",
+          "supplierPartyId",
+          "taxAmount",
+          "terminalId",
+          "trackingCodeOrders",
+          "transactionId",
+          "visitId",
+          "webSiteId",
+          "workEffortId",
+          "workEfforts"
+        ],
+        "service": "storeOrder"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "count": 56,
+        "inputs": [
+          "affiliateId",
+          "agreementId",
+          "autoOrderShoppingListId",
+          "billFromVendorPartyId",
+          "billToCustomerPartyId",
+          "billingAccountId",
+          "currencyUom",
+          "distributorId",
+          "endUserCustomerPartyId",
+          "externalId",
+          "firstAttemptOrderId",
+          "grandTotal",
+          "internalCode",
+          "isRushOrder",
+          "orderAdditionalPartyRoleMap",
+          "orderAdjustments",
+          "orderAttributes",
+          "orderContactMechs",
+          "orderDate",
+          "orderId",
+          "orderInternalNotes",
+          "orderItemAssociations",
+          "orderItemAttributes",
+          "orderItemContactMechs",
+          "orderItemGroups",
+          "orderItemPriceInfos",
+          "orderItemShipGroupInfo",
+          "orderItemSurveyResponses",
+          "orderItems",
+          "orderName",
+          "orderNotes",
+          "orderPaymentInfo",
+          "orderProductPromoCodes",
+          "orderProductPromoUses",
+          "orderTerms",
+          "orderTypeId",
+          "originFacilityId",
+          "originOrderId",
+          "partyId",
+          "placingCustomerPartyId",
+          "priority",
+          "productStoreId",
+          "salesChannelEnumId",
+          "shipFromVendorPartyId",
+          "shipToCustomerPartyId",
+          "shippingAmount",
+          "supplierAgentPartyId",
+          "supplierPartyId",
+          "taxAmount",
+          "terminalId",
+          "trackingCodeOrders",
+          "transactionId",
+          "visitId",
+          "webSiteId",
+          "workEffortId",
+          "workEfforts"
+        ],
+        "service": "storeOrder"
+      },
+      "id": "Q-SVC-003",
+      "note": "Input sets identical (56).",
+      "question": "What are the inputs of storeOrder?",
+      "source_files": [
+        "applications/order/servicedef/services.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/servicedef/services.xml",
+          "line": 108,
+          "xpath": "/services/service[10]"
+        }
+      ],
+      "status": "CORRECT"
+    },
+    {
+      "category": "service",
+      "evidence": {
+        "extraction_type": "direct",
+        "extractor": "ofbiz-context-extractor",
+        "extractor_version": "0.1.0",
+        "file": "applications/order/servicedef/services.xml",
+        "line": 108,
+        "method": "xml-attribute-read",
+        "xpath": "/services/service[10]"
+      },
+      "expected": {
+        "count": 3,
+        "outputs": [
+          "orderId",
+          "orderTypeId",
+          "statusId"
+        ],
+        "service": "storeOrder"
+      },
+      "expected_fact_type": "DIRECT",
+      "fact_type": "DIRECT",
+      "graph_answer": {
+        "count": 3,
+        "outputs": [
+          "orderId",
+          "orderTypeId",
+          "statusId"
+        ],
+        "service": "storeOrder"
+      },
+      "id": "Q-SVC-004",
+      "note": "Output sets identical.",
+      "question": "What are the outputs of storeOrder?",
+      "source_files": [
+        "applications/order/servicedef/services.xml"
+      ],
+      "source_locations": [
+        {
+          "file": "applications/order/servicedef/services.xml",
+          "line": 108,
+          "xpath": "/services/service[10]"
+        }
+      ],
+      "status": "CORRECT"
+    }
+  ],
+  "scope": {
+    "dependency_files": [
+      "applications/datamodel/entitydef/order-entitymodel.xml",
+      "applications/datamodel/ofbiz-component.xml"
+    ],
+    "include_dependencies": true
+  },
+  "structural": {
+    "by_kind": {
+      "base_entity": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      },
+      "eca": {
+        "found": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 5
+      },
+      "relation": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      },
+      "service": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      }
+    },
+    "details": [
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "CustRequest"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderAdjustment"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderContactMech"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderHeader"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderItem"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderItemShipGroup"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderPaymentPreference"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderRole"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderStatus"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "base_entity",
+        "name": "OrderType"
+      },
+      {
+        "expected_file": "applications/order/entitydef/eecas.xml",
+        "found": true,
+        "kind": "eca",
+        "name": "ECA:OrderHeader:return"
+      },
+      {
+        "expected_file": "applications/order/entitydef/eecas.xml",
+        "found": true,
+        "kind": "eca",
+        "name": "ECA:OrderItem:return"
+      },
+      {
+        "expected_file": "applications/order/entitydef/eecas.xml",
+        "found": true,
+        "kind": "eca",
+        "name": "ECA:OrderPaymentPreference:return"
+      },
+      {
+        "expected_file": "applications/order/servicedef/secas.xml",
+        "found": true,
+        "kind": "eca",
+        "name": "ECA:storeOrder:return"
+      },
+      {
+        "expected_file": "applications/order/servicedef/secas.xml",
+        "found": true,
+        "kind": "eca",
+        "name": "ECA:storeOrder:return"
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderAdjustment->OrderHeader",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderAdjustment->OrderItem",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderHeader->Facility",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderHeader->OrderType",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderHeader->OrderTypeAttr",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderHeader->ShoppingList",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderHeader->StatusItem",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderItem->OrderHeader",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderItem->Product",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/datamodel/entitydef/order-entitymodel.xml",
+        "found": true,
+        "kind": "relation",
+        "name": "OrderItem->StatusItem",
+        "node_ok": true
+      },
+      {
+        "expected_file": "applications/order/servicedef/services.xml",
+        "found": true,
+        "kind": "service",
+        "name": "addOrderRole"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_order.xml",
+        "found": true,
+        "kind": "service",
+        "name": "appendOrderItem"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services.xml",
+        "found": true,
+        "kind": "service",
+        "name": "cancelOrderItem"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_request.xml",
+        "found": true,
+        "kind": "service",
+        "name": "createCustRequest"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_order.xml",
+        "found": true,
+        "kind": "service",
+        "name": "createOrderAdjustment"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_order.xml",
+        "found": true,
+        "kind": "service",
+        "name": "createOrderHeader"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_quote.xml",
+        "found": true,
+        "kind": "service",
+        "name": "createQuote"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services_return.xml",
+        "found": true,
+        "kind": "service",
+        "name": "createReturnHeader"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services.xml",
+        "found": true,
+        "kind": "service",
+        "name": "findOrders"
+      },
+      {
+        "expected_file": "applications/order/servicedef/services.xml",
+        "found": true,
+        "kind": "service",
+        "name": "storeOrder"
+      }
+    ],
+    "found": 35,
+    "label": "sampled structural gold-set evaluation",
+    "missing": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "total": 35
+  }
+}

@@ -1,0 +1,385 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ofbiz: <http://example.org/ofbiz/0.1/> .
+
+# =============================================================================
+# Context Graph ontology v0.2 — Part 1 (deterministic only), prototype scope:
+# applications/order (+ its entity source in applications/datamodel).
+# Every class/property below is justified by an OFBiz source construct.
+# No probabilistic / LLM concepts. See docs/context-ontology.md and
+# docs/provenance-model.md.
+# v0.3 -> v0.4 is ADDITIVE (stated-name literals for triggers/default entity;
+# term IRIs in the http://example.org/ofbiz/0.1/ namespace are stable across 0.x).
+# =============================================================================
+<http://example.org/ofbiz/ontology/0.4>
+    a owl:Ontology ;
+    rdfs:label "OFBiz Context Graph ontology (deterministic prototype)" ;
+    rdfs:comment "Minimal, evidence-grounded schema for Part 1. Application, Component, Service, Entity (+ViewEntity), Method, Attribute, ECA (+subclasses), Relation, Condition, SourceArtifact. W3C PROV-O-aligned provenance: Repository, Extractor, Extraction, Evidence." ;
+    owl:versionInfo "0.4" ;
+    owl:priorVersion <http://example.org/ofbiz/ontology/0.3> .
+
+# ---------------- Classes ----------------
+
+ofbiz:Application a owl:Class ;
+    rdfs:label "Application" ;
+    rdfs:comment "The scanned OFBiz distribution instance (e.g. apache-ofbiz-24.09.07). Evidence: dataset root + VERSION file. Direct." .
+
+ofbiz:Component a owl:Class ;
+    rdfs:label "Component" ;
+    rdfs:comment "An OFBiz component: a directory with ofbiz-component.xml, listed in component-load.xml (e.g. order, datamodel). Direct." .
+
+ofbiz:Service a owl:Class ;
+    rdfs:label "Service" ;
+    rdfs:comment "A <service> in servicedef/services*.xml (name, engine, location, invoke). Direct." .
+
+ofbiz:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:comment "An <entity> in *-entitymodel.xml (entity-name, fields, primary key). Direct." .
+
+ofbiz:ViewEntity a owl:Class ;
+    rdfs:subClassOf ofbiz:Entity ;
+    rdfs:label "View entity" ;
+    rdfs:comment "A <view-entity>: composed of member-entities + aliases + view-links, no stored fields of its own. Distinct XML construct (53 in order scope), hence a subclass. Direct." .
+
+ofbiz:Method a owl:Class ;
+    rdfs:label "Method" ;
+    rdfs:comment "A service implementation: java static method (DispatchContext, Map), groovy function, or minilang simple-method. Evidence: service location+invoke joined against code. Binding is stated; existence is validated." .
+
+ofbiz:Attribute a owl:Class ;
+    rdfs:label "Attribute" ;
+    rdfs:comment "One class for both entity <field> and service <attribute>/<override>/expanded auto-attributes and view <alias>. Role given by ofbiz:role ('entity-field' | 'service-parameter' | 'view-alias'). Direct, except auto-attribute expansion (inference, flagged)." .
+
+ofbiz:ECA a owl:Class ;
+    rdfs:label "ECA" ;
+    rdfs:comment "An event-condition-action rule: <eca> in entity-eca (eecas.xml) or service-eca (secas.xml) files. Direct." .
+
+ofbiz:EntityECA a owl:Class ;
+    rdfs:subClassOf ofbiz:ECA ;
+    rdfs:label "Entity ECA" ;
+    rdfs:comment "ECA triggered by an entity operation (<eca entity operation event>). Distinct XSD (entity-eca.xsd), hence a subclass. Direct." .
+
+ofbiz:ServiceECA a owl:Class ;
+    rdfs:subClassOf ofbiz:ECA ;
+    rdfs:label "Service ECA" ;
+    rdfs:comment "ECA triggered by a service invocation (<eca service event>). Distinct XSD (service-eca.xsd; 108 in order secas.xml), hence a subclass. Direct." .
+
+ofbiz:Relation a owl:Class ;
+    rdfs:label "Entity relation" ;
+    rdfs:comment "A <relation> inside an entity definition (type, fk-name, rel-entity-name, key-maps). Reified as a class so type/fk/key-maps are lossless (428 in the order model). Direct." .
+
+ofbiz:Condition a owl:Class ;
+    rdfs:label "Condition" ;
+    rdfs:comment "A <condition field-name operator value> guard on an ECA (or minilang if/compare). Syntax recorded verbatim; meaning not interpreted. Direct." .
+
+ofbiz:SourceArtifact a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Source artifact" ;
+    rdfs:comment "A repository file that evidence came from. Identified by fromRepository + filePath, pinned by sha256, typed by artifactType. Provenance anchor for every fact. Direct." .
+
+# ---------------- Provenance classes (W3C PROV-O aligned) ----------------
+
+ofbiz:Repository a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Repository" ;
+    rdfs:comment "The scanned source repository (e.g. the local apache-ofbiz-24.09.07 tree). repositoryId is stable across runs; repositoryPath records where it was read from. Direct (run configuration + VERSION file)." .
+
+ofbiz:Extractor a owl:Class ;
+    rdfs:subClassOf prov:SoftwareAgent ;
+    rdfs:label "Extractor" ;
+    rdfs:comment "A deterministic extractor program version (extractorName + extractorVersion), e.g. ofbiz-service-parser 0.2. One individual per (name, version). Direct (build metadata)." .
+
+ofbiz:Extraction a owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "Extraction run" ;
+    rdfs:comment "One execution of an extractor over the repository: extractedAt timestamp, extractionMethod verb (documented vocabulary), prov:used source artifacts, prov:wasAssociatedWith the Extractor. Direct (run log)." .
+
+ofbiz:Evidence a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "Evidence" ;
+    rdfs:comment "A quoted source span backing a fact: quotedFrom artifact + lineStart/lineEnd + sourceXPath + verbatim snippet. REQUIRED (one or more) for every inferred fact via hasEvidence; optional supporting detail for direct facts. Direct (mechanical quote)." .
+
+# ---------------- Object properties ----------------
+
+ofbiz:containsComponent a owl:ObjectProperty ;
+    rdfs:label "contains component" ;
+    rdfs:comment "Application lists a component (component-load.xml load-component + directory with ofbiz-component.xml). Direct." ;
+    rdfs:domain ofbiz:Application ; rdfs:range ofbiz:Component .
+
+ofbiz:containsService a owl:ObjectProperty ;
+    rdfs:label "contains service" ;
+    rdfs:comment "Component declares a service file via <service-resource> and the service is defined there. Direct; cite both files." ;
+    rdfs:domain ofbiz:Component ; rdfs:range ofbiz:Service .
+
+ofbiz:containsEntity a owl:ObjectProperty ;
+    rdfs:label "contains entity" ;
+    rdfs:comment "Component DEFINES an entity in its own <entity-resource type=model> files. References (e.g. view member-entities pointing at datamodel entities) do NOT count. Direct under this rule." ;
+    rdfs:domain ofbiz:Component ; rdfs:range ofbiz:Entity .
+
+ofbiz:belongsToComponent a owl:ObjectProperty ;
+    rdfs:label "belongs to component" ;
+    rdfs:comment "Convenience inverse view of containsService/containsEntity (Service|Entity -> Component). Same evidence. Direct." ;
+    rdfs:domain owl:Thing ; rdfs:range ofbiz:Component .
+
+ofbiz:implementedBy a owl:ObjectProperty ;
+    rdfs:label "implemented by" ;
+    rdfs:comment "Service names its implementation (engine + location + invoke). Only for engines java/groovy/simple. Absent for entity-auto/group/interface by design. Direct (stated binding; target existence validated)." ;
+    rdfs:domain ofbiz:Service ; rdfs:range ofbiz:Method .
+
+ofbiz:hasInput a owl:ObjectProperty ;
+    rdfs:label "has input" ;
+    rdfs:comment "Service input parameter (<attribute mode=IN/INOUT>, <override>, or expanded <auto-attributes>). Explicit = direct; auto-attribute expansion or implements-inherited = inference, flagged." ;
+    rdfs:domain ofbiz:Service ; rdfs:range ofbiz:Attribute .
+
+ofbiz:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output" ;
+    rdfs:comment "Service output parameter (<attribute mode=OUT/INOUT> or inherited via <implements>). Explicit = direct; inherited = inference, flagged." ;
+    rdfs:domain ofbiz:Service ; rdfs:range ofbiz:Attribute .
+
+ofbiz:operatesOn a owl:ObjectProperty ;
+    rdfs:label "operates on" ;
+    rdfs:comment "WEAK, stated-only meaning: service carries default-entity-name=X. CRUD semantics hold only for engine=entity-auto; for java/groovy do not claim exclusivity or intent. Direct-as-stated; anything more is forbidden." ;
+    rdfs:domain ofbiz:Service ; rdfs:range ofbiz:Entity .
+
+ofbiz:hasCondition a owl:ObjectProperty ;
+    rdfs:label "has condition" ;
+    rdfs:comment "ECA owns a <condition> guard. Direct." ;
+    rdfs:domain ofbiz:ECA ; rdfs:range ofbiz:Condition .
+
+ofbiz:triggersService a owl:ObjectProperty ;
+    rdfs:label "triggers service" ;
+    rdfs:comment "ECA <action service=name mode> fires a service. Direct; mode/persist/run-as-user recorded on the ECA." ;
+    rdfs:domain ofbiz:ECA ; rdfs:range ofbiz:Service .
+
+ofbiz:referencesService a owl:ObjectProperty ;
+    rdfs:label "references service" ;
+    rdfs:comment "Stated service-to-service name reference: <implements service>, <permission-service service-name>, <group><invoke name>. Target existence validated; dangling names reported, never silently resolved. Direct." ;
+    rdfs:domain ofbiz:Service ; rdfs:range ofbiz:Service .
+
+ofbiz:appliesTo a owl:ObjectProperty ;
+    rdfs:label "applies to" ;
+    rdfs:comment "General ECA-to-trigger relation: the entity or service whose activity fires the rule. Always emitted alongside the specific triggeredOnEntity / triggeredOnService triple (of which it is the super-property) so plain SPARQL works without a reasoner. Direct." ;
+    rdfs:domain ofbiz:ECA ; rdfs:range owl:Thing .
+
+ofbiz:triggeredOnEntity a owl:ObjectProperty ;
+    rdfs:subPropertyOf ofbiz:appliesTo ;
+    rdfs:label "triggered on entity" ;
+    rdfs:comment "EntityECA trigger: <eca entity=name operation event>. Direct." ;
+    rdfs:domain ofbiz:EntityECA ; rdfs:range ofbiz:Entity .
+
+ofbiz:triggeredOnService a owl:ObjectProperty ;
+    rdfs:subPropertyOf ofbiz:appliesTo ;
+    rdfs:label "triggered on service" ;
+    rdfs:comment "ServiceECA trigger: <eca service=name event>. Direct." ;
+    rdfs:domain ofbiz:ServiceECA ; rdfs:range ofbiz:Service .
+
+ofbiz:hasAttribute a owl:ObjectProperty ;
+    rdfs:label "has attribute" ;
+    rdfs:comment "Entity owns a field (<field>), or ViewEntity owns an <alias>. Services use hasInput/hasOutput instead. Direct." ;
+    rdfs:domain ofbiz:Entity ; rdfs:range ofbiz:Attribute .
+
+ofbiz:relationFrom a owl:ObjectProperty ;
+    rdfs:label "relation from" ;
+    rdfs:comment "Subject entity of a Relation (the <entity> containing the <relation>). Direct." ;
+    rdfs:domain ofbiz:Relation ; rdfs:range ofbiz:Entity .
+
+ofbiz:relationTo a owl:ObjectProperty ;
+    rdfs:label "relation to" ;
+    rdfs:comment "Target entity of a Relation (<relation rel-entity-name>). Direct; dangling targets reported." ;
+    rdfs:domain ofbiz:Relation ; rdfs:range ofbiz:Entity .
+
+ofbiz:definedIn a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:label "defined in" ;
+    rdfs:comment "PRIMARY source file of any individual. Functional and REQUIRED on every individual except SourceArtifact itself. Direct." ;
+    rdfs:domain owl:Thing ; rdfs:range ofbiz:SourceArtifact .
+
+ofbiz:hasSourceArtifact a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:label "has source artifact" ;
+    rdfs:comment "SUPPORTING evidence files beyond the primary one (e.g. ofbiz-component.xml resource entry; entity file behind an auto-attributes expansion). Direct." ;
+    rdfs:domain owl:Thing ; rdfs:range ofbiz:SourceArtifact .
+
+ofbiz:fromRepository a owl:ObjectProperty ;
+    rdfs:label "from repository" ;
+    rdfs:comment "The repository an artifact was read from. Functional. Direct (run configuration)." ;
+    rdfs:domain ofbiz:SourceArtifact ; rdfs:range ofbiz:Repository .
+
+ofbiz:generatedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasGeneratedBy ;
+    rdfs:label "generated by" ;
+    rdfs:comment "The Extraction run that produced this individual. Required on every individual except SourceArtifact, Repository, Extractor, Extraction, Evidence themselves. Direct (run log)." ;
+    rdfs:domain owl:Thing ; rdfs:range ofbiz:Extraction .
+
+ofbiz:hasEvidence a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:label "has evidence" ;
+    rdfs:comment "Quoted source spans backing this fact. REQUIRED (one or more) when extractionType is 'inferred'; each span cites the exact source location used. Optional extra detail for direct facts. Direct (mechanical quote)." ;
+    rdfs:domain owl:Thing ; rdfs:range ofbiz:Evidence .
+
+ofbiz:quotedFrom a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:label "quoted from" ;
+    rdfs:comment "The SourceArtifact an Evidence span is quoted from. Functional. Direct." ;
+    rdfs:domain ofbiz:Evidence ; rdfs:range ofbiz:SourceArtifact .
+
+# ---------------- Datatype properties ----------------
+
+ofbiz:name a owl:DatatypeProperty ;
+    rdfs:label "name" ; rdfs:comment "OFBiz local name: component/service/entity/method/field/attribute name. Verbatim." ;
+    rdfs:domain owl:Thing ; rdfs:range xsd:string .
+
+ofbiz:title a owl:DatatypeProperty ;
+    rdfs:label "title" ; rdfs:domain owl:Thing ; rdfs:range xsd:string .
+
+ofbiz:description a owl:DatatypeProperty ;
+    rdfs:label "description" ; rdfs:comment "Verbatim <description> text. Never paraphrased." ;
+    rdfs:domain owl:Thing ; rdfs:range xsd:string .
+
+ofbiz:engine a owl:DatatypeProperty ;
+    rdfs:label "service engine" ; rdfs:comment "java|groovy|simple|entity-auto|group|interface|... Verbatim." ;
+    rdfs:domain ofbiz:Service ; rdfs:range xsd:string .
+
+ofbiz:implLocation a owl:DatatypeProperty ;
+    rdfs:label "implementation location" ; rdfs:comment "Service location attr (dotted class or component:// path). Verbatim." ;
+    rdfs:domain ofbiz:Service ; rdfs:range xsd:string .
+
+ofbiz:implInvoke a owl:DatatypeProperty ;
+    rdfs:label "implementation invoke" ; rdfs:comment "Service invoke attr (method/function name). Verbatim." ;
+    rdfs:domain ofbiz:Service ; rdfs:range xsd:string .
+
+ofbiz:role a owl:DatatypeProperty ;
+    rdfs:label "attribute role" ; rdfs:comment "entity-field | service-parameter | view-alias." ;
+    rdfs:domain ofbiz:Attribute ; rdfs:range xsd:string .
+
+ofbiz:paramMode a owl:DatatypeProperty ;
+    rdfs:label "parameter mode" ; rdfs:comment "IN | OUT | INOUT. Verbatim; absent mode recorded as absent, never defaulted." ;
+    rdfs:domain ofbiz:Attribute ; rdfs:range xsd:string .
+
+ofbiz:attrType a owl:DatatypeProperty ;
+    rdfs:label "attribute type" ; rdfs:comment "Entity field type (id, currency-amount, ...) or service param type (String, BigDecimal, ...). Verbatim." ;
+    rdfs:domain ofbiz:Attribute ; rdfs:range xsd:string .
+
+ofbiz:optional a owl:DatatypeProperty ;
+    rdfs:label "optional" ; rdfs:comment "Verbatim optional attr (true|false or absent)." ;
+    rdfs:domain ofbiz:Attribute ; rdfs:range xsd:string .
+
+ofbiz:isPrimaryKey a owl:DatatypeProperty ;
+    rdfs:label "is primary key" ; rdfs:comment "True iff named in <prim-key>. Direct." ;
+    rdfs:domain ofbiz:Attribute ; rdfs:range xsd:boolean .
+
+ofbiz:relationType a owl:DatatypeProperty ;
+    rdfs:label "relation type" ; rdfs:comment "one | many. Verbatim; never reinterpreted as cardinality." ;
+    rdfs:domain ofbiz:Relation ; rdfs:range xsd:string .
+
+ofbiz:fkName a owl:DatatypeProperty ;
+    rdfs:label "fk name" ; rdfs:comment "Verbatim fk-name (may be absent)." ;
+    rdfs:domain ofbiz:Relation ; rdfs:range xsd:string .
+
+ofbiz:keyMap a owl:DatatypeProperty ;
+    rdfs:label "key map" ; rdfs:comment "Verbatim key-map as 'field-name->rel-field-name' (rel side omitted when absent in source)." ;
+    rdfs:domain ofbiz:Relation ; rdfs:range xsd:string .
+
+ofbiz:ecaEvent a owl:DatatypeProperty ;
+    rdfs:label "ECA event" ; rdfs:comment "return | commit | ... Verbatim." ;
+    rdfs:domain ofbiz:ECA ; rdfs:range xsd:string .
+
+ofbiz:ecaOperation a owl:DatatypeProperty ;
+    rdfs:label "ECA operation" ; rdfs:comment "EntityECA only: create-store | ... Verbatim." ;
+    rdfs:domain ofbiz:EntityECA ; rdfs:range xsd:string .
+
+ofbiz:triggerEntityName a owl:DatatypeProperty ;
+    rdfs:label "trigger entity name" ;
+    rdfs:comment "Stated <eca entity> name, verbatim literal. Present even when the Entity is out of scope and no triggeredOnEntity triple can be minted. Direct; never resolved by guessing." ;
+    rdfs:domain ofbiz:EntityECA ; rdfs:range xsd:string .
+
+ofbiz:triggerServiceName a owl:DatatypeProperty ;
+    rdfs:label "trigger service name" ;
+    rdfs:comment "Stated <eca service> name, verbatim literal. Present even when the Service is out of scope and no triggeredOnService triple can be minted. Direct; never resolved by guessing." ;
+    rdfs:domain ofbiz:ServiceECA ; rdfs:range xsd:string .
+
+ofbiz:defaultEntityName a owl:DatatypeProperty ;
+    rdfs:label "default entity name" ;
+    rdfs:comment "Stated service default-entity-name, verbatim literal. Present even when no operatesOn triple is minted (target out of scope). Direct; carries no CRUD or exclusivity claim." ;
+    rdfs:domain ofbiz:Service ; rdfs:range xsd:string .
+
+ofbiz:actionMode a owl:DatatypeProperty ;
+    rdfs:label "action mode" ; rdfs:comment "sync | async (+persist/run-as-user where stated). Verbatim." ;
+    rdfs:domain ofbiz:ECA ; rdfs:range xsd:string .
+
+ofbiz:condField a owl:DatatypeProperty ;
+    rdfs:label "condition field" ; rdfs:comment "Verbatim field-name." ;
+    rdfs:domain ofbiz:Condition ; rdfs:range xsd:string .
+
+ofbiz:condOperator a owl:DatatypeProperty ;
+    rdfs:label "condition operator" ; rdfs:comment "equals | is-not-empty | ... Verbatim; semantics not interpreted." ;
+    rdfs:domain ofbiz:Condition ; rdfs:range xsd:string .
+
+ofbiz:condValue a owl:DatatypeProperty ;
+    rdfs:label "condition value" ; rdfs:comment "Verbatim value (may be absent)." ;
+    rdfs:domain ofbiz:Condition ; rdfs:range xsd:string .
+
+ofbiz:filePath a owl:DatatypeProperty ;
+    rdfs:label "file path" ; rdfs:comment "Repo-relative path, e.g. applications/order/servicedef/services.xml." ;
+    rdfs:domain ofbiz:SourceArtifact ; rdfs:range xsd:string .
+
+ofbiz:sha256 a owl:DatatypeProperty ;
+    rdfs:label "sha256" ; rdfs:comment "Hex sha256 of file bytes at extraction time." ;
+    rdfs:domain ofbiz:SourceArtifact ; rdfs:range xsd:string .
+
+ofbiz:extractionType a owl:DatatypeProperty ;
+    rdfs:label "extraction type" ;
+    rdfs:comment "'direct' (stated verbatim in source) or 'inferred' (deterministic join/expansion with all sources cited via hasEvidence). Required on every individual except SourceArtifact, Repository, Extractor, Extraction, Evidence. No third value. No confidence scores in Part 1." ;
+    rdfs:domain owl:Thing ; rdfs:range xsd:string .
+
+ofbiz:evidenceLine a owl:DatatypeProperty ;
+    rdfs:label "evidence line" ; rdfs:comment "1-based XML line number of the stating element, when available. Convenience single-line pointer; multi-line spans use Evidence lineStart/lineEnd." ;
+    rdfs:domain owl:Thing ; rdfs:range xsd:integer .
+
+ofbiz:repositoryId a owl:DatatypeProperty ;
+    rdfs:label "repository id" ; rdfs:comment "Stable identifier, e.g. 'apache-ofbiz-24.09.07'. Same value across runs on the same tree." ;
+    rdfs:domain ofbiz:Repository ; rdfs:range xsd:string .
+
+ofbiz:repositoryPath a owl:DatatypeProperty ;
+    rdfs:label "repository path" ; rdfs:comment "Where the tree was read from at extraction time (machine-local; for audit, not identity)." ;
+    rdfs:domain ofbiz:Repository ; rdfs:range xsd:string .
+
+ofbiz:artifactType a owl:DatatypeProperty ;
+    rdfs:label "artifact type" ;
+    rdfs:comment "Controlled vocabulary (see docs/provenance-model.md): component-descriptor | component-loader | entity-model | entity-eca | service-def | service-eca | java-source | groovy-source | minilang | widget-screen | widget-form | widget-menu | controller | properties | labels. Verbatim classifier, assigned by filename/root element." ;
+    rdfs:domain ofbiz:SourceArtifact ; rdfs:range xsd:string .
+
+ofbiz:extractorName a owl:DatatypeProperty ;
+    rdfs:label "extractor name" ; rdfs:comment "Program name, e.g. 'ofbiz-service-parser'." ;
+    rdfs:domain ofbiz:Extractor ; rdfs:range xsd:string .
+
+ofbiz:extractorVersion a owl:DatatypeProperty ;
+    rdfs:label "extractor version" ; rdfs:comment "Program version, e.g. '0.2'. Name+version jointly identify the producer." ;
+    rdfs:domain ofbiz:Extractor ; rdfs:range xsd:string .
+
+ofbiz:extractedAt a owl:DatatypeProperty ;
+    rdfs:label "extracted at" ; rdfs:comment "Run timestamp (xsd:dateTime, UTC)." ;
+    rdfs:domain ofbiz:Extraction ; rdfs:range xsd:dateTime .
+
+ofbiz:extractionMethod a owl:DatatypeProperty ;
+    rdfs:label "extraction method" ;
+    rdfs:comment "How this run derived facts. Controlled vocabulary (see docs/provenance-model.md): xml-attribute-read | xml-literal-reference | auto-attributes-expansion | implements-chain-resolution | code-literal-scan | join-validate. A run uses one primary method." ;
+    rdfs:domain ofbiz:Extraction ; rdfs:range xsd:string .
+
+ofbiz:sourceXPath a owl:DatatypeProperty ;
+    rdfs:label "source XPath" ; rdfs:comment "Element path of the stating/quoted element, e.g. /services/service[12]/attribute[1]. Deterministic with lxml." ;
+    rdfs:domain owl:Thing ; rdfs:range xsd:string .
+
+ofbiz:lineStart a owl:DatatypeProperty ;
+    rdfs:label "line start" ; rdfs:comment "1-based first line of an Evidence span." ;
+    rdfs:domain ofbiz:Evidence ; rdfs:range xsd:integer .
+
+ofbiz:lineEnd a owl:DatatypeProperty ;
+    rdfs:label "line end" ; rdfs:comment "1-based last line of an Evidence span." ;
+    rdfs:domain ofbiz:Evidence ; rdfs:range xsd:integer .
+
+ofbiz:snippet a owl:DatatypeProperty ;
+    rdfs:label "snippet" ; rdfs:comment "Verbatim source text of an Evidence span (bounded length; full file pinned by artifact sha256). Never paraphrased." ;
+    rdfs:domain ofbiz:Evidence ; rdfs:range xsd:string .

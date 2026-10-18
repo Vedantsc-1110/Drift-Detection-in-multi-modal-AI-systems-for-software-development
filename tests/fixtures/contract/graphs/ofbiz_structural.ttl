@@ -1,0 +1,26 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:engine "java" ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 142 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:142" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:OrderHeader a ctx:Entity ;
+    rdfs:label "OrderHeader" ;
+    ctx:definedIn <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "order-entitymodel.xml:5" ;
+    ctx:sourceHash "bbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbb" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

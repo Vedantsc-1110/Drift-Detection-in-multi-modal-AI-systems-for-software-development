@@ -1,0 +1,143 @@
+@prefix ofbiz: <http://example.org/ofbiz/0.1/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+
+# =============================================================================
+# SHACL shapes for the deterministic OFBiz Context Graph (ontology v0.4).
+# Philosophy: validate structure the SOURCE actually provides. Missing
+# information that OFBiz legitimately omits (unresolved cross-component
+# targets, absent condition values, engines without code entry points) must
+# NOT fail validation. sh:Violation = broken structure; sh:Warning = "should",
+# reported but conforming.
+# =============================================================================
+
+<http://example.org/ofbiz/shapes/0.1>
+    a owl:Ontology ;
+    rdfs:label "OFBiz Context Graph SHACL shapes" ;
+    owl:versionInfo "0.1" .
+
+# ---------------- 1. Every Service must have a name ----------------
+
+ofbiz:ServiceShape a sh:NodeShape ;
+    sh:targetClass ofbiz:Service ;
+    sh:property [
+        sh:path ofbiz:name ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every Service must have ofbiz:name." ;
+    ] .
+
+# ---------------- 3. Implementation reference when source gives one ----------------
+# Only fires when BOTH implLocation and implInvoke are present (java/groovy/
+# simple with a stated binding). entity-auto/group/interface services never
+# carry them, so they can never fail this shape. (SPARQL form: sh:if/sh:then
+# is unreliable in the pinned validator.)
+
+ofbiz:ServiceImplShape a sh:NodeShape ;
+    sh:targetClass ofbiz:Service ;
+    sh:sparql [
+        sh:message "A Service with stated location+invoke must link ofbiz:implementedBy." ;
+        sh:severity sh:Violation ;
+        sh:select """SELECT $this WHERE {
+            $this ofbiz:implLocation ?loc ; ofbiz:implInvoke ?inv .
+            FILTER NOT EXISTS { $this ofbiz:implementedBy ?m . }
+        }""" ;
+    ] .
+
+# ---------------- 2+6. Provenance: every domain individual ----------------
+# Domain classes only (scaffolding: SourceArtifact/Repository/Extractor/
+# Extraction/Evidence and rdf:Statement reifications carry their own scheme).
+
+ofbiz:ProvenanceShape a sh:NodeShape ;
+    sh:targetClass ofbiz:Component, ofbiz:Service, ofbiz:Entity, ofbiz:ViewEntity,
+        ofbiz:Method, ofbiz:Attribute, ofbiz:ECA, ofbiz:EntityECA, ofbiz:ServiceECA,
+        ofbiz:Relation, ofbiz:Condition ;
+    sh:property [
+        sh:path ofbiz:definedIn ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every domain individual must have ofbiz:definedIn." ;
+    ] ;
+    sh:property [
+        sh:path ofbiz:extractionType ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every domain individual must have ofbiz:extractionType." ;
+    ] ;
+    sh:property [
+        sh:path ofbiz:definedIn ;
+        sh:class ofbiz:SourceArtifact ;
+        sh:severity sh:Warning ;
+        sh:message "ofbiz:definedIn should point at a SourceArtifact." ;
+    ] .
+
+# ---------------- 4. ECA completeness (as the source provides it) ----------------
+# Trigger TARGET links (triggeredOn*/appliesTo) are deliberately NOT required:
+# out-of-scope targets are reported in unresolved.json, never minted. The
+# stated trigger NAME is always available, so that is what is required.
+
+ofbiz:EcaBaseShape a sh:NodeShape ;
+    sh:targetClass ofbiz:ECA, ofbiz:EntityECA, ofbiz:ServiceECA ;
+    sh:property [
+        sh:path ofbiz:ecaEvent ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every ECA must have ofbiz:ecaEvent." ;
+    ] .
+
+ofbiz:EntityEcaShape a sh:NodeShape ;
+    sh:targetClass ofbiz:EntityECA ;
+    sh:property [
+        sh:path ofbiz:ecaOperation ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every EntityECA must have ofbiz:ecaOperation." ;
+    ] ;
+    sh:property [
+        sh:path ofbiz:triggerEntityName ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every EntityECA must state ofbiz:triggerEntityName." ;
+    ] .
+
+ofbiz:ServiceEcaShape a sh:NodeShape ;
+    sh:targetClass ofbiz:ServiceECA ;
+    sh:property [
+        sh:path ofbiz:triggerServiceName ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every ServiceECA must state ofbiz:triggerServiceName." ;
+    ] .
+
+# Action coverage is a SHOULD: dangling (out-of-component) action targets are
+# reported, not minted, so absence in-graph is legitimate. Warning, not failure.
+
+ofbiz:EcaActionShape a sh:NodeShape ;
+    sh:targetClass ofbiz:ECA, ofbiz:EntityECA, ofbiz:ServiceECA ;
+    sh:property [
+        sh:path ofbiz:triggersService ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report)." ;
+    ] .
+
+# ---------------- 5. Conditions: field + operator required, value optional ----------------
+# A missing value is legitimate OFBiz (e.g. operator is-not-empty carries none).
+
+ofbiz:ConditionShape a sh:NodeShape ;
+    sh:targetClass ofbiz:Condition ;
+    sh:property [
+        sh:path ofbiz:condField ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every Condition must have ofbiz:condField." ;
+    ] ;
+    sh:property [
+        sh:path ofbiz:condOperator ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every Condition must have ofbiz:condOperator." ;
+    ] .

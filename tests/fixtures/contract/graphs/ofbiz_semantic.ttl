@@ -1,0 +1,13 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:OrderModule a ctx:Module ;
+    rdfs:label "OrderModule" ;
+    ctx:businessPurpose "Capture and fulfil customer orders" ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:GroqLLMExtractor ;
+    ctx:confidence 0.78 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .

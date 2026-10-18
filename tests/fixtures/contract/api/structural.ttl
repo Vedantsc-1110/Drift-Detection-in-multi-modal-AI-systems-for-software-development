@@ -1,0 +1,55 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 142 ;
+    ctx:sourceLocation "services.xml:142" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> .
+
+ctx:createInvoice a ctx:Service ;
+    rdfs:label "createInvoice" ;
+    ctx:hasInputParam ctx:createInvoice-invoiceTypeId ;
+    ctx:hasOutputParam ctx:createInvoice-invoiceId ;
+    ctx:definedIn <file:///ofbiz/accounting/servicedef/services.xml> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/servicedef/services.xml> .
+
+ctx:createInvoice-invoiceTypeId a ctx:Field ;
+    rdfs:label "invoiceTypeId" ;
+    ctx:definedIn <file:///ofbiz/accounting/servicedef/services.xml> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/servicedef/services.xml> .
+
+ctx:createInvoice-invoiceId a ctx:Field ;
+    rdfs:label "invoiceId" ;
+    ctx:definedIn <file:///ofbiz/accounting/servicedef/services.xml> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/servicedef/services.xml> .
+
+ctx:OrderHeader a ctx:Entity ;
+    rdfs:label "OrderHeader" ;
+    ctx:definedIn <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/order/entitydef/order-entitymodel.xml> .
+
+ctx:Invoice a ctx:Entity ;
+    rdfs:label "Invoice" ;
+    ctx:definedIn <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> .

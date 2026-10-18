@@ -1,0 +1,27 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:orders_etl a ctx:DAG ;
+    rdfs:label "orders_etl" ;
+    ctx:scheduledAt "@daily" ;
+    ctx:definedIn <file:///airflow/dag_orders_etl.py> ;
+    ctx:atLine 8 ;
+    prov:hadPrimarySource <file:///airflow/dag_orders_etl.py> ;
+    prov:wasGeneratedBy ctx:PythonAstExtractor ;
+    ctx:sourceLocation "dag_orders_etl.py:8" ;
+    ctx:sourceHash "ccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbbcccc" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:orders_etl_extract a ctx:Task ;
+    rdfs:label "extract_orders" ;
+    ctx:operatorType "PythonOperator" ;
+    ctx:definedIn <file:///airflow/dag_orders_etl.py> ;
+    ctx:atLine 10 ;
+    prov:hadPrimarySource <file:///airflow/dag_orders_etl.py> ;
+    prov:wasGeneratedBy ctx:PythonAstExtractor ;
+    ctx:sourceLocation "dag_orders_etl.py:10" ;
+    ctx:sourceHash "ccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbbcccc" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

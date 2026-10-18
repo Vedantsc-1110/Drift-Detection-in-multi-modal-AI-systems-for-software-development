@@ -1,0 +1,46 @@
+# Synthetic corpus manifest (v1.0). Counts verified by scripts/validate_dataset.py.
+dataset_name: Enterprise Context Identification Dataset — Synthetic Corpus
+version: "1.0"
+organization: Meridian Retail Group (fictional — synthetic enterprise)
+document_count: 20
+documents_by_type:
+  requirements: 5
+  designs: 5
+  policies: 5
+  sops: 5
+documents:
+  - {id: R01, file: requirements/R01-order-to-cash-requirements, title: Order-to-Cash Process Requirements}
+  - {id: R02, file: requirements/R02-order-creation-validation-requirements, title: Order Creation and Validation Requirements}
+  - {id: R03, file: requirements/R03-fulfillment-inventory-requirements, title: Order Fulfillment and Inventory Requirements}
+  - {id: R04, file: requirements/R04-payment-status-requirements, title: Payment and Order Status Requirements}
+  - {id: R05, file: requirements/R05-customer-party-requirements, title: Customer and Party Management Requirements}
+  - {id: D01, file: designs/D01-order-management-service-design, title: Order Management Service Design}
+  - {id: D02, file: designs/D02-validation-processing-design, title: Order Validation and Processing Design}
+  - {id: D03, file: designs/D03-fulfillment-service-design, title: Order Fulfillment Service Design}
+  - {id: D04, file: designs/D04-payment-integration-design, title: Payment Processing Integration Design}
+  - {id: D05, file: designs/D05-customer-party-integration-design, title: Customer and Party Integration Design}
+  - {id: P01, file: policies/P01-order-approval-policy, title: Order Approval Policy}
+  - {id: P02, file: policies/P02-payment-authorization-policy, title: Payment Authorization Policy}
+  - {id: P03, file: policies/P03-order-cancellation-policy, title: Order Cancellation Policy}
+  - {id: P04, file: policies/P04-customer-data-access-policy, title: Customer Data and Access Policy}
+  - {id: P05, file: policies/P05-fulfillment-inventory-policy, title: Fulfillment and Inventory Control Policy}
+  - {id: S01, file: sops/S01-order-processing-sop, title: Order Processing Standard Operating Procedure}
+  - {id: S02, file: sops/S02-exception-handling-procedure, title: Order Exception Handling Procedure}
+  - {id: S03, file: sops/S03-payment-reconciliation-procedure, title: Payment Reconciliation Procedure}
+  - {id: S04, file: sops/S04-fulfillment-escalation-procedure, title: Fulfillment Escalation Procedure}
+  - {id: S05, file: sops/S05-architecture-decision-record, title: Order Management Architecture Decision Record}
+formats: [docx, md]
+ground_truth:
+  fact_mappings: ground_truth/fact-mappings.yaml
+  facts: 72
+  negative_cases: ground_truth/negative_cases.yaml
+  negatives: 18
+creation_methodology: "Fictional org defined first; 20 titles fixed; bodies written against verified OFBiz identifiers (outputs-deps/order-facts.jsonl, 2026-09-22); out-of-scope refs labeled; ambiguities planted; generator scripts/build_synthetic_corpus.py is deterministic."
+ground_truth_methodology: "Each fact records statement, subject/predicate/object, support_type (DIRECT/INDIRECT/SYNTHETIC/UNRESOLVED), OFBiz file+location where applicable, and an honesty note. Business readings over real artifacts are INDIRECT, never DIRECT. Negatives specify why_unsupported plus expected UNSUPPORTED/NOT_FOUND/PARTIALLY_SUPPORTED."
+ofbiz_scope: "applications/order plus applications/datamodel/entitydef/order-entitymodel.xml (467 services, 112 base entities, 55 views, 567 relations, 111 ECAs, 10204 facts, 117788 triples)."
+limitations:
+  - "Synthetic business content only; thresholds, timers, roles and codes are fictional."
+  - "OFBiz linkage limited to the order plus order-entitymodel.xml scope; product/party masters unresolved by design."
+  - "Word counts vary (~340-880 per doc); tables and appendices render to approximately 2 pages in DOCX."
+  - "No real personal data; no real company affiliation."
+license_notes: "Synthetic corpus is original fictional content for research evaluation. OFBiz portions remain under the Apache License 2.0 (see dataset LICENSES_AND_SOURCES.md)."

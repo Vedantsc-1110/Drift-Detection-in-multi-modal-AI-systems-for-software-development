@@ -1,0 +1,27 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> .
+
+ctx:OrderModule a ctx:Module ;
+    rdfs:label "OrderModule" ;
+    ctx:businessPurpose "Capture orders" ;
+    ctx:confidence 0.8 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" .
+
+ctx:C1 a ctx:Contract ;
+    rdfs:label "Services Agreement" ;
+    ctx:hasClause ctx:C1-Payment-Terms ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "cuad-annotator" .
+
+ctx:C1-Payment-Terms a ctx:Clause ;
+    rdfs:label "Pay within thirty days" ;
+    ctx:clauseType "Payment Terms" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "cuad-annotator" .

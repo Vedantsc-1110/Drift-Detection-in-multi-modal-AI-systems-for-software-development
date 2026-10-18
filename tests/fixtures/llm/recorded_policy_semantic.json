@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "subject": "P01",
+      "predicate": "threshold",
+      "object": "Purchases above $50,000 require three approvals",
+      "confidence": 0.8,
+      "evidence": ["Purchases above $50,000 require three approvals"]
+    },
+    {
+      "subject": "P01",
+      "predicate": "requiresApproval",
+      "object": "Manager, Procurement Officer, and Finance Administrator",
+      "confidence": 0.82,
+      "evidence": ["the Procurement Officer", "Finance Administrator"]
+    },
+    {
+      "subject": "P01",
+      "predicate": "mentionsEntity",
+      "object": "OrderHeader",
+      "confidence": 0.75,
+      "evidence": ["OrderHeader"]
+    }
+  ]
+}

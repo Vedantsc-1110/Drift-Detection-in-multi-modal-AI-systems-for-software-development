@@ -1,0 +1,27 @@
+conforms: True
+violations: 0
+warnings: 20
+
+## Violations
+
+## Warnings (first 30)
+- http://example.org/ofbiz/0.1/eca/0b23d547aab3/1 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/106 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/120 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/18 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/20 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/23 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/3 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/49 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/5 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/70 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/71 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/73 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/87 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/90 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/92 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/94 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/95 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/96 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/97 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).
+- http://example.org/ofbiz/0.1/eca/b21571a1e30b/98 | http://example.org/ofbiz/0.1/triggersService | An ECA should link ofbiz:triggersService (absent when the action target is out of scope; see unresolved report).

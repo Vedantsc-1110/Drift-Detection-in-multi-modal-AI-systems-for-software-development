@@ -1,0 +1,1 @@
+{"confidence": 0.6, "evidence": ["createAccommodationSpot"], "extractedAt": "2026-09-21T20:21:13.721546+00:00", "extractionType": "probabilistic", "model": "stub-test-client", "object": "Hospitality", "predicate": "suggestsDomain", "promptVersion": "prob-v1", "status": "proposed", "subject": "Accommodation management"}

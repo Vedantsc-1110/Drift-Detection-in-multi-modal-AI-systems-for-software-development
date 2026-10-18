@@ -1,0 +1,146 @@
+# Sampled structural gold set — Part 1 deterministic evaluation.
+# Purpose: verify that expected graph representations exist for a small,
+# manually verified sample. NOT repository-wide precision/recall.
+# Label in all reports: "sampled structural gold-set evaluation".
+# Every entry grounded in the actual dataset files listed.
+services:
+  # 10 services defined in applications/order/servicedef/ (must have Service nodes).
+  - name: storeOrder
+    file: applications/order/servicedef/services.xml
+    line: 108
+  - name: cancelOrderItem
+    file: applications/order/servicedef/services.xml
+  - name: createOrderHeader
+    file: applications/order/servicedef/services_order.xml
+  - name: createOrderAdjustment
+    file: applications/order/servicedef/services_order.xml
+  - name: findOrders
+    file: applications/order/servicedef/services.xml
+  - name: createQuote
+    file: applications/order/servicedef/services_quote.xml
+  - name: createReturnHeader
+    file: applications/order/servicedef/services_return.xml
+  - name: addOrderRole
+    file: applications/order/servicedef/services.xml
+  - name: appendOrderItem
+    file: applications/order/servicedef/services_order.xml
+  - name: createCustRequest
+    file: applications/order/servicedef/services_request.xml
+
+base_entities:
+  # 10 <entity> in applications/datamodel/entitydef/order-entitymodel.xml (must be Entity, not ViewEntity).
+  - name: OrderHeader
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 418
+  - name: OrderItem
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderAdjustment
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderPaymentPreference
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderRole
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderStatus
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderItemShipGroup
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderContactMech
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: CustRequest
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+  - name: OrderType
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+
+relations:
+  # 10 <relation> elements (Relation nodes must exist; relationTo edge only when target in scope).
+  - subject: OrderHeader
+    target: OrderType
+    type: one
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 450
+  - subject: OrderHeader
+    target: OrderTypeAttr
+    type: many
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 459
+  - subject: OrderHeader
+    target: ShoppingList
+    type: one
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 468
+  - subject: OrderItem
+    target: OrderHeader
+    type: one
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 574
+  - subject: OrderAdjustment
+    target: OrderHeader
+    type: one
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 109
+  - subject: OrderHeader
+    target: StatusItem
+    type: one
+    in_scope: false
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 474
+  - subject: OrderHeader
+    target: Facility
+    type: one
+    in_scope: false
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 456
+  - subject: OrderItem
+    target: Product
+    type: one
+    in_scope: false
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 587
+  - subject: OrderItem
+    target: StatusItem
+    type: one
+    in_scope: false
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 596
+  - subject: OrderAdjustment
+    target: OrderItem
+    type: one-nofk
+    in_scope: true
+    file: applications/datamodel/entitydef/order-entitymodel.xml
+    line: 115
+
+ecas:
+  # 5 ECAs: 3 entity + 2 service (ECA nodes + conditions must exist; triggersService edge only when target in scope).
+  - trigger_entity: OrderHeader
+    operation: create-store
+    event: return
+    eca_class: EntityECA
+    file: applications/order/entitydef/eecas.xml
+    line: 24
+  - trigger_entity: OrderItem
+    operation: create-store
+    event: return
+    eca_class: EntityECA
+    file: applications/order/entitydef/eecas.xml
+    line: 30
+  - trigger_entity: OrderPaymentPreference
+    operation: create-store
+    event: return
+    eca_class: EntityECA
+    file: applications/order/entitydef/eecas.xml
+    line: 35
+  - trigger_service: storeOrder
+    event: return
+    eca_class: ServiceECA
+    file: applications/order/servicedef/secas.xml
+    line: 24
+  - trigger_service: storeOrder
+    event: return
+    eca_class: ServiceECA
+    file: applications/order/servicedef/secas.xml
+    line: 28

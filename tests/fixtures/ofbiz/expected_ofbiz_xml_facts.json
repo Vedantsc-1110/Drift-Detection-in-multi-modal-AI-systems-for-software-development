@@ -1,0 +1,79 @@
+{
+  "services": [
+    {
+      "file": "applications/order/servicedef/services.xml",
+      "name": "createOrder",
+      "engine": "java",
+      "location": "org.apache.ofbiz.order.order.OrderServices",
+      "invoke": "createOrder",
+      "inputs": ["orderTypeId"],
+      "outputs": ["orderId"]
+    },
+    {
+      "file": "applications/order/servicedef/services.xml",
+      "name": "cancelOrderItem",
+      "engine": "groovy",
+      "location": "component://order/groovyScripts/OrderServices.groovy",
+      "invoke": "cancelOrderItem",
+      "inputs": ["orderId", "orderItemSeqId", "cancelQuantity"],
+      "outputs": ["success"]
+    },
+    {
+      "file": "applications/accounting/servicedef/services.xml",
+      "name": "createInvoice",
+      "engine": "java",
+      "location": "org.apache.ofbiz.accounting.invoice.InvoiceServices",
+      "invoke": "createInvoice",
+      "inputs": ["invoiceTypeId"],
+      "outputs": ["invoiceId"]
+    },
+    {
+      "file": "applications/party/servicedef/services.xml",
+      "name": "createPerson",
+      "engine": "java",
+      "location": "org.apache.ofbiz.party.party.PartyServices",
+      "invoke": "createPerson",
+      "inputs": ["firstName", "lastName"],
+      "outputs": ["partyId"]
+    }
+  ],
+  "entities": [
+    {
+      "file": "applications/order/entitydef/order-entitymodel.xml",
+      "name": "OrderHeader",
+      "primary_keys": ["orderId"],
+      "fields": ["orderId", "orderTypeId", "statusId"],
+      "relations": [
+        {"type": "one", "target": "OrderType", "key_maps": [{"field_name": "orderTypeId", "rel_field_name": "orderTypeId"}]},
+        {"type": "many", "target": "OrderItem", "key_maps": [{"field_name": "orderId", "rel_field_name": "orderId"}]}
+      ]
+    },
+    {
+      "file": "applications/order/entitydef/order-entitymodel.xml",
+      "name": "OrderType",
+      "primary_keys": ["orderTypeId"],
+      "fields": ["orderTypeId", "description"],
+      "relations": []
+    },
+    {
+      "file": "applications/accounting/entitydef/accounting-entitymodel.xml",
+      "name": "Invoice",
+      "primary_keys": ["invoiceId"],
+      "fields": ["invoiceId", "invoiceTypeId", "statusId"],
+      "relations": [
+        {"type": "one", "target": "InvoiceType", "key_maps": [{"field_name": "invoiceTypeId", "rel_field_name": "invoiceTypeId"}]},
+        {"type": "many", "target": "InvoiceItem", "key_maps": [{"field_name": "invoiceId", "rel_field_name": "invoiceId"}]}
+      ]
+    },
+    {
+      "file": "applications/party/entitydef/party-entitymodel.xml",
+      "name": "Person",
+      "primary_keys": ["partyId"],
+      "fields": ["partyId", "firstName", "lastName"],
+      "relations": [
+        {"type": "one", "target": "Party", "key_maps": [{"field_name": "partyId", "rel_field_name": "partyId"}]},
+        {"type": "many", "target": "PartyContactMech", "key_maps": [{"field_name": "partyId", "rel_field_name": "partyId"}]}
+      ]
+    }
+  ]
+}

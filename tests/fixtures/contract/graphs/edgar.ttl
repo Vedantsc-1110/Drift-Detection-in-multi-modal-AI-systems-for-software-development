@@ -1,0 +1,23 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:ACME-2025-10K a ctx:Filing ;
+    rdfs:label "ACME-2025-10K" ;
+    prov:hadPrimarySource <file:///edgar/ACME-2025-10K> ;
+    prov:wasGeneratedBy ctx:EdgarExtractor ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "edgar-parser" ;
+    ctx:supportType "DIRECT" ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .
+
+ctx:ACME-2025-10K-1A a ctx:Section ;
+    rdfs:label "ITEM 1A. RISK FACTORS." ;
+    prov:hadPrimarySource <file:///edgar/ACME-2025-10K> ;
+    prov:wasGeneratedBy ctx:EdgarExtractor ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "edgar-parser" ;
+    ctx:supportType "DIRECT" ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .

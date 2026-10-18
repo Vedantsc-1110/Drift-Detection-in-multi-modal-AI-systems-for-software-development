@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evidence workspace for exploring code, workflows, business rules, and the connections behind context drift detection.">
+  <meta name="theme-color" content="#151d2b">
+  <title>Context Atlas · Evidence workspace</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/assets/dashboard.css?v=2">
+  <script defer src="/vendor/vis-network.min.js"></script>
+  <script defer src="/assets/dashboard.js?v=2"></script>
+</head>
+<body>
+<a class="skip-link" href="#explorer">Skip to graph explorer</a>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="icon-graph" viewBox="0 0 24 24"><path d="m6 6 12 3-7 10L6 6Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="6" r="3" fill="currentColor"/><circle cx="18" cy="9" r="3" fill="currentColor"/><circle cx="11" cy="19" r="3" fill="currentColor"/></symbol>
+  <symbol id="icon-layers" viewBox="0 0 24 24"><path d="m3 8 9-5 9 5-9 5-9-5Zm0 5 9 5 9-5M3 18l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="icon-route" viewBox="0 0 24 24"><path d="M6 5h10a4 4 0 0 1 0 8H8a4 4 0 0 0 0 8h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="6" cy="5" r="2.5" fill="currentColor"/><path d="m16 18 3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="icon-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 9a2.5 2.5 0 0 1 5 .5c0 1.5-2.5 2-2.5 3.5m0 3v.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="icon-export" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-fit" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="8" y="8" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="icon-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="icon-inspect" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 8h8M8 12h5M8 16h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-crosshair" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 10v7m0-10v.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+</defs></svg>
+<div class="app">
+  <aside class="rail" aria-label="Workspace navigation">
+    <a class="brand-mark" href="#overview" aria-label="Context Atlas home" title="Context Atlas"><svg aria-hidden="true"><use href="#icon-graph"/></svg></a>
+    <nav class="rail-nav">
+      <a class="rail-link" href="#explorer" aria-label="Graph explorer" aria-current="page" title="Graph explorer"><svg aria-hidden="true"><use href="#icon-graph"/></svg><span class="rail-label">Explorer</span></a>
+      <a class="rail-link" href="#overview" aria-label="The problem and solution" title="The problem and solution"><svg aria-hidden="true"><use href="#icon-layers"/></svg><span class="rail-label">Overview</span></a>
+      <a class="rail-link" href="#workflow" aria-label="Implementation workflow" title="Implementation workflow"><svg aria-hidden="true"><use href="#icon-route"/></svg><span class="rail-label">Workflow</span></a>
+    </nav>
+    <div class="rail-bottom"><a class="rail-link" href="#help" aria-label="Graph explorer guide" title="Graph explorer guide"><svg aria-hidden="true"><use href="#icon-help"/></svg></a></div>
+  </aside>
+  <main class="content">
+    <header class="topbar">
+      <div class="product-lockup"><span class="product-name">Context Atlas<span class="sr-only"> — Enterprise context graph</span></span><span class="product-divider" aria-hidden="true"></span><span class="breadcrumb">Workspace / Evidence explorer</span></div>
+      <div class="topbar-actions"><span class="badge" id="connection" data-state="loading">Connecting to local store</span><button class="export-button" id="exportGraph" type="button" aria-label="Export visible graph as JSON" title="Export visible graph as JSON"><svg aria-hidden="true"><use href="#icon-export"/></svg><span>Export graph</span></button></div>
+    </header>
+    <div class="page-body">
+      <section class="intro" id="overview" aria-labelledby="page-title">
+        <div><h1 id="page-title">Explore your system’s context.</h1><p>Trace code, workflows, and business rules.</p></div>
+        <div class="metrics" aria-label="Current graph statistics">
+          <div class="metric"><strong id="nodeCount">—</strong><span>Visible nodes</span></div>
+          <div class="metric"><strong id="edgeCount">—</strong><span>Relationships</span></div>
+          <div class="metric"><strong id="graphCount">—</strong><span>Source graphs</span></div>
+          <div class="metric"><strong id="inferredCount">—</strong><span>Model-extracted</span></div>
+        </div>
+      </section>
+      <section class="context-strip" aria-label="Problem and solution">
+        <div class="context-point"><h2>The problem</h2><p>Code changes. Agents keep working with outdated context.</p></div>
+        <div class="context-point solution"><h2>The solution</h2><p>Connect evidence, find stale context, recommend a targeted correction.</p></div>
+      </section>
+      <section id="explorer" aria-labelledby="explorer-title">
+        <div class="workspace" id="workspace" data-view="graph">
+          <div class="workspace-heading">
+            <div class="workspace-title"><svg aria-hidden="true"><use href="#icon-graph"/></svg><div><h2 id="explorer-title">Context explorer</h2><span class="eyebrow">Select a node or connection to inspect its evidence.</span></div></div>
+            <div class="workspace-heading-actions"><button class="text-button" id="reset" type="button" title="Clear every filter"><svg aria-hidden="true"><use href="#icon-reset"/></svg>Reset</button><div class="view-switch" role="group" aria-label="Explorer view"><button id="viewGraph" type="button" aria-pressed="true" aria-label="Graph view" title="Graph view"><svg aria-hidden="true"><use href="#icon-graph"/></svg><span>Graph</span></button><button id="viewList" type="button" aria-pressed="false" aria-label="List view" title="List view"><svg aria-hidden="true"><use href="#icon-list"/></svg><span>List</span></button></div></div>
+          </div>
+          <form class="filters" id="filters" role="search" aria-label="Filter context graph">
+            <div class="field search-field"><label for="search">Find anything in the graph</label><div class="search-input"><svg aria-hidden="true"><use href="#icon-search"/></svg><input id="search" name="search" type="search" maxlength="250" placeholder="Search services, tasks, policies…" autocomplete="off"></div></div>
+            <details class="advanced-filters" id="advancedFilters" open><summary>Refine results <span>Confidence, method &amp; source</span></summary><div class="advanced-filter-grid">
+              <div class="field field-confidence"><label for="confidence">Minimum confidence</label><select id="confidence" name="confidence"><option value="all">Any confidence</option><option value="medium">60% and above</option><option value="high">85% and above</option></select></div>
+              <div class="field field-method"><label for="factType">Extraction method</label><select id="factType" name="factType"><option value="both">All methods</option><option value="deterministic">Deterministic</option><option value="probabilistic">Probabilistic</option></select></div>
+              <div class="field field-source"><label for="graphFilter">Source graph</label><select id="graphFilter" name="graph"><option value="">All source graphs</option></select></div>
+            </div></details>
+            <button class="primary" id="reload" type="submit">Apply filters</button>
+          </form>
+          <div class="workspace-body">
+            <aside class="source-navigator" aria-labelledby="sources-heading">
+              <div class="panel-heading"><h3 id="sources-heading">Source navigator</h3><span class="count-tag" id="sourceCount">—</span></div>
+              <div class="source-list" id="sourceList" aria-label="Filter by source graph"><div class="source-placeholder" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
+              <div class="source-guide"><svg aria-hidden="true"><use href="#icon-layers"/></svg><p>One connected view.<br>Different sources of truth.</p><p>Choose a source to narrow the graph. Counts represent stored triples.</p></div>
+            </aside>
+            <div class="graph-column">
+              <div class="graph-pane">
+                <div class="canvas-label"><svg aria-hidden="true"><use href="#icon-graph"/></svg><span id="visibleSummary">Preparing your graph</span></div>
+                <span class="canvas-hint">Drag to explore · Select to inspect</span>
+                <div id="graph" role="region" aria-label="Interactive context graph. Drag nodes to arrange them, drag the background to pan, or use zoom controls. Use List view or the node directory for keyboard access."></div>
+                <div class="graph-message" id="graphMessage"><h3 id="messageTitle">Connecting the context…</h3><p id="messageBody">Reading nodes and relationships from your local graph store.</p><button id="retry" type="button" hidden>Retry loading</button></div>
+                <div class="legend" aria-label="Graph legend"><span class="key"><i class="dot" aria-hidden="true"></i>Code &amp; data</span><span class="key"><i class="dot workflow" aria-hidden="true"></i>Workflows</span><span class="key"><i class="dot semantic" aria-hidden="true"></i>Business &amp; documents</span><span class="legend-note">Dashed border = model-extracted</span></div>
+                <div class="graph-toolbar" role="group" aria-label="Graph controls"><div class="button-group"><button class="icon-button" id="zoomOut" type="button" aria-label="Zoom out" title="Zoom out"><svg aria-hidden="true"><use href="#icon-minus"/></svg></button><button class="icon-button" id="zoomIn" type="button" aria-label="Zoom in" title="Zoom in"><svg aria-hidden="true"><use href="#icon-plus"/></svg></button><button class="icon-button" id="fit" type="button" aria-label="Fit graph to view" title="Fit graph to view"><svg aria-hidden="true"><use href="#icon-fit"/></svg></button></div><button id="physics" type="button" aria-pressed="false" title="Let the graph arrange its nodes automatically">Auto-layout: off</button></div>
+              </div>
+              <details class="directory" id="fallback"><summary id="directorySummary">Browse the node directory · Keyboard accessible</summary><div class="directory-content"><p>The same nodes, in a searchable graph or accessible list. Select any item to inspect its evidence.</p><ul class="node-list" id="nodelist"></ul></div></details>
+            </div>
+            <aside class="inspector" aria-labelledby="inspector-heading">
+              <div class="panel-heading"><div class="inspector-title"><svg aria-hidden="true"><use href="#icon-inspect"/></svg><h3 id="inspector-heading">Evidence inspector</h3></div><span class="selection-badge" id="selectionBadge">No selection</span></div>
+              <div id="provenance" aria-live="polite"><div class="inspector-empty"><svg class="empty-illustration" viewBox="0 0 240 104" fill="none" aria-hidden="true"><path d="M38 53h61m42 0h61" stroke="#d9e2f2" stroke-width="2" stroke-dasharray="4 4"/><rect x="15" y="33" width="46" height="40" rx="6" fill="#f2f5fb" stroke="#d9e2f2"/><rect x="179" y="33" width="46" height="40" rx="6" fill="#f2f5fb" stroke="#d9e2f2"/><rect x="85" y="15" width="70" height="76" rx="6" fill="#edf2ff" stroke="#b8c9ff"/><circle cx="120" cy="43" r="11" stroke="currentColor" stroke-width="1.5"/><path d="M105 70h30m-23-8h16M35 47h6m-6 10h12m151-10h6m-6 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><h3>Every connection<br>has a story.</h3><p>Select a node to see where it came from, how it was extracted, and what it connects to.</p><p class="inspector-note">Select an arrow to inspect the recorded relationship. The node directory works with a keyboard or touch.</p></div></div>
+              <div class="inspector-actions"><button id="focusSelection" type="button" disabled title="Center the graph on the selected node"><svg aria-hidden="true"><use href="#icon-crosshair"/></svg>Focus</button><button id="clearSelection" type="button" disabled title="Clear the selected item"><svg aria-hidden="true"><use href="#icon-close"/></svg>Clear</button></div>
+            </aside>
+          </div>
+          <div class="statusbar"><span id="status" role="status" aria-live="polite" data-state="loading">Loading graph…</span><span id="updated">Local graph store · Read-only exploration</span></div>
+        </div>
+        <p class="scope-note" id="dataScope">Reading the data source… This explorer displays stored facts. It does not monitor running agents.</p>
+      </section>
+      <div class="support-grid">
+        <details class="support-panel" id="workflow"><summary>How this fits into context drift detection</summary><div class="support-content"><div class="steps"><article><span class="step-number">01 / Extract</span><h3>Read the sources</h3><p>Parsers extract structural facts. Models propose business meaning with confidence and provenance.</p></article><article><span class="step-number">02 / Connect</span><h3>Build shared context</h3><p>Named graphs connect services, tasks, policies, and contracts. This workspace explores those facts.</p></article><article><span class="step-number">03 / Compare</span><h3>Identify stale context</h3><p>The Python drift module compares supplied graph versions and agent snapshots using controlled examples.</p></article><article><span class="step-number">04 / Recommend</span><h3>Return a correction</h3><p>Recommendations describe continue, refresh, re-brief, re-plan, or rollback. Agent actions are not executed.</p></article></div><p class="inspector-note">This is a research prototype. The graph explorer is implemented; live agent monitoring and automatic remediation are not integrated.</p></div></details>
+        <details class="support-panel" id="help"><summary>What am I looking at? A quick guide</summary><div class="support-content"><h3>Follow the arrows</h3><p>Nodes are extracted services, entities, tasks, or document concepts. Arrows read from subject to object: a task invokes a service, or a policy constrains a service. Drag to pan, use the zoom controls, and select Fit graph to return to the full view.</p><h3>Interpret confidence carefully</h3><p>Deterministic facts come from a parser or fixed rule. Probabilistic facts come from model-assisted extraction. Confidence describes the extraction process; it is not a calibrated guarantee of business truth.</p><h3>Understand filtered results</h3><p>Only relationships with two visible endpoints appear. A source filter also restricts arrows to that source. Cross-source bridges live in a separate graph. Missing evidence is shown as unavailable.</p></div></details>
+      </div>
+      <footer class="footer"><span>Context Atlas · Local research prototype</span><a href="/docs" target="_blank" rel="noopener">API documentation<svg aria-hidden="true"><use href="#icon-arrow"/></svg></a></footer>
+    </div>
+  </main>
+</div>
+<noscript>This explorer requires JavaScript. Start the local server, enable JavaScript, and open http://127.0.0.1:8000/dashboard. The JSON API is available at /graph/nodes.</noscript>
+</body>
+</html>

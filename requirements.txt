@@ -1,0 +1,36 @@
+# Unified runtime, extraction, and test dependencies. Python 3.11+.
+# Install: python -m pip install -r requirements.txt
+# Direct dependencies are pinned; transitive dependencies remain resolver-managed.
+
+# Dashboard and API
+fastapi==0.143.2
+pydantic==2.13.5
+uvicorn==0.54.0
+httpx==0.28.1
+
+# RDF graph storage, validation, and configuration
+lxml==6.1.3
+rdflib==7.6.0
+pyshacl==0.40.1
+pyoxigraph==0.5.11
+PyYAML==6.0.3
+
+# Code extraction and change tracking
+tree-sitter==0.26.0
+tree-sitter-java==0.23.5
+GitPython==3.2.1
+
+# Text, document, and SEC filing extraction
+spacy==3.8.16
+# spaCy models are published as release wheels, not regular PyPI packages.
+# Source: https://spacy.io/usage/models#download-pip
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+python-docx==1.2.0
+PyPDF2==3.0.1
+edgartools==5.62.0
+
+# Unit and real-browser tests
+pytest==9.1.1
+playwright==1.64.0
+# Browser binaries are separate: python -m playwright install chromium
+# An installed Microsoft Edge browser also works without that download.

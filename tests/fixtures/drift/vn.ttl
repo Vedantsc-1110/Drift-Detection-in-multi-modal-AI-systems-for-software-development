@@ -1,0 +1,78 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# V(n): versioned context state (immutable once written; see 4.4).
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:engine "java" ;
+    ctx:hasInputParam ctx:findOrders-statusId ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 142 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:142" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:createOrder a ctx:Service ;
+    rdfs:label "createOrder" ;
+    ctx:engine "java" ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 10 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:10" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:OrderHeader a ctx:Entity ;
+    rdfs:label "OrderHeader" ;
+    ctx:definedIn <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "order-entitymodel.xml:5" ;
+    ctx:sourceHash "bbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbb" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:etl_task a ctx:Task ;
+    rdfs:label "etl_task" ;
+    ctx:definedIn <file:///airflow/dag_orders_etl.py> ;
+    ctx:atLine 10 ;
+    prov:hadPrimarySource <file:///airflow/dag_orders_etl.py> ;
+    prov:wasGeneratedBy ctx:PythonAstExtractor ;
+    ctx:sourceLocation "dag_orders_etl.py:10" ;
+    ctx:sourceHash "ccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbbcccc" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:etl_task ctx:invokesService ctx:findOrders .
+
+# Accounting scope (Agent B's snapshot must match V(n+1) exactly: these
+# triples carry over unchanged through the order rename).
+ctx:createInvoice a ctx:Service ;
+    rdfs:label "createInvoice" ;
+    ctx:engine "java" ;
+    ctx:definedIn <file:///ofbiz/accounting/servicedef/services.xml> ;
+    ctx:atLine 20 ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:20" ;
+    ctx:sourceHash "dddddeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddd" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:Invoice a ctx:Entity ;
+    rdfs:label "Invoice" ;
+    ctx:definedIn <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "accounting-entitymodel.xml:5" ;
+    ctx:sourceHash "eeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddddeeee" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

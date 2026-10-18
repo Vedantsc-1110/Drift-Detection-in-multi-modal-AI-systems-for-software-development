@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service-eca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/service-eca.xsd">
+    <description>Order service ECAs (synthetic fixture modeled on OFBiz secas.xml).</description>
+    <eca service="changeOrderItemStatus" event="commit">
+        <condition field-name="statusId" operator="equals" value="ITEM_CANCELLED"/>
+        <action service="cancelOrderItemInventory" mode="sync"/>
+        <action service="notifyCustomerOnCancel" mode="async" run-as-user="system"/>
+    </eca>
+    <eca service="storeOrder" event="return">
+        <condition field-name="orderId" operator="is-not-empty" value=""/>
+        <action service="createOrderContent" mode="sync"/>
+    </eca>
+</service-eca>

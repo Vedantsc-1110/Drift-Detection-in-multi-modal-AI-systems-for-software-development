@@ -1,0 +1,5007 @@
+[
+  {
+    "from": "checkCreateStockRequirementQoh",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_requirement.xml",
+      "line": 135,
+      "xpath": "/services/service[14]/auto-attributes[1]"
+    },
+    "to_name": "ItemIssuance",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "checkCreateStockRequirementQoh",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_requirement.xml",
+      "line": 136,
+      "xpath": "/services/service[14]/auto-attributes[2]"
+    },
+    "to_name": "ItemIssuance",
+    "via": "auto-attributes(include=nonpk,mode=IN)"
+  },
+  {
+    "from": "createAccommodationSpot",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 29,
+      "xpath": "/services/service[1]/auto-attributes[1]"
+    },
+    "to_name": "AccommodationSpot",
+    "via": "auto-attributes(include=pk,mode=INOUT)"
+  },
+  {
+    "from": "createAccommodationSpot",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 30,
+      "xpath": "/services/service[1]/auto-attributes[2]"
+    },
+    "to_name": "AccommodationSpot",
+    "via": "auto-attributes(include=nonpk,mode=IN)"
+  },
+  {
+    "from": "createCustRequestFromCommEvent",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_request.xml",
+      "line": 202,
+      "xpath": "/services/service[24]/auto-attributes[1]"
+    },
+    "to_name": "CommunicationEvent",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "createCustRequestFromCommEvent",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_request.xml",
+      "line": 203,
+      "xpath": "/services/service[24]/auto-attributes[2]"
+    },
+    "to_name": "CommunicationEvent",
+    "via": "auto-attributes(include=nonpk,mode=IN)"
+  },
+  {
+    "from": "deleteAccommodationSpot",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 39,
+      "xpath": "/services/service[3]/auto-attributes"
+    },
+    "to_name": "AccommodationSpot",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "ensureWorkEffortAndCreateQuoteWorkEffort",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_quote.xml",
+      "line": 277,
+      "xpath": "/services/service[33]/auto-attributes[1]"
+    },
+    "to_name": "WorkEffort",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "ensureWorkEffortAndCreateQuoteWorkEffort",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_quote.xml",
+      "line": 278,
+      "xpath": "/services/service[33]/auto-attributes[2]"
+    },
+    "to_name": "WorkEffort",
+    "via": "auto-attributes(include=pk,mode=OUT)"
+  },
+  {
+    "from": "ensureWorkEffortAndCreateQuoteWorkEffort",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_quote.xml",
+      "line": 279,
+      "xpath": "/services/service[33]/auto-attributes[3]"
+    },
+    "to_name": "WorkEffort",
+    "via": "auto-attributes(include=nonpk,mode=IN)"
+  },
+  {
+    "from": "itemFulfillmentInterface",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 652,
+      "xpath": "/services/service[49]/auto-attributes"
+    },
+    "to_name": "ProductContent",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "updateAccommodationSpot",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 34,
+      "xpath": "/services/service[2]/auto-attributes[1]"
+    },
+    "to_name": "AccommodationSpot",
+    "via": "auto-attributes(include=pk,mode=IN)"
+  },
+  {
+    "from": "updateAccommodationSpot",
+    "kind": "auto_attributes_unexpanded",
+    "reason": "entity-out-of-scope",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 35,
+      "xpath": "/services/service[2]/auto-attributes[2]"
+    },
+    "to_name": "AccommodationSpot",
+    "via": "auto-attributes(include=nonpk,mode=IN)"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/checkCreateStockRequirementQoh",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_requirement.xml",
+      "line": 133,
+      "xpath": "/services/service[14]"
+    },
+    "to_kind": "entity",
+    "to_name": "ItemIssuance",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/createAccommodationSpot",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 27,
+      "xpath": "/services/service[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "AccommodationSpot",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/createCustRequestFromCommEvent",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_request.xml",
+      "line": 200,
+      "xpath": "/services/service[24]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/createUpdateCreditCard",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 1283,
+      "xpath": "/services/service[106]"
+    },
+    "to_kind": "entity",
+    "to_name": "CreditCard",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/deleteAccommodationSpot",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 37,
+      "xpath": "/services/service[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "AccommodationSpot",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/ensureWorkEffortAndCreateQuoteWorkEffort",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_quote.xml",
+      "line": 272,
+      "xpath": "/services/service[33]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "operatesOn",
+    "from": "http://example.org/ofbiz/0.1/service/updateAccommodationSpot",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_reservations.xml",
+      "line": 32,
+      "xpath": "/services/service[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "AccommodationSpot",
+    "via": "default-entity-name"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/checkShoppingListItemSecurity",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_shoppinglist.xml",
+      "line": 147,
+      "xpath": "/services/service[15]/implements"
+    },
+    "to_kind": "service",
+    "to_name": "permissionInterface",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/checkShoppingListSecurity",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_shoppinglist.xml",
+      "line": 57,
+      "xpath": "/services/service[5]/implements"
+    },
+    "to_kind": "service",
+    "to_name": "permissionInterface",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/createOrderConversation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 909,
+      "xpath": "/services/service[82]/implements[1]"
+    },
+    "to_kind": "service",
+    "to_name": "createCommunicationEvent",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/createOrderConversation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 910,
+      "xpath": "/services/service[82]/implements[2]"
+    },
+    "to_kind": "service",
+    "to_name": "createCommunicationEventPurpose",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/custRequestPermissionCheck",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_request.xml",
+      "line": 34,
+      "xpath": "/services/service[1]/implements"
+    },
+    "to_kind": "service",
+    "to_name": "permissionInterface",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/orderAdjustmentPermissionCheck",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 239,
+      "xpath": "/services/service[15]/implements"
+    },
+    "to_kind": "service",
+    "to_name": "permissionInterface",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/returnPermissionCheck",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services_perm.xml",
+      "line": 29,
+      "xpath": "/services/service/implements"
+    },
+    "to_kind": "service",
+    "to_name": "permissionInterface",
+    "via": "implements"
+  },
+  {
+    "edge": "referencesService",
+    "from": "http://example.org/ofbiz/0.1/service/uploadOrderContentFile",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/services.xml",
+      "line": 1740,
+      "xpath": "/services/service[155]/group/invoke[1]"
+    },
+    "to_kind": "service",
+    "to_name": "createContentFromUploadedFile",
+    "via": "group-invoke"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanHeader/relation/3031",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3031,
+      "xpath": "/entitymodel/entity[111]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanHeader/relation/3037",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3037,
+      "xpath": "/entitymodel/entity[111]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanHeader/relation/3040",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3040,
+      "xpath": "/entitymodel/entity[111]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanHeader/relation/3043",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3043,
+      "xpath": "/entitymodel/entity[111]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanItem/relation/3075",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3075,
+      "xpath": "/entitymodel/entity[112]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanItem/relation/3078",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3078,
+      "xpath": "/entitymodel/entity[112]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanItem/relation/3081",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3081,
+      "xpath": "/entitymodel/entity[112]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanItem/relation/3084",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3084,
+      "xpath": "/entitymodel/entity[112]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/AllocationPlanItem/relation/3087",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3087,
+      "xpath": "/entitymodel/entity[112]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CartAbandonedLine/relation/2854",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2854,
+      "xpath": "/entitymodel/entity[103]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CartAbandonedLine/relation/2857",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2857,
+      "xpath": "/entitymodel/entity[103]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProdCatalog",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CommunicationEventOrder/relation/293",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 293,
+      "xpath": "/entitymodel/entity[11]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CommunicationEventReturn/relation/2825",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2825,
+      "xpath": "/entitymodel/entity[102]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1827",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1827,
+      "xpath": "/entitymodel/entity[60]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1830",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1830,
+      "xpath": "/entitymodel/entity[60]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1833",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1833,
+      "xpath": "/entitymodel/entity[60]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1836",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1836,
+      "xpath": "/entitymodel/entity[60]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStore",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1839",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1839,
+      "xpath": "/entitymodel/entity[60]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1845",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1845,
+      "xpath": "/entitymodel/entity[60]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequest/relation/1848",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1848,
+      "xpath": "/entitymodel/entity[60]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndCommEvent/relation/1367",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1367,
+      "xpath": "/entitymodel/view-entity[32]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndRole/relation/1317",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1317,
+      "xpath": "/entitymodel/view-entity[30]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndRole/relation/1320",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1320,
+      "xpath": "/entitymodel/view-entity[30]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Person",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndRole/relation/1323",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1323,
+      "xpath": "/entitymodel/view-entity[30]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndRole/relation/1327",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1327,
+      "xpath": "/entitymodel/view-entity[30]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndWorkEffort/relation/1386",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1386,
+      "xpath": "/entitymodel/view-entity[33]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestCommEvent/relation/1889",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1889,
+      "xpath": "/entitymodel/entity[63]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestContent/relation/1904",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1904,
+      "xpath": "/entitymodel/entity[64]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Content",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestInfoAndWorkEffortAndPartyRel/relation/1426",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1426,
+      "xpath": "/entitymodel/view-entity[35]/relation"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItem/relation/1933",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1933,
+      "xpath": "/entitymodel/entity[65]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItem/relation/1939",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1939,
+      "xpath": "/entitymodel/entity[65]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItemNote/relation/1970",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1970,
+      "xpath": "/entitymodel/entity[67]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItemWorkEffort/relation/1990",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1990,
+      "xpath": "/entitymodel/entity[68]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestNote/relation/1953",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1953,
+      "xpath": "/entitymodel/entity[66]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestParty/relation/2021",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2021,
+      "xpath": "/entitymodel/entity[70]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestParty/relation/2024",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2024,
+      "xpath": "/entitymodel/entity[70]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestParty/relation/2027",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2027,
+      "xpath": "/entitymodel/entity[70]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestStatus/relation/2042",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2042,
+      "xpath": "/entitymodel/entity[71]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestStatus/relation/2052",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2052,
+      "xpath": "/entitymodel/entity[71]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestType/relation/2069",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2069,
+      "xpath": "/entitymodel/entity[72]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestType/relation/2072",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2072,
+      "xpath": "/entitymodel/entity[72]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRelationship",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestWorkEffort/relation/2104",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2104,
+      "xpath": "/entitymodel/entity[74]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/DesiredFeature/relation/2146",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2146,
+      "xpath": "/entitymodel/entity[76]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductFeature",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/112",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 112,
+      "xpath": "/entitymodel/entity[1]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/128",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 128,
+      "xpath": "/entitymodel/entity[1]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/131",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 131,
+      "xpath": "/entitymodel/entity[1]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoRule",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/135",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 135,
+      "xpath": "/entitymodel/entity[1]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoAction",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/140",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 140,
+      "xpath": "/entitymodel/entity[1]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/143",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 143,
+      "xpath": "/entitymodel/entity[1]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/146",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 146,
+      "xpath": "/entitymodel/entity[1]/relation[13]"
+    },
+    "to_kind": "entity",
+    "to_name": "TaxAuthority",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/150",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 150,
+      "xpath": "/entitymodel/entity[1]/relation[14]"
+    },
+    "to_kind": "entity",
+    "to_name": "GlAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustment/relation/153",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 153,
+      "xpath": "/entitymodel/entity[1]/relation[15]"
+    },
+    "to_kind": "entity",
+    "to_name": "TaxAuthorityRateProduct",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustmentBilling/relation/203",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 203,
+      "xpath": "/entitymodel/entity[4]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Invoice",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAdjustmentBilling/relation/206",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 206,
+      "xpath": "/entitymodel/entity[4]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "InvoiceItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech/relation/332",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 332,
+      "xpath": "/entitymodel/view-entity[1]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech/relation/335",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 335,
+      "xpath": "/entitymodel/view-entity[1]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMechPurposeType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech/relation/338",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 338,
+      "xpath": "/entitymodel/view-entity[1]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech/relation/341",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 341,
+      "xpath": "/entitymodel/view-entity[1]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "TelecomNumber",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech/relation/344",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 344,
+      "xpath": "/entitymodel/view-entity[1]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "FtpAddress",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderContactMech/relation/310",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 310,
+      "xpath": "/entitymodel/entity[12]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderContactMech/relation/313",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 313,
+      "xpath": "/entitymodel/entity[12]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMechPurposeType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderContent/relation/363",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 363,
+      "xpath": "/entitymodel/entity[13]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Content",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderDeliverySchedule/relation/405",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 405,
+      "xpath": "/entitymodel/entity[15]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderDeliverySchedule/relation/408",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 408,
+      "xpath": "/entitymodel/entity[15]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderDeliverySchedule/relation/411",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 411,
+      "xpath": "/entitymodel/entity[15]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/453",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 453,
+      "xpath": "/entitymodel/entity[16]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/456",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 456,
+      "xpath": "/entitymodel/entity[16]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/462",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 462,
+      "xpath": "/entitymodel/entity[16]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/465",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 465,
+      "xpath": "/entitymodel/entity[16]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStore",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/471",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 471,
+      "xpath": "/entitymodel/entity[16]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/474",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 474,
+      "xpath": "/entitymodel/entity[16]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/477",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 477,
+      "xpath": "/entitymodel/entity[16]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/480",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 480,
+      "xpath": "/entitymodel/entity[16]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeader/relation/483",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 483,
+      "xpath": "/entitymodel/entity[16]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "WebSite",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/194",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 194,
+      "xpath": "/entitymodel/view-entity[6]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/239",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 239,
+      "xpath": "/entitymodel/view-entity[6]/relation[17]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/248",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 248,
+      "xpath": "/entitymodel/view-entity[6]/relation[20]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/251",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 251,
+      "xpath": "/entitymodel/view-entity[6]/relation[21]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/254",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 254,
+      "xpath": "/entitymodel/view-entity[6]/relation[22]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndRoles/relation/260",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 260,
+      "xpath": "/entitymodel/view-entity[6]/relation[24]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/305",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 305,
+      "xpath": "/entitymodel/view-entity[7]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/350",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 350,
+      "xpath": "/entitymodel/view-entity[7]/relation[17]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/359",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 359,
+      "xpath": "/entitymodel/view-entity[7]/relation[20]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/362",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 362,
+      "xpath": "/entitymodel/view-entity[7]/relation[21]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/365",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 365,
+      "xpath": "/entitymodel/view-entity[7]/relation[22]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInv/relation/371",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 371,
+      "xpath": "/entitymodel/view-entity[7]/relation[24]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/422",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 422,
+      "xpath": "/entitymodel/view-entity[8]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/467",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 467,
+      "xpath": "/entitymodel/view-entity[8]/relation[17]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/476",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 476,
+      "xpath": "/entitymodel/view-entity[8]/relation[20]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/479",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 479,
+      "xpath": "/entitymodel/view-entity[8]/relation[21]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/482",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 482,
+      "xpath": "/entitymodel/view-entity[8]/relation[22]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndInvRoles/relation/488",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 488,
+      "xpath": "/entitymodel/view-entity[8]/relation[24]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/538",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 538,
+      "xpath": "/entitymodel/view-entity[9]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/583",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 583,
+      "xpath": "/entitymodel/view-entity[9]/relation[17]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/592",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 592,
+      "xpath": "/entitymodel/view-entity[9]/relation[20]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/595",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 595,
+      "xpath": "/entitymodel/view-entity[9]/relation[21]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/598",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 598,
+      "xpath": "/entitymodel/view-entity[9]/relation[22]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndRoles/relation/604",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 604,
+      "xpath": "/entitymodel/view-entity[9]/relation[24]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderNote/relation/502",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 502,
+      "xpath": "/entitymodel/entity[17]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderWorkEffort/relation/516",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 516,
+      "xpath": "/entitymodel/entity[18]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/587",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 587,
+      "xpath": "/entitymodel/entity[19]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/590",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 590,
+      "xpath": "/entitymodel/entity[19]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/593",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 593,
+      "xpath": "/entitymodel/entity[19]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/596",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 596,
+      "xpath": "/entitymodel/entity[19]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/599",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 599,
+      "xpath": "/entitymodel/entity[19]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductFacilityLocation",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/602",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 602,
+      "xpath": "/entitymodel/entity[19]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusValidChange",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/605",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 605,
+      "xpath": "/entitymodel/entity[19]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/608",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 608,
+      "xpath": "/entitymodel/entity[19]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/619",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 619,
+      "xpath": "/entitymodel/entity[19]/relation[15]"
+    },
+    "to_kind": "entity",
+    "to_name": "GlAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/622",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 622,
+      "xpath": "/entitymodel/entity[19]/relation[16]"
+    },
+    "to_kind": "entity",
+    "to_name": "SalesOpportunity",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItem/relation/625",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 625,
+      "xpath": "/entitymodel/entity[19]/relation[17]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProduct/relation/1766",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1766,
+      "xpath": "/entitymodel/view-entity[51]/relation"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProductContentInfo/relation/656",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 656,
+      "xpath": "/entitymodel/view-entity[11]/relation"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGroupAssoc/relation/738",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 738,
+      "xpath": "/entitymodel/view-entity[13]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGroupAssoc/relation/741",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 741,
+      "xpath": "/entitymodel/view-entity[13]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGroupAssoc/relation/744",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 744,
+      "xpath": "/entitymodel/view-entity[13]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ItemIssuance",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGrpInvResAndItemSum/relation/1705",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1705,
+      "xpath": "/entitymodel/view-entity[48]/relation"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBilling/relation/742",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 742,
+      "xpath": "/entitymodel/entity[23]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Invoice",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBilling/relation/745",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 745,
+      "xpath": "/entitymodel/entity[23]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "InvoiceItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBilling/relation/749",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 749,
+      "xpath": "/entitymodel/entity[23]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBilling/relation/752",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 752,
+      "xpath": "/entitymodel/entity[23]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ItemIssuance",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBillingAndInvoiceAndItem/relation/1744",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1744,
+      "xpath": "/entitymodel/view-entity[50]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Invoice",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBillingAndInvoiceAndItem/relation/1747",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1747,
+      "xpath": "/entitymodel/view-entity[50]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "InvoiceItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemChange/relation/780",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 780,
+      "xpath": "/entitymodel/entity[24]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemChange/relation/783",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 783,
+      "xpath": "/entitymodel/entity[24]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemChange/relation/786",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 786,
+      "xpath": "/entitymodel/entity[24]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemContactMech/relation/808",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 808,
+      "xpath": "/entitymodel/entity[25]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemContactMech/relation/811",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 811,
+      "xpath": "/entitymodel/entity[25]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMechPurposeType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemGroupOrder/relation/843",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 843,
+      "xpath": "/entitymodel/entity[27]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductGroupOrder",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemPriceInfo/relation/867",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 867,
+      "xpath": "/entitymodel/entity[28]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPriceRule",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemPriceInfo/relation/870",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 870,
+      "xpath": "/entitymodel/entity[28]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPriceAction",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemRole/relation/894",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 894,
+      "xpath": "/entitymodel/entity[29]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemRole/relation/897",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 897,
+      "xpath": "/entitymodel/entity[29]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemRole/relation/900",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 900,
+      "xpath": "/entitymodel/entity[29]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/933",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 933,
+      "xpath": "/entitymodel/entity[30]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/936",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 936,
+      "xpath": "/entitymodel/entity[30]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Agreement",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/939",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 939,
+      "xpath": "/entitymodel/entity[30]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/942",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 942,
+      "xpath": "/entitymodel/entity[30]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "CarrierShipmentMethod",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/947",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 947,
+      "xpath": "/entitymodel/entity[30]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/950",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 950,
+      "xpath": "/entitymodel/entity[30]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/954",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 954,
+      "xpath": "/entitymodel/entity[30]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/957",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 957,
+      "xpath": "/entitymodel/entity[30]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentMethodType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/960",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 960,
+      "xpath": "/entitymodel/entity[30]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/963",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 963,
+      "xpath": "/entitymodel/entity[30]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/966",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 966,
+      "xpath": "/entitymodel/entity[30]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGroup/relation/969",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 969,
+      "xpath": "/entitymodel/entity[30]/relation[13]"
+    },
+    "to_kind": "entity",
+    "to_name": "TelecomNumber",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvRes/relation/1033",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1033,
+      "xpath": "/entitymodel/entity[32]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvResAndItemLocation/relation/831",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 831,
+      "xpath": "/entitymodel/view-entity[16]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvResAndItemLocation/relation/834",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 834,
+      "xpath": "/entitymodel/view-entity[16]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "FacilityLocation",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderNotification/relation/1084",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1084,
+      "xpath": "/entitymodel/entity[35]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1140",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1140,
+      "xpath": "/entitymodel/entity[36]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPricePurpose",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1143",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1143,
+      "xpath": "/entitymodel/entity[36]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethodType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1146",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1146,
+      "xpath": "/entitymodel/entity[36]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethod",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1149",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1149,
+      "xpath": "/entitymodel/entity[36]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "FinAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1152",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1152,
+      "xpath": "/entitymodel/entity[36]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1155",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1155,
+      "xpath": "/entitymodel/entity[36]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1158",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1158,
+      "xpath": "/entitymodel/entity[36]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "CreditCard",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1161",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1161,
+      "xpath": "/entitymodel/entity[36]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "EftAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPreference/relation/1164",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1164,
+      "xpath": "/entitymodel/entity[36]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "GiftCard",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderProductPromoCode/relation/1179",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1179,
+      "xpath": "/entitymodel/entity[37]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoCode",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRole/relation/1196",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1196,
+      "xpath": "/entitymodel/entity[38]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRole/relation/1199",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1199,
+      "xpath": "/entitymodel/entity[38]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRole/relation/1203",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1203,
+      "xpath": "/entitymodel/entity[38]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRoleAndProductContentInfo/relation/1062",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1062,
+      "xpath": "/entitymodel/view-entity[23]/relation"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderShipment/relation/1232",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1232,
+      "xpath": "/entitymodel/entity[39]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Shipment",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderShipment/relation/1235",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1235,
+      "xpath": "/entitymodel/entity[39]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderStatus/relation/1258",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1258,
+      "xpath": "/entitymodel/entity[40]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderStatus/relation/1271",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1271,
+      "xpath": "/entitymodel/entity[40]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderSummaryEntry/relation/1287",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1287,
+      "xpath": "/entitymodel/entity[41]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderSummaryEntry/relation/1290",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1290,
+      "xpath": "/entitymodel/entity[41]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderTerm/relation/1308",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1308,
+      "xpath": "/entitymodel/entity[42]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderTerm/relation/1318",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1318,
+      "xpath": "/entitymodel/entity[42]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "TermType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ProductOrderItem/relation/1391",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1391,
+      "xpath": "/entitymodel/entity[46]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Quote/relation/1455",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1455,
+      "xpath": "/entitymodel/entity[48]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Quote/relation/1458",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1458,
+      "xpath": "/entitymodel/entity[48]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Quote/relation/1461",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1461,
+      "xpath": "/entitymodel/entity[48]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Quote/relation/1464",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1464,
+      "xpath": "/entitymodel/entity[48]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStore",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Quote/relation/1467",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1467,
+      "xpath": "/entitymodel/entity[48]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "Enumeration",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1725",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1725,
+      "xpath": "/entitymodel/entity[59]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1732",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1732,
+      "xpath": "/entitymodel/entity[59]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1735",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1735,
+      "xpath": "/entitymodel/entity[59]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoRule",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1739",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1739,
+      "xpath": "/entitymodel/entity[59]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoAction",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1744",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1744,
+      "xpath": "/entitymodel/entity[59]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1747",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1747,
+      "xpath": "/entitymodel/entity[59]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1750",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1750,
+      "xpath": "/entitymodel/entity[59]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "TaxAuthority",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteAdjustment/relation/1754",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1754,
+      "xpath": "/entitymodel/entity[59]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "GlAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1531",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1531,
+      "xpath": "/entitymodel/entity[51]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1534",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1534,
+      "xpath": "/entitymodel/entity[51]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductFeature",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1537",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1537,
+      "xpath": "/entitymodel/entity[51]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "DeliverableType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1540",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1540,
+      "xpath": "/entitymodel/entity[51]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "SkillType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1543",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1543,
+      "xpath": "/entitymodel/entity[51]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteItem/relation/1546",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1546,
+      "xpath": "/entitymodel/entity[51]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteNote/relation/1568",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1568,
+      "xpath": "/entitymodel/entity[52]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteRole/relation/1586",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1586,
+      "xpath": "/entitymodel/entity[53]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteRole/relation/1589",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1589,
+      "xpath": "/entitymodel/entity[53]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteRole/relation/1592",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1592,
+      "xpath": "/entitymodel/entity[53]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteTerm/relation/1618",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1618,
+      "xpath": "/entitymodel/entity[54]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "TermType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteWorkEffort/relation/1682",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1682,
+      "xpath": "/entitymodel/entity[58]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteWorkEffortView/relation/1506",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1506,
+      "xpath": "/entitymodel/view-entity[39]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteWorkEffortView/relation/1512",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1512,
+      "xpath": "/entitymodel/view-entity[39]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Requirement/relation/2200",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2200,
+      "xpath": "/entitymodel/entity[78]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Requirement/relation/2203",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2203,
+      "xpath": "/entitymodel/entity[78]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Deliverable",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Requirement/relation/2206",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2206,
+      "xpath": "/entitymodel/entity[78]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "FixedAsset",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Requirement/relation/2209",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2209,
+      "xpath": "/entitymodel/entity[78]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/Requirement/relation/2212",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2212,
+      "xpath": "/entitymodel/entity[78]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementAndRole/relation/1552",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1552,
+      "xpath": "/entitymodel/view-entity[40]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementAndRole/relation/1555",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1555,
+      "xpath": "/entitymodel/view-entity[40]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Person",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementAndRole/relation/1558",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1558,
+      "xpath": "/entitymodel/view-entity[40]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementAndRole/relation/1562",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1562,
+      "xpath": "/entitymodel/view-entity[40]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "RoleType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementBudgetAllocation/relation/2242",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2242,
+      "xpath": "/entitymodel/entity[80]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Budget",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementBudgetAllocation/relation/2245",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2245,
+      "xpath": "/entitymodel/entity[80]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "BudgetItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementRole/relation/2288",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2288,
+      "xpath": "/entitymodel/entity[82]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementRole/relation/2291",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2291,
+      "xpath": "/entitymodel/entity[82]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRole",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementStatus/relation/2308",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2308,
+      "xpath": "/entitymodel/entity[83]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RequirementStatus/relation/2311",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2311,
+      "xpath": "/entitymodel/entity[83]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RespondingParty/relation/2122",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2122,
+      "xpath": "/entitymodel/entity[75]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/RespondingParty/relation/2125",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2125,
+      "xpath": "/entitymodel/entity[75]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2437",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2437,
+      "xpath": "/entitymodel/entity[88]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2444",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2444,
+      "xpath": "/entitymodel/entity[88]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2447",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2447,
+      "xpath": "/entitymodel/entity[88]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoRule",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2451",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2451,
+      "xpath": "/entitymodel/entity[88]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoAction",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2456",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2456,
+      "xpath": "/entitymodel/entity[88]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2459",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2459,
+      "xpath": "/entitymodel/entity[88]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "Geo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2462",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2462,
+      "xpath": "/entitymodel/entity[88]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "TaxAuthority",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2466",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2466,
+      "xpath": "/entitymodel/entity[88]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "GlAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnAdjustment/relation/2475",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2475,
+      "xpath": "/entitymodel/entity[88]/relation[14]"
+    },
+    "to_kind": "entity",
+    "to_name": "TaxAuthorityRateProduct",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnContactMech/relation/2807",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2807,
+      "xpath": "/entitymodel/entity[101]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnContactMech/relation/2810",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2810,
+      "xpath": "/entitymodel/entity[101]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMechPurposeType",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2514",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2514,
+      "xpath": "/entitymodel/entity[90]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2517",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2517,
+      "xpath": "/entitymodel/entity[90]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2520",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2520,
+      "xpath": "/entitymodel/entity[90]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2523",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2523,
+      "xpath": "/entitymodel/entity[90]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "FinAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2526",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2526,
+      "xpath": "/entitymodel/entity[90]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethod",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2529",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2529,
+      "xpath": "/entitymodel/entity[90]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "Facility",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2532",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2532,
+      "xpath": "/entitymodel/entity[90]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2535",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2535,
+      "xpath": "/entitymodel/entity[90]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2538",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2538,
+      "xpath": "/entitymodel/entity[90]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2541",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2541,
+      "xpath": "/entitymodel/entity[90]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "Uom",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnHeader/relation/2544",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2544,
+      "xpath": "/entitymodel/entity[90]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItem/relation/2609",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2609,
+      "xpath": "/entitymodel/entity[92]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItem/relation/2612",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2612,
+      "xpath": "/entitymodel/entity[92]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItem/relation/2615",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2615,
+      "xpath": "/entitymodel/entity[92]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemBilling/relation/2755",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2755,
+      "xpath": "/entitymodel/entity[99]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Invoice",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemBilling/relation/2758",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2758,
+      "xpath": "/entitymodel/entity[99]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "InvoiceItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemBilling/relation/2762",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2762,
+      "xpath": "/entitymodel/entity[99]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentReceipt",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemResponse/relation/2647",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2647,
+      "xpath": "/entitymodel/entity[93]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Payment",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemResponse/relation/2650",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2650,
+      "xpath": "/entitymodel/entity[93]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "BillingAccount",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemResponse/relation/2653",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2653,
+      "xpath": "/entitymodel/entity[93]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "FinAccountTrans",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemShipment/relation/2785",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2785,
+      "xpath": "/entitymodel/entity[100]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Shipment",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnItemShipment/relation/2788",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2788,
+      "xpath": "/entitymodel/entity[100]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ShipmentItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnStatus/relation/2708",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2708,
+      "xpath": "/entitymodel/entity[97]/relation[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ReturnStatus/relation/2718",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2718,
+      "xpath": "/entitymodel/entity[97]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "UserLogin",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2899",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2899,
+      "xpath": "/entitymodel/entity[104]/relation[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStore",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2902",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2902,
+      "xpath": "/entitymodel/entity[104]/relation[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Party",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2905",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2905,
+      "xpath": "/entitymodel/entity[104]/relation[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStoreShipmentMeth",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2911",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2911,
+      "xpath": "/entitymodel/entity[104]/relation[7]"
+    },
+    "to_kind": "entity",
+    "to_name": "CarrierShipmentMethod",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2916",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2916,
+      "xpath": "/entitymodel/entity[104]/relation[8]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2919",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2919,
+      "xpath": "/entitymodel/entity[104]/relation[9]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2922",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2922,
+      "xpath": "/entitymodel/entity[104]/relation[10]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethod",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2925",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2925,
+      "xpath": "/entitymodel/entity[104]/relation[11]"
+    },
+    "to_kind": "entity",
+    "to_name": "RecurrenceInfo",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingList/relation/2928",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2928,
+      "xpath": "/entitymodel/entity[104]/relation[12]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductPromoCode",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingListItem/relation/2950",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2950,
+      "xpath": "/entitymodel/entity[105]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingListItemSurvey/relation/2985",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2985,
+      "xpath": "/entitymodel/entity[107]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "SurveyResponse",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/ShoppingListWorkEffort/relation/3007",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 3007,
+      "xpath": "/entitymodel/entity[109]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/WorkOrderItemFulfillment/relation/1419",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 1419,
+      "xpath": "/entitymodel/entity[47]/relation[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "relationTo",
+    "from": "http://example.org/ofbiz/0.1/entity/WorkRequirementFulfillment/relation/2365",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 2365,
+      "xpath": "/entitymodel/entity[87]/relation[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "relation"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/7",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 50,
+      "xpath": "/service-eca/eca[7]"
+    },
+    "to_kind": "service",
+    "to_name": "receiveInventoryProduct",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/8",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 55,
+      "xpath": "/service-eca/eca[8]"
+    },
+    "to_kind": "service",
+    "to_name": "receiveInventoryProduct",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/80",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 367,
+      "xpath": "/service-eca/eca[62]"
+    },
+    "to_kind": "service",
+    "to_name": "createItemIssuance",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/81",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 371,
+      "xpath": "/service-eca/eca[63]"
+    },
+    "to_kind": "service",
+    "to_name": "updateItemIssuance",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/82",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 375,
+      "xpath": "/service-eca/eca[64]"
+    },
+    "to_kind": "service",
+    "to_name": "reserveOrderItemInventory",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/95",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 433,
+      "xpath": "/service-eca/eca[71]"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunity",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/96",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 437,
+      "xpath": "/service-eca/eca[72]"
+    },
+    "to_kind": "service",
+    "to_name": "updateSalesOpportunity",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/97",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 441,
+      "xpath": "/service-eca/eca[73]"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunity",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggeredOnService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/98",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 445,
+      "xpath": "/service-eca/eca[74]"
+    },
+    "to_kind": "service",
+    "to_name": "updateSalesOpportunity",
+    "via": "eca-trigger"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/0b23d547aab3/1",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/eecas.xml",
+      "line": 27,
+      "xpath": "/entity-eca/eca[1]/action"
+    },
+    "to_kind": "service",
+    "to_name": "issueImmediatelyFulfilledOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/106",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 475,
+      "xpath": "/service-eca/eca[80]/action"
+    },
+    "to_kind": "service",
+    "to_name": "checkOrderItemForProductGroupOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/120",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 519,
+      "xpath": "/service-eca/eca[92]/action"
+    },
+    "to_kind": "service",
+    "to_name": "ensurePartyRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/122",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 524,
+      "xpath": "/service-eca/eca[93]/action[2]"
+    },
+    "to_kind": "service",
+    "to_name": "ensurePartyRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/15",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 88,
+      "xpath": "/service-eca/eca[14]/action[1]"
+    },
+    "to_kind": "service",
+    "to_name": "releaseOrderPayments",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/16",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 94,
+      "xpath": "/service-eca/eca[15]/action[1]"
+    },
+    "to_kind": "service",
+    "to_name": "createInvoiceFromOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/18",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 105,
+      "xpath": "/service-eca/eca[16]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createPaymentFromOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/20",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 113,
+      "xpath": "/service-eca/eca[17]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createPaymentFromOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/23",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 129,
+      "xpath": "/service-eca/eca[18]/action[2]"
+    },
+    "to_kind": "service",
+    "to_name": "processExtendSubscriptionByOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/23",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 128,
+      "xpath": "/service-eca/eca[18]/action[1]"
+    },
+    "to_kind": "service",
+    "to_name": "updateContentSubscriptionByOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/3",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 33,
+      "xpath": "/service-eca/eca[3]/action"
+    },
+    "to_kind": "service",
+    "to_name": "balanceOrderItemsWithNegativeReservations",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/49",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 214,
+      "xpath": "/service-eca/eca[36]/action"
+    },
+    "to_kind": "service",
+    "to_name": "quickReceiveReturn",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/5",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 42,
+      "xpath": "/service-eca/eca[5]/action"
+    },
+    "to_kind": "service",
+    "to_name": "setOrderReservationPriority",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/50",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 221,
+      "xpath": "/service-eca/eca[37]/action[3]"
+    },
+    "to_kind": "service",
+    "to_name": "createShipmentAndItemsForReturn",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/50",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 223,
+      "xpath": "/service-eca/eca[37]/action[5]"
+    },
+    "to_kind": "service",
+    "to_name": "createTrackingCodeOrderReturns",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/53",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 254,
+      "xpath": "/service-eca/eca[40]/action[4]"
+    },
+    "to_kind": "service",
+    "to_name": "createInvoiceFromReturn",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/70",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 326,
+      "xpath": "/service-eca/eca[55]/action"
+    },
+    "to_kind": "service",
+    "to_name": "updateCommunicationEvent",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/71",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 332,
+      "xpath": "/service-eca/eca[56]/action"
+    },
+    "to_kind": "service",
+    "to_name": "updateCommunicationEvent",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/73",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 343,
+      "xpath": "/service-eca/eca[57]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createSystemInfoNote",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/87",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 397,
+      "xpath": "/service-eca/eca[67]/action"
+    },
+    "to_kind": "service",
+    "to_name": "ensurePartyRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/9",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 62,
+      "xpath": "/service-eca/eca[9]/action[1]"
+    },
+    "to_kind": "service",
+    "to_name": "cancelOrderInventoryReservation",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/9",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 63,
+      "xpath": "/service-eca/eca[9]/action[2]"
+    },
+    "to_kind": "service",
+    "to_name": "cancleOrderItemGroupOrder",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/90",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 411,
+      "xpath": "/service-eca/eca[68]/action"
+    },
+    "to_kind": "service",
+    "to_name": "sendMailFromTemplateSetting",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/92",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 421,
+      "xpath": "/service-eca/eca[69]/action"
+    },
+    "to_kind": "service",
+    "to_name": "sendMailFromTemplateSetting",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/94",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 431,
+      "xpath": "/service-eca/eca[70]/action"
+    },
+    "to_kind": "service",
+    "to_name": "sendMailFromTemplateSetting",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/95",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 435,
+      "xpath": "/service-eca/eca[71]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunityAccountRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/96",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 439,
+      "xpath": "/service-eca/eca[72]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunityAccountRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/97",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 443,
+      "xpath": "/service-eca/eca[73]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunityLeadRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "triggersService",
+    "from": "http://example.org/ofbiz/0.1/eca/b21571a1e30b/98",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/servicedef/secas.xml",
+      "line": 447,
+      "xpath": "/service-eca/eca[74]/action"
+    },
+    "to_kind": "service",
+    "to_name": "createSalesOpportunityLeadRole",
+    "via": "eca-action"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CommunicationEventAndCustRequest",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1652,
+      "xpath": "/entitymodel/view-entity[46]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CommunicationEventAndOrder",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1641,
+      "xpath": "/entitymodel/view-entity[45]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CommunicationEventAndReturn",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1664,
+      "xpath": "/entitymodel/view-entity[47]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "CommunicationEvent",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustReqAndTypeAndPartyRel",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1336,
+      "xpath": "/entitymodel/view-entity[31]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRelationship",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndContent",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1623,
+      "xpath": "/entitymodel/view-entity[44]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Content",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndNote",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1394,
+      "xpath": "/entitymodel/view-entity[34]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestAndWorkEffort",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1375,
+      "xpath": "/entitymodel/view-entity[33]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestInfoAndWorkEffortAndPartyRel",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1411,
+      "xpath": "/entitymodel/view-entity[35]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyRelationship",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItemNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1456,
+      "xpath": "/entitymodel/view-entity[37]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestItemNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1454,
+      "xpath": "/entitymodel/view-entity[37]/member-entity[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Person",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1435,
+      "xpath": "/entitymodel/view-entity[36]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/CustRequestNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1433,
+      "xpath": "/entitymodel/view-entity[36]/member-entity[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "Person",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/ItemIssuanceQuantitySum",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 849,
+      "xpath": "/entitymodel/view-entity[17]/member-entity"
+    },
+    "to_kind": "entity",
+    "to_name": "ItemIssuance",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndContactMech",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "line": 321,
+      "xpath": "/entitymodel/view-entity[1]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMechDetail",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndPartyContactMech",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1787,
+      "xpath": "/entitymodel/view-entity[53]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ContactMech",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderAndPartyContactMech",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1788,
+      "xpath": "/entitymodel/view-entity[53]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PartyContactMech",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndItemFacilityLocation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 85,
+      "xpath": "/entitymodel/view-entity[2]/member-entity[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "FacilityLocation",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndItemFacilityLocation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 84,
+      "xpath": "/entitymodel/view-entity[2]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndShipGroups",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1125,
+      "xpath": "/entitymodel/view-entity[25]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndShipGroupsByProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1148,
+      "xpath": "/entitymodel/view-entity[26]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "PostalAddress",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndShipGroupsByProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1152,
+      "xpath": "/entitymodel/view-entity[26]/member-entity[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderAndWorkEffort",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1713,
+      "xpath": "/entitymodel/view-entity[49]/member-entity[1]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderItemAndShipGroup",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 669,
+      "xpath": "/entitymodel/view-entity[12]/member-entity[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderHeaderNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 613,
+      "xpath": "/entitymodel/view-entity[10]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1758,
+      "xpath": "/entitymodel/view-entity[51]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 630,
+      "xpath": "/entitymodel/view-entity[11]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Content",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 631,
+      "xpath": "/entitymodel/view-entity[11]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 629,
+      "xpath": "/entitymodel/view-entity[11]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductContent",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGrpInvResAndItem",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 778,
+      "xpath": "/entitymodel/view-entity[14]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemAndShipGrpInvResAndItemSum",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1678,
+      "xpath": "/entitymodel/view-entity[48]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBillingAndInvoiceAndItem",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1733,
+      "xpath": "/entitymodel/view-entity[50]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Invoice",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemBillingAndInvoiceAndItem",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1734,
+      "xpath": "/entitymodel/view-entity[50]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "InvoiceItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvResAndItem",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 801,
+      "xpath": "/entitymodel/view-entity[15]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvResAndItemLocation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 815,
+      "xpath": "/entitymodel/view-entity[16]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "FacilityLocation",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderItemShipGrpInvResAndItemLocation",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 814,
+      "xpath": "/entitymodel/view-entity[16]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "InventoryItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPaymentPrefAndPayment",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 147,
+      "xpath": "/entitymodel/view-entity[4]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "Payment",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPurchasePaymentSummary",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 938,
+      "xpath": "/entitymodel/view-entity[20]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethodType",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderPurchaseProductSummary",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 966,
+      "xpath": "/entitymodel/view-entity[21]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportPurchasesGroupByProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1233,
+      "xpath": "/entitymodel/view-entity[28]/member-entity[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportSalesGroupByProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1184,
+      "xpath": "/entitymodel/view-entity[27]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportSalesGroupByProduct",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1185,
+      "xpath": "/entitymodel/view-entity[27]/member-entity[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductStore",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 998,
+      "xpath": "/entitymodel/view-entity[22]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "PaymentMethodType",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 999,
+      "xpath": "/entitymodel/view-entity[22]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderReportView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1001,
+      "xpath": "/entitymodel/view-entity[22]/member-entity[6]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRoleAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1040,
+      "xpath": "/entitymodel/view-entity[23]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "Content",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRoleAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1041,
+      "xpath": "/entitymodel/view-entity[23]/member-entity[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "Product",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderRoleAndProductContentInfo",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1039,
+      "xpath": "/entitymodel/view-entity[23]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "ProductContent",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderTaskList",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1071,
+      "xpath": "/entitymodel/view-entity[24]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "Person",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderTaskList",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1072,
+      "xpath": "/entitymodel/view-entity[24]/member-entity[4]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/OrderTaskList",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1073,
+      "xpath": "/entitymodel/view-entity[24]/member-entity[5]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffortPartyAssignment",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteNoteView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1478,
+      "xpath": "/entitymodel/view-entity[38]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "NoteData",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteWorkEffortView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1495,
+      "xpath": "/entitymodel/view-entity[39]/member-entity[3]"
+    },
+    "to_kind": "entity",
+    "to_name": "StatusItem",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/QuoteWorkEffortView",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1494,
+      "xpath": "/entitymodel/view-entity[39]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "member-entity"
+  },
+  {
+    "edge": "viewMemberEntity",
+    "from": "http://example.org/ofbiz/0.1/entity/WorkAndOrderItemFulfillment",
+    "kind": "dangling_reference",
+    "source": {
+      "file": "applications/order/entitydef/entitymodel_view.xml",
+      "line": 1776,
+      "xpath": "/entitymodel/view-entity[52]/member-entity[2]"
+    },
+    "to_kind": "entity",
+    "to_name": "WorkEffort",
+    "via": "member-entity"
+  }
+]

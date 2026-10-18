@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <description>Order entities (synthetic fixture modeled on OFBiz 24.09).</description>
+    <entity entity-name="OrderHeader" package-name="org.apache.ofbiz.order.order" title="Order Header">
+        <description>One row per customer order.</description>
+        <field name="orderId" type="id"/>
+        <field name="orderTypeId" type="id-vlong"/>
+        <field name="statusId" type="id"/>
+        <prim-key field="orderId"/>
+        <relation type="one" fk-name="ORD_HDR_TYPE" title="Type" rel-entity-name="OrderType">
+            <key-map field-name="orderTypeId" rel-field-name="orderTypeId"/>
+        </relation>
+        <relation type="many" title="Items" rel-entity-name="OrderItem">
+            <key-map field-name="orderId" rel-field-name="orderId"/>
+        </relation>
+    </entity>
+    <entity entity-name="OrderType" package-name="org.apache.ofbiz.order.order" title="Order Type">
+        <field name="orderTypeId" type="id-vlong"/>
+        <field name="description" type="description"/>
+        <prim-key field="orderTypeId"/>
+    </entity>
+</entitymodel>

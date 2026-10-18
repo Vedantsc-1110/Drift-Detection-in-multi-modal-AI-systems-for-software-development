@@ -1,0 +1,113 @@
+@prefix ctx:  <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# =============================================================================
+# Contract ontology (CONTRACT.md §2–§3, proposal §7.2 3.1).
+# Companion to context-ontology.ttl (ofbiz: prototype vocabulary): this file
+# declares EXACTLY the shared contract surface. Domains/ranges below repeat
+# §3.1 verbatim; extractor-used properties carry no domain/range beyond what
+# §3.1 states (see rdfs:comment on each).
+# =============================================================================
+<http://context.example.org/ontology/1.0>
+    a owl:Ontology ;
+    rdfs:label "Enterprise Context contract ontology" ;
+    rdfs:comment "Shared ctx: vocabulary for Parts 1–4 (CONTRACT.md §2–§3)." ;
+    owl:versionInfo "1.0" .
+
+# ---------------- Classes (§2) ----------------
+# Code-level: Module, Service, Entity, Field, JavaClass, JavaMethod, ECA.
+# Workflow-level: DAG, Task, Workflow, Job, Step.
+# Document-level: Document, BusinessConcept, Policy, BusinessRule, Contract,
+# Clause, Party, Filing, Section, RiskFactor.
+
+ctx:Module a owl:Class ; rdfs:label "Module" ; rdfs:comment "An OFBiz component or software module (CONTRACT.md §2)." .
+ctx:Service a owl:Class ; rdfs:label "Service" ; rdfs:comment "An OFBiz service definition (CONTRACT.md §2)." .
+ctx:Entity a owl:Class ; rdfs:label "Entity" ; rdfs:comment "An OFBiz entity definition (CONTRACT.md §2)." .
+ctx:Field a owl:Class ; rdfs:label "Field" ; rdfs:comment "An entity field (CONTRACT.md §2)." .
+ctx:JavaClass a owl:Class ; rdfs:label "JavaClass" ; rdfs:comment "A Java/Groovy class (CONTRACT.md §2)." .
+ctx:JavaMethod a owl:Class ; rdfs:label "JavaMethod" ; rdfs:comment "A Java/Groovy method (CONTRACT.md §2)." .
+ctx:ECA a owl:Class ; rdfs:label "ECA" ; rdfs:comment "An event-condition-action rule (CONTRACT.md §2)." .
+ctx:DAG a owl:Class ; rdfs:label "DAG" ; rdfs:comment "An Airflow DAG (CONTRACT.md §2)." .
+ctx:Task a owl:Class ; rdfs:label "Task" ; rdfs:comment "An Airflow task (CONTRACT.md §2)." .
+ctx:Workflow a owl:Class ; rdfs:label "Workflow" ; rdfs:comment "A CI/CD workflow (CONTRACT.md §2)." .
+ctx:Job a owl:Class ; rdfs:label "Job" ; rdfs:comment "A CI/CD job (CONTRACT.md §2)." .
+ctx:Step a owl:Class ; rdfs:label "Step" ; rdfs:comment "A CI/CD step (CONTRACT.md §2)." .
+ctx:Document a owl:Class ; rdfs:label "Document" ; rdfs:comment "An enterprise document (CONTRACT.md §2)." .
+ctx:BusinessConcept a owl:Class ; rdfs:label "BusinessConcept" ; rdfs:comment "A domain concept (CONTRACT.md §2)." .
+ctx:Policy a owl:Class ; rdfs:label "Policy" ; rdfs:comment "A policy (CONTRACT.md §2)." .
+ctx:BusinessRule a owl:Class ; rdfs:label "BusinessRule" ; rdfs:comment "A business rule (CONTRACT.md §2)." .
+ctx:Contract a owl:Class ; rdfs:label "Contract" ; rdfs:comment "A contract (CONTRACT.md §2)." .
+ctx:Clause a owl:Class ; rdfs:label "Clause" ; rdfs:comment "A contract clause (CONTRACT.md §2)." .
+ctx:Party a owl:Class ; rdfs:label "Party" ; rdfs:comment "A contract party (CONTRACT.md §2)." .
+ctx:Filing a owl:Class ; rdfs:label "Filing" ; rdfs:comment "An SEC filing (CONTRACT.md §2)." .
+ctx:Section a owl:Class ; rdfs:label "Section" ; rdfs:comment "A filing section (CONTRACT.md §2)." .
+ctx:RiskFactor a owl:Class ; rdfs:label "RiskFactor" ; rdfs:comment "A filing risk factor (CONTRACT.md §2)." .
+
+# ---------------- Object properties (§3.1 declared) ----------------
+
+ctx:calls a owl:ObjectProperty ;
+    rdfs:label "calls" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:JavaMethod ; rdfs:range ctx:JavaMethod .
+ctx:implementedBy a owl:ObjectProperty ;
+    rdfs:label "implementedBy" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Service ; rdfs:range ctx:JavaMethod .
+ctx:hasField a owl:ObjectProperty ;
+    rdfs:label "hasField" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Entity ; rdfs:range ctx:Field .
+ctx:relatesTo a owl:ObjectProperty ;
+    rdfs:label "relatesTo" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Entity ; rdfs:range ctx:Entity .
+ctx:invokesService a owl:ObjectProperty ;
+    rdfs:label "invokesService" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Task ; rdfs:range ctx:Service .
+ctx:constrains a owl:ObjectProperty ;
+    rdfs:label "constrains" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Policy ; rdfs:range ctx:Service .
+ctx:mentionsEntity a owl:ObjectProperty ;
+    rdfs:label "mentionsEntity" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Document ; rdfs:range ctx:Entity .
+ctx:hasClause a owl:ObjectProperty ;
+    rdfs:label "hasClause" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Contract ; rdfs:range ctx:Clause .
+ctx:belongsToConcept a owl:ObjectProperty ;
+    rdfs:label "belongsToConcept" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Service ; rdfs:range ctx:BusinessConcept .
+ctx:referencesModule a owl:ObjectProperty ;
+    rdfs:label "referencesModule" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Filing ; rdfs:range ctx:Module .
+ctx:mentionsProcess a owl:ObjectProperty ;
+    rdfs:label "mentionsProcess" ; rdfs:comment "§3.1 declared (CONTRACT.md §3)." ;
+    rdfs:domain ctx:Section ; rdfs:range ctx:Service .
+
+# ---------------- Extractor-used object properties (§3, no §3.1 domain/range) ----------------
+
+ctx:hasInputParam a owl:ObjectProperty ; rdfs:label "hasInputParam" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:hasOutputParam a owl:ObjectProperty ; rdfs:label "hasOutputParam" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:hasParameter a owl:ObjectProperty ; rdfs:label "hasParameter" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:hasTask a owl:ObjectProperty ; rdfs:label "hasTask" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:dependsOn a owl:ObjectProperty ; rdfs:label "dependsOn" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:triggeredBy a owl:ObjectProperty ; rdfs:label "triggeredBy" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:hasStep a owl:ObjectProperty ; rdfs:label "hasStep" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:usesAction a owl:ObjectProperty ; rdfs:label "usesAction" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+ctx:definedIn a owl:ObjectProperty ; rdfs:label "definedIn" ; rdfs:comment "Used by extractors (CONTRACT.md §3); no §3.1 domain/range." .
+
+# ---------------- Datatype properties (§3) ----------------
+
+ctx:engine a owl:DatatypeProperty ; rdfs:label "engine" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:scheduledAt a owl:DatatypeProperty ; rdfs:label "scheduledAt" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:operatorType a owl:DatatypeProperty ; rdfs:label "operatorType" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:clauseType a owl:DatatypeProperty ; rdfs:label "clauseType" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:imports a owl:DatatypeProperty ; rdfs:label "imports" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:atLine a owl:DatatypeProperty ; rdfs:label "atLine" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:integer .
+ctx:sourceLocation a owl:DatatypeProperty ; rdfs:label "sourceLocation" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:sourceHash a owl:DatatypeProperty ; rdfs:label "sourceHash" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:businessPurpose a owl:DatatypeProperty ; rdfs:label "businessPurpose" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:confidence a owl:DatatypeProperty ; rdfs:label "confidence" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:decimal .
+ctx:factType a owl:DatatypeProperty ; rdfs:label "factType" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:extractedBy a owl:DatatypeProperty ; rdfs:label "extractedBy" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .
+ctx:supportType a owl:DatatypeProperty ; rdfs:label "supportType" ; rdfs:comment "Used by extractors (CONTRACT.md §3)." ; rdfs:range xsd:string .

@@ -1,0 +1,75 @@
+{
+  "cross_document_links": 78,
+  "documents_by_type": {
+    "designs": 5,
+    "policies": 5,
+    "requirements": 5,
+    "sops": 5
+  },
+  "facts_by_support_type": {
+    "DIRECT": 22,
+    "INDIRECT": 13,
+    "SYNTHETIC": 31,
+    "UNRESOLVED": 6
+  },
+  "method": "computed from actual MD bodies, front-matter related_documents, [OFBiz-existing] markers, and ground-truth YAMLs",
+  "negatives_by_classification": {
+    "NOT_FOUND": 6,
+    "PARTIALLY_SUPPORTED": 3,
+    "UNSUPPORTED": 9
+  },
+  "ofbiz_entities_referenced": [
+    "CommunicationEventOrder",
+    "CustRequest",
+    "OrderAdjustment",
+    "OrderContactMech",
+    "OrderHeader",
+    "OrderItem",
+    "OrderItemAssoc",
+    "OrderItemShipGroup",
+    "OrderPaymentPreference",
+    "OrderRole",
+    "OrderStatus",
+    "ShoppingList"
+  ],
+  "ofbiz_entities_referenced_count": 12,
+  "ofbiz_out_of_scope_referenced": [
+    "issueImmediatelyFulfilledOrder"
+  ],
+  "ofbiz_services_referenced": [
+    "addSuggestionsToShoppingList",
+    "cancelOrderItem",
+    "changeOrderPaymentStatus",
+    "changeOrderStatus",
+    "checkCreateDropShipPurchaseOrders",
+    "checkUpdateQuoteStatus",
+    "createCustRequest",
+    "createCustRequestItem",
+    "createOrderContactMech",
+    "createOrderFromShoppingCart",
+    "createOrderHeader",
+    "createOrderItemAssoc",
+    "createOrderItemGroup",
+    "createOrderItemShipGroup",
+    "createPaymentFromPreference",
+    "createQuote",
+    "createReturnHeader",
+    "findOrders",
+    "resetGrandTotal",
+    "sendOrderCompleteNotification",
+    "sendOrderConfirmation",
+    "setUnitPriceAsLastPrice",
+    "storeOrder"
+  ],
+  "ofbiz_services_referenced_count": 23,
+  "total_documents": 20,
+  "total_ground_truth_facts": 72,
+  "total_negative_cases": 18,
+  "total_words_md": 9926,
+  "words_by_type_md": {
+    "designs": 2457,
+    "policies": 2090,
+    "requirements": 3261,
+    "sops": 2118
+  }
+}

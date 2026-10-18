@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "subject": "ACME-2025-10K",
+      "predicate": "referencesModule",
+      "object": "Order",
+      "confidence": 0.8,
+      "evidence": ["order management system"]
+    },
+    {
+      "subject": "ACME-2025-10K",
+      "predicate": "referencesModule",
+      "object": "Accounting",
+      "confidence": 0.77,
+      "evidence": ["accounts receivable"]
+    },
+    {
+      "subject": "Business",
+      "predicate": "mentionsProcess",
+      "object": "createOrder",
+      "confidence": 0.74,
+      "evidence": ["creates an order record"]
+    }
+  ]
+}

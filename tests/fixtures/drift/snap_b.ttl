@@ -1,0 +1,27 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Agent B snapshot: full-fidelity Accounting scope captured at V(n).
+ctx:createInvoice a ctx:Service ;
+    rdfs:label "createInvoice" ;
+    ctx:engine "java" ;
+    ctx:definedIn <file:///ofbiz/accounting/servicedef/services.xml> ;
+    ctx:atLine 20 ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:20" ;
+    ctx:sourceHash "dddddeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddd" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:Invoice a ctx:Entity ;
+    rdfs:label "Invoice" ;
+    ctx:definedIn <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "accounting-entitymodel.xml:5" ;
+    ctx:sourceHash "eeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddddeeee" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

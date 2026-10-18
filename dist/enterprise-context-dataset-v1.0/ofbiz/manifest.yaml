@@ -1,0 +1,25 @@
+ofbiz_source:
+  name: Apache OFBiz
+  version: 24.09.07
+  location: dataset/apache-ofbiz-24.09.07 (read-only; not redistributed)
+  license: Apache License 2.0
+extraction_scope:
+  - applications/order/
+  - applications/datamodel/entitydef/order-entitymodel.xml
+  - applications/datamodel/ofbiz-component.xml
+baseline:
+  services: 467
+  base_entities: 112
+  view_entities: 55
+  relations: 567
+  relations_resolved: 301
+  ecas: 111
+  facts: 10204
+  rdf_triples: 117788
+  unresolved: 386
+  shacl_violations: 0
+reproduce:
+  - python extract.py --root dataset/apache-ofbiz-24.09.07 --component order --out outputs-deps --include-dependencies
+  - python build_graph.py --facts outputs-deps/order-facts.jsonl --manifest outputs-deps/order-manifest.json --out outputs-deps/order-graph.ttl
+  - python store_graph.py load --graph outputs-deps/order-graph.ttl --store stores/order-deps
+note: Full ~180MB OFBiz tree intentionally not copied; see README.md and LICENSES_AND_SOURCES.md.

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Context-identification experiment evaluation schema",
+  "definitions": {
+    "verdict": {"enum": ["correct", "incorrect", ""]},
+    "templateItem": {
+      "type": "object",
+      "required": ["key", "arm", "kind", "summary", "file", "verdict", "reviewer", "note"],
+      "properties": {
+        "key": {"type": "string", "description": "Stable join key: 'A:<fact-id>' or 'B:<i>:<s>|<p>|<o>'"},
+        "arm": {"enum": ["A", "B"]},
+        "kind": {"type": "string"},
+        "summary": {"type": "string"},
+        "file": {"type": ["string", "null"]},
+        "line": {"type": ["integer", "null"]},
+        "verdict": {"$ref": "#/definitions/verdict"},
+        "reviewer": {"type": "string"},
+        "note": {"type": "string"}
+      }
+    },
+    "metricOrNull": {"type": ["number", "null"]},
+    "results": {
+      "type": "object",
+      "required": ["sample", "adjudication", "arms"],
+      "properties": {
+        "adjudication": {
+          "type": "object",
+          "required": ["reviewed", "total", "coverage"],
+          "properties": {
+            "reviewed": {"type": "integer"},
+            "total": {"type": "integer"},
+            "coverage": {"type": ["number", "null"]}
+          }
+        },
+        "arms": {
+          "type": "object",
+          "properties": {
+            "A_deterministic": {"$ref": "#/definitions/armMetrics"},
+            "B_probabilistic": {"$ref": "#/definitions/armMetrics"},
+            "C_hybrid": {"$ref": "#/definitions/armMetrics"}
+          }
+        }
+      }
+    },
+    "armMetrics": {
+      "type": "object",
+      "required": ["extracted", "adjudicated", "correct", "unsupported", "pending", "accuracy"],
+      "properties": {
+        "extracted": {"type": "integer"},
+        "adjudicated": {"type": "integer"},
+        "correct": {"type": "integer", "description": "Verdict=correct against source evidence"},
+        "unsupported": {"type": "integer", "description": "Verdict=incorrect: no source support"},
+        "pending": {"type": "integer", "description": "No verdict yet; excluded from accuracy"},
+        "accuracy": {"type": ["number", "null"], "description": "correct/adjudicated; null when nothing adjudicated"},
+        "provenance_coverage": {"type": "object"},
+        "repeatability": {"type": ["object", "null"]},
+        "execution_sec": {"type": ["number", "null"]},
+        "validation": {"type": ["object", "null"]}
+      }
+    }
+  }
+}

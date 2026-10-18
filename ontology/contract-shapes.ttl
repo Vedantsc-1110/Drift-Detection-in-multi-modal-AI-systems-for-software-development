@@ -1,0 +1,52 @@
+@prefix ctx:  <http://context.example.org/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+
+# =============================================================================
+# Contract SHACL shapes (proposal §7.2 3.5, CONTRACT.md §5).
+# Violations are REPORTED, never silently discarded; validators must not
+# modify data to "fix" them. ContractShape targets ctx:Contract (OPEN Q8).
+# =============================================================================
+<http://context.example.org/shapes/1.0>
+    a owl:Ontology ;
+    rdfs:label "Enterprise Context contract SHACL shapes" ;
+    owl:versionInfo "1.0" .
+
+ctx:ServiceShape a sh:NodeShape ;
+    sh:targetClass ctx:Service ;
+    sh:property [
+        sh:path ctx:definedIn ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every Service must have ctx:definedIn." ;
+    ] .
+
+ctx:ProbabilisticFactShape a sh:NodeShape ;
+    # Class-targeted (SPARQL targets are not portable across validators):
+    # the eleven probabilistic-only classes. Service/Entity subjects keep
+    # their deterministic shapes; probabilistic claims never retype them.
+    sh:targetClass ctx:Module, ctx:BusinessConcept, ctx:Policy,
+        ctx:BusinessRule, ctx:Document, ctx:Contract, ctx:Clause, ctx:Party,
+        ctx:Filing, ctx:Section, ctx:RiskFactor ;
+    sh:property [
+        sh:path ctx:confidence ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every probabilistic fact must have ctx:confidence." ;
+    ] ;
+    sh:property [
+        sh:path ctx:extractedBy ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every probabilistic fact must have ctx:extractedBy." ;
+    ] .
+
+ctx:ContractShape a sh:NodeShape ;
+    sh:targetClass ctx:Contract ;
+    sh:property [
+        sh:path ctx:hasClause ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Every Contract must have at least one ctx:hasClause." ;
+    ] .

@@ -1,0 +1,88 @@
+{
+  "adjudication": {
+    "coverage": 1.0,
+    "reviewed": 9,
+    "total": 9
+  },
+  "arms": {
+    "A_deterministic": {
+      "accuracy": 1.0,
+      "adjudicated": 8,
+      "correct": 8,
+      "execution_sec": 0.83,
+      "extracted": 8,
+      "pending": 0,
+      "provenance_coverage": {
+        "covered": 8,
+        "rate": 1.0,
+        "total": 8
+      },
+      "repeatability": {
+        "identical_content": true,
+        "items_a": 4555,
+        "items_b": 4555
+      },
+      "unsupported": 0,
+      "validation": {
+        "conforms": true,
+        "violations": 0,
+        "warnings": 20
+      }
+    },
+    "B_probabilistic": {
+      "accuracy": 0.0,
+      "adjudicated": 1,
+      "correct": 0,
+      "execution_sec": 0.24,
+      "extracted": 1,
+      "pending": 0,
+      "provenance_coverage": {
+        "covered": 1,
+        "rate": 1.0,
+        "total": 1
+      },
+      "repeatability": {
+        "identical_content": true,
+        "items_a": 1,
+        "items_b": 1
+      },
+      "unsupported": 1,
+      "validation": null
+    },
+    "C_hybrid": {
+      "accuracy": 1.0,
+      "adjudicated": 8,
+      "correct": 8,
+      "execution_sec": 1.07,
+      "extracted": 8,
+      "note": "Hybrid = deterministic facts + accepted proposals sidecar (0 accepted of 1 proposed; graph unchanged).",
+      "pending": 0,
+      "provenance_coverage": {
+        "arms": {
+          "deterministic": {
+            "covered": 8,
+            "rate": 1.0,
+            "total": 8
+          },
+          "probabilistic": {
+            "covered": 1,
+            "rate": 1.0,
+            "total": 1
+          }
+        }
+      },
+      "repeatability": null,
+      "unsupported": 0,
+      "validation": {
+        "conforms": true,
+        "violations": 0,
+        "warnings": 20
+      }
+    }
+  },
+  "sample": "experiments/context-identification/samples/order-reservations.json",
+  "warnings": [
+    "Stub-client B numbers measure plumbing only, never LLM quality.",
+    "C validation covers the deterministic graph; accepted proposals are not merged into it."
+  ]
+}

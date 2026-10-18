@@ -1,0 +1,5 @@
+// Accounting component build (synthetic fixture).
+dependencies {
+    implementation project(':applications:party')
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+}

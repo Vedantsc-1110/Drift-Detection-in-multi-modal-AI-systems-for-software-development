@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      PIP_CACHE: "true"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: Run tests
+        run: pytest -q
+        env:
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+  lint:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Lint
+        run: ruff check .

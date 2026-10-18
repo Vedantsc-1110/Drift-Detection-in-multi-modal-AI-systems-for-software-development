@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "evaluation_hash": "b553dd42942264785fb5aa0e76d6a17f4989280f0a9389c7c3c4a3d3804bfc9f",
+    "facts": "outputs-deps/order-facts.jsonl",
+    "facts_count": 10204,
+    "graph": "outputs-deps/order-graph.ttl",
+    "manifest": "outputs-deps/order-manifest.json",
+    "store": "stores/order-deps",
+    "triples": 117788,
+    "unresolved": "outputs-deps/order-unresolved.json",
+    "unresolved_count": 386
+  },
+  "metrics": {
+    "answer_coverage": 0.8667,
+    "correct": 13,
+    "direct_count": 12,
+    "direct_coverage": 0.8,
+    "incorrect": 0,
+    "inferred_count": 0,
+    "inferred_coverage": 0.0,
+    "partial": 0,
+    "provenance_coverage": 1.0,
+    "provenance_covered": 15,
+    "resolved_correctness": 1.0,
+    "total": 15,
+    "unresolved": 2,
+    "unresolved_count": 3,
+    "unresolved_fact_coverage": 0.2
+  },
+  "structural": {
+    "by_kind": {
+      "base_entity": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      },
+      "eca": {
+        "found": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 5
+      },
+      "relation": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      },
+      "service": {
+        "found": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "total": 10
+      }
+    },
+    "found": 35,
+    "label": "sampled structural gold-set evaluation",
+    "missing": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "total": 35
+  }
+}

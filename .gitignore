@@ -1,0 +1,117 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# Test / lint / coverage caches (generated, do not version)
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+playwright-report/
+test-results/
+ms-playwright/
+
+# Oxigraph / database stores (regenerable via store_graph.py; excluded per spec)
+stores/
+.cache/
+.models/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+outputs/demo-*/
+
+# Full Apache OFBiz source tree (pinned read-only at dataset/apache-ofbiz-24.09.07,
+# ~114 MB; NOT redistributed — manifests + deterministic extracted artifacts in
+# outputs-deps/ are versioned instead)
+dataset/apache-ofbiz-24.09.07/
+
+# Build / packaging artifacts (regenerable, standard Python ignores)
+.gradle/
+*.class
+*.egg-info/
+build/
+*.egg
+*.whl
+pip-wheel-metadata/
+# dist/ intentionally contains the published research dataset.
+
+# JavaScript dependencies and package-manager caches
+node_modules/
+.npm/
+.yarn/
+
+# Logs and temporary files
+.tools/
+logs/
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*~
+\#*\#
+.\#*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE-specific (do not version)
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*.swn
+.project
+.classpath
+.settings/
+
+# Local assistant configuration
+.agents/
+.codex/
+.claude/
+skills-lock.json
+
+# Secrets / credentials (never commit)
+.env
+.env.*
+!.env.example
+!.env.template
+.aws/
+.ssh/
+.netrc
+_netrc
+.pypirc
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_dsa*
+id_ed25519*
+credentials.json
+secrets.json
+secrets.yaml
+secrets.yml

@@ -1,0 +1,1 @@
+{"A": 0.83, "B": 0.24, "C": 1.07, "method": "Single timed runs on the developer machine (extract A=0.33s + graph build 0.50s; stub propose B=0.24s; C=A+B by construction). Not a benchmark; B uses the labeled stub client, so its time says nothing about LLM latency."}

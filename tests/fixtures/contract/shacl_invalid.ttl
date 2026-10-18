@@ -1,0 +1,18 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Violates ServiceShape: no ctx:definedIn.
+ctx:lonelyService a ctx:Service ;
+    rdfs:label "lonelyService" .
+
+# Violates ProbabilisticFactShape twice: no confidence, no extractedBy.
+ctx:guessModule a ctx:Module ;
+    rdfs:label "guessModule" ;
+    ctx:factType "probabilistic" .
+
+# Violates ContractShape: no ctx:hasClause.
+ctx:emptyContract a ctx:Contract ;
+    rdfs:label "Empty" ;
+    ctx:confidence 0.5 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" .

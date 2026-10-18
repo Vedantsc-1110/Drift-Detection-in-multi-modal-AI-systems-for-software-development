@@ -1,0 +1,29 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Agent A snapshot: full-fidelity 1-hop order scope captured at V(n).
+ctx:createOrder a ctx:Service ;
+    rdfs:label "createOrder" ;
+    ctx:engine "java" ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 10 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:10" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:engine "java" ;
+    ctx:hasInputParam ctx:findOrders-statusId ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 142 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:142" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

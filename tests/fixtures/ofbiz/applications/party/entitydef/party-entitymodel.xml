@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entitymodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/entitymodel.xsd">
+    <description>Party entities (synthetic fixture modeled on OFBiz 24.09).</description>
+    <entity entity-name="Person" package-name="org.apache.ofbiz.party.party" title="Person">
+        <field name="partyId" type="id"/>
+        <field name="firstName" type="name"/>
+        <field name="lastName" type="name"/>
+        <prim-key field="partyId"/>
+        <relation type="one" title="Party" rel-entity-name="Party">
+            <key-map field-name="partyId" rel-field-name="partyId"/>
+        </relation>
+        <relation type="many" title="ContactMechs" rel-entity-name="PartyContactMech">
+            <key-map field-name="partyId" rel-field-name="partyId"/>
+        </relation>
+    </entity>
+</entitymodel>

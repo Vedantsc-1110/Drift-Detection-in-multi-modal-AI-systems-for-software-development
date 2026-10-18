@@ -1,0 +1,24 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:CUAD-1 a ctx:Contract ;
+    rdfs:label "Services Agreement" ;
+    ctx:hasClause ctx:CUAD-1-Pay ;
+    ctx:mentionsEntity ctx:OrderHeader ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "cuad-annotator" ;
+    prov:wasGeneratedBy ctx:CuadExtractor ;
+    prov:hadPrimarySource <file:///cuad/CUAD-1> ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .
+
+ctx:CUAD-1-Pay a ctx:Clause ;
+    rdfs:label "Pay each invoice within thirty days" ;
+    ctx:clauseType "Payment Terms" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "cuad-annotator" ;
+    prov:wasGeneratedBy ctx:CuadExtractor ;
+    prov:hadPrimarySource <file:///cuad/CUAD-1> ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .

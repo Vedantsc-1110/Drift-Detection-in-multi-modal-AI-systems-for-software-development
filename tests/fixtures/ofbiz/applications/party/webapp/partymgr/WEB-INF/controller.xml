@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/site-conf.xsd">
+    <request-map uri="viewprofile">
+        <security auth="true"/>
+        <event type="service" invoke="getPartyProfile"/>
+        <response name="success" type="view" value="profile"/>
+    </request-map>
+</site-conf>

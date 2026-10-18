@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-eca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/entity-eca.xsd">
+    <description>Order entity ECAs (synthetic fixture modeled on OFBiz eecas.xml).</description>
+    <eca entity="OrderHeader" operation="create-store" event="return">
+        <condition field-name="statusId" operator="equals" value="ORDER_COMPLETED"/>
+        <condition field-name="needsInventoryIssuance" operator="equals" value="Y"/>
+        <action service="issueImmediatelyFulfilledOrder" mode="sync"/>
+    </eca>
+    <eca entity="OrderItem" operation="create" event="return">
+        <condition field-name="statusId" operator="is-not-empty" value=""/>
+        <action service="reserveOrderItemInventory" mode="async" persist="true"/>
+    </eca>
+</entity-eca>

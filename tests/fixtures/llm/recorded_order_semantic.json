@@ -1,0 +1,32 @@
+{
+  "claims": [
+    {
+      "subject": "OrderModule",
+      "predicate": "businessPurpose",
+      "object": "Capture and fulfil customer orders end to end",
+      "confidence": 0.78,
+      "evidence": ["createOrder", "OrderHeader"]
+    },
+    {
+      "subject": "createOrder",
+      "predicate": "managesEntity",
+      "object": "OrderHeader",
+      "confidence": 0.82,
+      "evidence": ["createOrder", "default-entity-name=OrderHeader"]
+    },
+    {
+      "subject": "createOrder",
+      "predicate": "belongsToConcept",
+      "object": "OrderCapture",
+      "confidence": 0.8,
+      "evidence": ["createOrder"]
+    },
+    {
+      "subject": "OrderModule",
+      "predicate": "dependsOn",
+      "object": "PartyModule",
+      "confidence": 0.74,
+      "evidence": ["PartyServices.getParty"]
+    }
+  ]
+}

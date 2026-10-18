@@ -1,0 +1,18 @@
+{
+  "claims": [
+    {
+      "subject": "Payment Terms",
+      "predicate": "mentionsEntity",
+      "object": "Invoice",
+      "confidence": 0.8,
+      "evidence": ["pay each invoice"]
+    },
+    {
+      "subject": "Governing Law",
+      "predicate": "mentionsEntity",
+      "object": "OrderHeader",
+      "confidence": 0.72,
+      "evidence": ["laws of California"]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Hand-made Stage-1 fixture (CONTRACT.md §2–§3 vocabulary only).
+ctx:findOrders a ctx:Service ;
+    rdfs:label "findOrders" ;
+    ctx:engine "java" ;
+    ctx:implementedBy ctx:OrderServices_findOrders ;
+    ctx:hasInputParam ctx:findOrders_statusId ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 142 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:142" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:createOrder a ctx:Service ;
+    rdfs:label "createOrder" ;
+    ctx:engine "java" ;
+    ctx:hasOutputParam ctx:createOrder_orderId ;
+    ctx:definedIn <file:///ofbiz/order/servicedef/services.xml> ;
+    ctx:atLine 10 ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "services.xml:10" ;
+    ctx:sourceHash "aaaabbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaa" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:OrderHeader a ctx:Entity ;
+    rdfs:label "OrderHeader" ;
+    ctx:hasField ctx:OrderHeader_orderId ;
+    ctx:definedIn <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/order/entitydef/order-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "order-entitymodel.xml:5" ;
+    ctx:sourceHash "bbbbccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbb" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:OrderServices_createOrder a ctx:JavaMethod ;
+    rdfs:label "createOrder" ;
+    ctx:calls ctx:PartyServices_getParty ;
+    ctx:definedIn <file:///ofbiz/order/src/OrderServices.java> ;
+    ctx:atLine 7 ;
+    prov:hadPrimarySource <file:///ofbiz/order/src/OrderServices.java> ;
+    prov:wasGeneratedBy ctx:TreeSitterExtractor ;
+    ctx:sourceLocation "OrderServices.java:7" ;
+    ctx:sourceHash "ccccddddeeeeffff0000111122223333444455556666777788889999aaaabbbbcccc" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .
+
+ctx:Invoice a ctx:Entity ;
+    rdfs:label "Invoice" ;
+    ctx:hasField ctx:Invoice_invoiceId ;
+    ctx:definedIn <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    ctx:atLine 5 ;
+    prov:hadPrimarySource <file:///ofbiz/accounting/entitydef/accounting-entitymodel.xml> ;
+    prov:wasGeneratedBy ctx:XmlEtreeExtractor ;
+    ctx:sourceLocation "accounting-entitymodel.xml:5" ;
+    ctx:sourceHash "dddddeeeeffff0000111122223333444455556666777788889999aaaabbbbccccdddd" ;
+    ctx:confidence 1.0 ;
+    ctx:factType "deterministic" .

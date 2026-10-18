@@ -1,0 +1,7 @@
+{
+  "name": "order-reservations-controlled",
+  "description": "Controlled sample: all deterministic facts from one small service file plus all probabilistic proposals about it. Fully human-reviewable; no sampling.",
+  "component": "order",
+  "files": ["applications/order/servicedef/services_reservations.xml"],
+  "proposal_source": "outputs/prob/reservations-proposals.jsonl"
+}

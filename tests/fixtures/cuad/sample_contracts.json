@@ -1,0 +1,54 @@
+[
+  {
+    "contract_id": "CUAD-SVC-001",
+    "title": "Services Agreement",
+    "text": "SERVICES AGREEMENT. This Services Agreement is entered into on March 3, 2026 by and between Acme Corporation, a California corporation, and Globex Ltd. Payment Terms: Client shall pay each invoice within thirty days of receipt. Late payments accrue interest at one percent per month. Term: This agreement begins on March 3, 2026 and continues for twelve months. Governing Law: This agreement is governed by the laws of California.",
+    "parties": [
+      "Acme Corporation",
+      "Globex Ltd"
+    ],
+    "clauses": [
+      {
+        "category": "Payment Terms",
+        "text": "Client shall pay each invoice within thirty days of receipt.",
+        "start": 167,
+        "end": 227
+      },
+      {
+        "category": "Term",
+        "text": "This agreement begins on March 3, 2026 and continues for twelve months.",
+        "start": 290,
+        "end": 361
+      },
+      {
+        "category": "Governing Law",
+        "text": "This agreement is governed by the laws of California.",
+        "start": 377,
+        "end": 430
+      }
+    ]
+  },
+  {
+    "contract_id": "CUAD-NDA-002",
+    "title": "Mutual NDA",
+    "text": "MUTUAL NON-DISCLOSURE AGREEMENT. Effective June 1, 2026, Initech LLC and Acme Corporation agree to protect shared confidential information. Confidentiality: Each party shall hold all Confidential Information in strict confidence. Termination: Either party may terminate this agreement with thirty days written notice.",
+    "parties": [
+      "Initech LLC",
+      "Acme Corporation"
+    ],
+    "clauses": [
+      {
+        "category": "Confidentiality",
+        "text": "Each party shall hold all Confidential Information in strict confidence.",
+        "start": 157,
+        "end": 229
+      },
+      {
+        "category": "Termination",
+        "text": "Either party may terminate this agreement with thirty days written notice.",
+        "start": 243,
+        "end": 317
+      }
+    ]
+  }
+]

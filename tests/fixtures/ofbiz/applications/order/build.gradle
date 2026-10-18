@@ -1,0 +1,11 @@
+// Order component build (synthetic fixture modeled on OFBiz build.gradle).
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation project(':applications:party')
+    implementation project(':applications:accounting')
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+    testImplementation 'junit:junit:4.13.2'
+}

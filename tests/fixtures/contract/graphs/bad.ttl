@@ -1,0 +1,6 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Deliberately missing ALL §5 metadata: verification must fail loudly.
+ctx:orphanService a ctx:Service ;
+    rdfs:label "orphanService" .

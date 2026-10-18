@@ -1,0 +1,19 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:invoiceApproval a ctx:Policy ;
+    rdfs:label "createInvoice requires manager approval" ;
+    ctx:confidence 0.8 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" ;
+    prov:wasGeneratedBy ctx:GroqLLMExtractor ;
+    prov:hadPrimarySource <file:///docs/policy.md> .
+
+ctx:OrderModule a ctx:Module ;
+    rdfs:label "Order" ;
+    ctx:confidence 0.8 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" ;
+    prov:wasGeneratedBy ctx:GroqLLMExtractor ;
+    prov:hadPrimarySource <file:///ofbiz/order/servicedef/services.xml> .

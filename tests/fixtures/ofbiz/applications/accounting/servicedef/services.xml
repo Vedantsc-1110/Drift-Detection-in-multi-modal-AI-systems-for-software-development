@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://ofbiz.apache.org/dtds/services.xsd">
+    <description>Accounting component services (synthetic fixture modeled on OFBiz 24.09).</description>
+    <service name="createInvoice" engine="java"
+        location="org.apache.ofbiz.accounting.invoice.InvoiceServices" invoke="createInvoice"
+        default-entity-name="Invoice" auth="true">
+        <description>Create a new invoice for an order.</description>
+        <attribute name="invoiceTypeId" type="String" mode="IN" optional="false"/>
+        <attribute name="invoiceId" type="String" mode="OUT" optional="false"/>
+    </service>
+</services>

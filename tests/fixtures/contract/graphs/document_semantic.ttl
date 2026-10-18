@@ -1,0 +1,23 @@
+@prefix ctx: <http://context.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ctx:P01 a ctx:Document ;
+    rdfs:label "Procurement Approval Policy P01" ;
+    prov:hadPrimarySource <file:///docs/procurement_policy.md> ;
+    prov:wasGeneratedBy ctx:GroqLLMExtractor ;
+    ctx:confidence 1.0 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" ;
+    ctx:supportType "DIRECT" ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .
+
+ctx:P01-threshold a ctx:Policy ;
+    rdfs:label "Purchases above $50,000 require three approvals" ;
+    prov:hadPrimarySource <file:///docs/procurement_policy.md> ;
+    prov:wasGeneratedBy ctx:GroqLLMExtractor ;
+    ctx:confidence 0.8 ;
+    ctx:factType "probabilistic" ;
+    ctx:extractedBy "llama-3.3-70b" ;
+    ctx:supportType "SYNTHETIC" ;
+    prov:generatedAtTime "2026-01-01T00:00:00+00:00" .

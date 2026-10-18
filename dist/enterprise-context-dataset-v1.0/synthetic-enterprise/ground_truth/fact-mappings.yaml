@@ -1,0 +1,870 @@
+# Controlled ground truth for the synthetic enterprise corpus.
+# support_type: DIRECT (OFBiz structure proves it) | INDIRECT (business reading
+# anchored on real OFBiz artifacts) | SYNTHETIC (fictional business info, no
+# OFBiz source) | UNRESOLVED (references outside order+order-entitymodel scope).
+# category: A..P semantic fact categories (see dataset-manifest.yaml).
+facts:
+  - fact_id: GT-001
+    document_id: R01
+    statement: "The storeOrder service exists in the OFBiz order component."
+    subject: storeOrder
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Service node directly extracted; engine java, invoke createOrder."
+  - fact_id: GT-002
+    document_id: R01
+    statement: "storeOrder creates and stores order entities."
+    subject: storeOrder
+    predicate: hasDescription
+    object: "Creates order entities"
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, child description"
+    notes: "Verbatim description; business-process reading beyond it is INDIRECT."
+  - fact_id: GT-003
+    document_id: R01
+    statement: "storeOrder is part of the Meridian order-to-cash process."
+    subject: storeOrder
+    predicate: supportsBusinessProcess
+    object: OrderToCash
+    support_type: INDIRECT
+    category: B
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Service existence is deterministic; process membership is synthetic interpretation."
+  - fact_id: GT-004
+    document_id: R01
+    statement: "OrderHeader is a base entity keyed by orderId."
+    subject: OrderHeader
+    predicate: hasPrimaryKey
+    object: orderId
+    support_type: DIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "line 418, xpath /entitymodel/entity[16]"
+    notes: "Base Entity node; isPrimaryKey true on orderId field."
+  - fact_id: GT-005
+    document_id: R01
+    statement: "OrderItem is a base entity keyed by orderId plus orderItemSeqId."
+    subject: OrderItem
+    predicate: hasPrimaryKey
+    object: orderId+orderItemSeqId
+    support_type: DIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "xpath /entitymodel/entity[@entity-name='OrderItem']"
+    notes: "Composite primary key directly extracted."
+  - fact_id: GT-006
+    document_id: R01
+    statement: "sendOrderConfirmation exists for order confirmation messaging."
+    subject: sendOrderConfirmation
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Existence is direct; delivery to the customer is NOT proven."
+  - fact_id: GT-007
+    document_id: R01
+    statement: "findOrders supports order lookup for customer service."
+    subject: findOrders
+    predicate: supportsBusinessProcess
+    object: CustomerServiceLookup
+    support_type: INDIRECT
+    category: B
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Lookup capability anchored on real service; SLA and staffing synthetic."
+  - fact_id: GT-008
+    document_id: R01
+    statement: "Orders at or above 10,000 require Order Approver release."
+    subject: P01-threshold-10000
+    predicate: constrains
+    object: OrderRelease
+    support_type: SYNTHETIC
+    category: G
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P01 section 2 (synthetic policy)"
+    notes: "Pure business policy; no OFBiz source."
+  - fact_id: GT-009
+    document_id: R01
+    statement: "'Confirmed order' is ambiguous between notification-sent and customer-acknowledged."
+    subject: confirmed-order
+    predicate: hasAmbiguousMeaning
+    object: notification-vs-acknowledgement
+    support_type: SYNTHETIC
+    category: O
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R01 section 6 (deliberate ambiguity)"
+    notes: "Intentional ambiguity probe for semantic evaluation."
+  - fact_id: GT-010
+    document_id: R02
+    statement: "storeOrder accepts 56 IN/INOUT inputs including partyId, orderItems, currencyUom."
+    subject: storeOrder
+    predicate: hasInputs
+    object: partyId-orderItems-currencyUom
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Full input set verified in Part 1 evaluation (Q-SVC-003)."
+  - fact_id: GT-011
+    document_id: R02
+    statement: "storeOrder returns orderTypeId, orderId and statusId outputs."
+    subject: storeOrder
+    predicate: hasOutputs
+    object: orderTypeId-orderId-statusId
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Verified in Q-SVC-004."
+  - fact_id: GT-012
+    document_id: R02
+    statement: "Missing partyId must reject the order (rule R02-VR1)."
+    subject: R02-VR1
+    predicate: constrains
+    object: storeOrder
+    support_type: SYNTHETIC
+    category: F
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R02 section 3 (synthetic rule)"
+    notes: "Business constraint over real parameters."
+  - fact_id: GT-013
+    document_id: R02
+    statement: "createOrderHeader persists order headers (entity-auto)."
+    subject: createOrderHeader
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "services_order.xml service definition"
+    notes: "Entity-auto service directly extracted."
+  - fact_id: GT-014
+    document_id: R02
+    statement: "createOrderContactMech attaches order contact details."
+    subject: createOrderContactMech
+    predicate: operatesOn
+    object: OrderContactMech
+    support_type: INDIRECT
+    category: J
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "services_order.xml service definition"
+    notes: "Service and entity both real; operatesOn reading is stated-name based."
+  - fact_id: GT-015
+    document_id: R02
+    statement: "storeOrder guarantees the customer received the confirmation email."
+    subject: storeOrder
+    predicate: guarantees
+    object: EmailDelivery
+    support_type: SYNTHETIC
+    category: P
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R02 section 5 declares this UNSUPPORTED"
+    notes: "Unsupported/inferred statement probe: must be classified UNSUPPORTED."
+  - fact_id: GT-016
+    document_id: R03
+    statement: "OrderItemShipGroup carries shipment grouping for fulfillment."
+    subject: OrderItemShipGroup
+    predicate: supportsBusinessProcess
+    object: FulfillmentGrouping
+    support_type: INDIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "order-entitymodel.xml entity definition"
+    notes: "Entity real; grouping purpose is business reading."
+  - fact_id: GT-017
+    document_id: R03
+    statement: "createOrderItemShipGroup creates shipment groups."
+    subject: createOrderItemShipGroup
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "services_order.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-018
+    document_id: R03
+    statement: "resetGrandTotal recomputes order totals after fulfillment changes."
+    subject: resetGrandTotal
+    predicate: supportsBusinessProcess
+    object: TotalsRecomputation
+    support_type: INDIRECT
+    category: I
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Service real; totals business effect synthetic."
+  - fact_id: GT-019
+    document_id: R03
+    statement: "The OrderHeader create-store ECA references issueImmediatelyFulfilledOrder (sync)."
+    subject: OrderHeader-ECA
+    predicate: triggersService
+    object: issueImmediatelyFulfilledOrder
+    support_type: UNRESOLVED
+    category: I
+    ofbiz_source: true
+    source_file: applications/order/entitydef/eecas.xml
+    source_location: "line 24-27, xpath /entity-eca/eca[1]"
+    notes: "Reference stated in eecas.xml; target defined in applications/product, outside scope."
+  - fact_id: GT-020
+    document_id: R03
+    statement: "Immediate inventory issuance behavior of issueImmediatelyFulfilledOrder is verified."
+    subject: issueImmediatelyFulfilledOrder
+    predicate: hasVerifiedBehavior
+    object: InventoryIssuance
+    support_type: UNRESOLVED
+    category: O
+    ofbiz_source: false
+    source_file: applications/product/servicedef/services_facility.xml
+    source_location: "product scope, not extracted"
+    notes: "Intentionally unresolved: cannot be verified until product extraction."
+  - fact_id: GT-021
+    document_id: R03
+    statement: "'Fulfilled' is ambiguous between group completion and business milestone."
+    subject: fulfilled
+    predicate: hasAmbiguousMeaning
+    object: group-vs-milestone
+    support_type: SYNTHETIC
+    category: O
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R03 section 6 (deliberate ambiguity)"
+    notes: "Ambiguity probe."
+  - fact_id: GT-022
+    document_id: R04
+    statement: "OrderPaymentPreference records per-order payment preferences."
+    subject: OrderPaymentPreference
+    predicate: isBaseEntity
+    object: order-entitymodel
+    support_type: DIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "order-entitymodel.xml entity definition"
+    notes: "Base entity directly extracted."
+  - fact_id: GT-023
+    document_id: R04
+    statement: "createPaymentFromPreference creates payment preferences."
+    subject: createPaymentFromPreference
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-024
+    document_id: R04
+    statement: "changeOrderPaymentStatus advances payment preference state."
+    subject: changeOrderPaymentStatus
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-025
+    document_id: R04
+    statement: "changeOrderStatus advances the order lifecycle."
+    subject: changeOrderStatus
+    predicate: supportsBusinessProcess
+    object: StatusTransition
+    support_type: INDIRECT
+    category: B
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Lifecycle meaning is business reading over real service."
+  - fact_id: GT-026
+    document_id: R04
+    statement: "storeOrder guarantees payment authorization."
+    subject: storeOrder
+    predicate: guarantees
+    object: PaymentAuthorization
+    support_type: SYNTHETIC
+    category: P
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R04 section 4 declares this UNSUPPORTED"
+    notes: "Hallucination probe: must be UNSUPPORTED."
+  - fact_id: GT-027
+    document_id: R05
+    statement: "OrderRole records order participation."
+    subject: OrderRole
+    predicate: isBaseEntity
+    object: order-entitymodel
+    support_type: DIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "order-entitymodel.xml entity definition"
+    notes: "Direct entity existence."
+  - fact_id: GT-028
+    document_id: R05
+    statement: "CustRequest with createCustRequest manages customer requests."
+    subject: createCustRequest
+    predicate: operatesOn
+    object: CustRequest
+    support_type: INDIRECT
+    category: J
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_request.xml
+    source_location: "services_request.xml service definition"
+    notes: "Both anchors real; request-handling purpose is business reading."
+  - fact_id: GT-029
+    document_id: R05
+    statement: "Customer contact visibility is restricted by P04 access rules."
+    subject: OrderContactMech
+    predicate: constrainedBy
+    object: P04
+    support_type: SYNTHETIC
+    category: H
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P04 sections 2-3 (synthetic policy)"
+    notes: "OFBiz proves structures, not access rights."
+  - fact_id: GT-030
+    document_id: R05
+    statement: "'Customer' is ambiguous between partyId input and commercial relationship."
+    subject: customer
+    predicate: hasAmbiguousMeaning
+    object: party-vs-relationship
+    support_type: SYNTHETIC
+    category: O
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R05 section 6 (deliberate ambiguity)"
+    notes: "Ambiguity probe."
+  - fact_id: GT-031
+    document_id: D01
+    statement: "D01 refines R01 for order management services."
+    subject: D01
+    predicate: refines
+    object: R01
+    support_type: SYNTHETIC
+    category: N
+    ofbiz_source: false
+    source_file: ""
+    source_location: "D01 section 1 + R01 section 7"
+    notes: "Cross-document link (synthetic traceability)."
+  - fact_id: GT-032
+    document_id: D01
+    statement: "cancelOrderItem executes item cancellation."
+    subject: cancelOrderItem
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-033
+    document_id: D01
+    statement: "OrderAdjustment carries order charges and discounts."
+    subject: OrderAdjustment
+    predicate: supportsBusinessProcess
+    object: ChargeHandling
+    support_type: INDIRECT
+    category: D
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "order-entitymodel.xml entity definition"
+    notes: "Entity real; charge semantics business reading."
+  - fact_id: GT-034
+    document_id: D01
+    statement: "A fictional OrderRiskScore entity exists in OFBiz for fraud screening."
+    subject: OrderRiskScore
+    predicate: isBaseEntity
+    object: order-entitymodel
+    support_type: SYNTHETIC
+    category: P
+    ofbiz_source: false
+    source_file: ""
+    source_location: "D01 section 6 marks this deferred/SYNTHETIC"
+    notes: "Negative probe anchor: must be NOT_FOUND in OFBiz."
+  - fact_id: GT-035
+    document_id: D02
+    statement: "The storeOrder contract has 56 inputs and 3 outputs."
+    subject: storeOrder
+    predicate: hasParameterCounts
+    object: 56-in-3-out
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Counts verified in evaluation."
+  - fact_id: GT-036
+    document_id: D02
+    statement: "Validate-create-confirm-recompute is the mandated orchestration."
+    subject: order-creation
+    predicate: followsSequence
+    object: validate-confirm-recompute
+    support_type: SYNTHETIC
+    category: L
+    ofbiz_source: false
+    source_file: ""
+    source_location: "D02 section 4 (synthetic orchestration)"
+    notes: "OFBiz proves steps exist, not the mandated order."
+  - fact_id: GT-037
+    document_id: D03
+    statement: "D03 treats immediate issuance as an unresolved integration point."
+    subject: D03
+    predicate: marksUnresolved
+    object: issueImmediatelyFulfilledOrder
+    support_type: UNRESOLVED
+    category: M
+    ofbiz_source: true
+    source_file: applications/order/entitydef/eecas.xml
+    source_location: "line 24-27, xpath /entity-eca/eca[1]"
+    notes: "Correct handling: dangling report, no minted node."
+  - fact_id: GT-038
+    document_id: D03
+    statement: "checkCreateDropShipPurchaseOrders assesses drop-ship orders."
+    subject: checkCreateDropShipPurchaseOrders
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-039
+    document_id: D04
+    statement: "Order creation and payment authorization are separate concerns."
+    subject: storeOrder
+    predicate: separatedFrom
+    object: PaymentAuthorization
+    support_type: SYNTHETIC
+    category: M
+    ofbiz_source: false
+    source_file: ""
+    source_location: "D04 section 3 (architecture boundary)"
+    notes: "Anti-hallucination boundary statement."
+  - fact_id: GT-040
+    document_id: D04
+    statement: "S03 reconciliation runs daily at 06:00."
+    subject: S03
+    predicate: hasSchedule
+    object: daily-0600
+    support_type: SYNTHETIC
+    category: L
+    ofbiz_source: false
+    source_file: ""
+    source_location: "D04 section 4 / S03 (synthetic schedule)"
+    notes: "No OFBiz source for schedule."
+  - fact_id: GT-041
+    document_id: D05
+    statement: "There is no createOrderItem service in the current extraction scope."
+    subject: createOrderItem
+    predicate: absentFrom
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "verified absent from order-facts.jsonl"
+    notes: "Absence verified; designs must use appendOrderItem instead."
+  - fact_id: GT-042
+    document_id: D05
+    statement: "appendOrderItem adds order lines post-creation."
+    subject: appendOrderItem
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "services_order.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-043
+    document_id: P01
+    statement: "Orders of 50,000+ require dual approval."
+    subject: P01-threshold-50000
+    predicate: constrains
+    object: OrderRelease
+    support_type: SYNTHETIC
+    category: G
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P01 section 2 (synthetic policy)"
+    notes: "Business threshold; must not be attributed to OFBiz."
+  - fact_id: GT-044
+    document_id: P01
+    statement: "P01 gates storeOrder outputs before changeOrderStatus."
+    subject: P01
+    predicate: constrains
+    object: storeOrder-outputs
+    support_type: INDIRECT
+    category: G
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108 outputs orderId/statusId"
+    notes: "Gating is synthetic; outputs are real."
+  - fact_id: GT-045
+    document_id: P02
+    statement: "Authorizations above 5,000 need Finance Reviewer approval."
+    subject: P02-limit-5000
+    predicate: constrains
+    object: PaymentAuthorization
+    support_type: SYNTHETIC
+    category: H
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P02 section 2 (synthetic policy)"
+    notes: "No OFBiz source."
+  - fact_id: GT-046
+    document_id: P02
+    statement: "The Customer Service Representative captures orders; the Finance Reviewer authorizes payments."
+    subject: CSR-FinanceReviewer
+    predicate: hasRoleSeparation
+    object: capture-vs-authorize
+    support_type: SYNTHETIC
+    category: E
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P02 section 4 / R02 section 6 (synthetic roles)"
+    notes: "Fictional role model."
+  - fact_id: GT-047
+    document_id: P03
+    statement: "Unreleased lines may cancel anytime before ship-group release."
+    subject: P03-window
+    predicate: constrains
+    object: cancelOrderItem
+    support_type: SYNTHETIC
+    category: H
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P03 section 2 (synthetic window)"
+    notes: "Window is policy; service is real."
+  - fact_id: GT-048
+    document_id: P03
+    statement: "Returns use createReturnHeader."
+    subject: createReturnHeader
+    predicate: isServiceIn
+    object: order-component
+    support_type: DIRECT
+    category: C
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_return.xml
+    source_location: "services_return.xml service definition"
+    notes: "Direct service existence."
+  - fact_id: GT-049
+    document_id: P04
+    statement: "Contact records are visible only to the owning team and assignee."
+    subject: OrderContactMech
+    predicate: constrainedBy
+    object: P04-visibility
+    support_type: SYNTHETIC
+    category: H
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P04 section 2 (synthetic rule)"
+    notes: "OFBiz does not enforce this visibility."
+  - fact_id: GT-050
+    document_id: P04
+    statement: "CommunicationEventOrder links communications to orders."
+    subject: CommunicationEventOrder
+    predicate: isBaseEntity
+    object: order-entitymodel
+    support_type: DIRECT
+    category: J
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "order-entitymodel.xml entity definition"
+    notes: "Direct entity existence."
+  - fact_id: GT-051
+    document_id: P05
+    statement: "P05 immediate-issuance compliance cannot be verified from the deterministic graph alone."
+    subject: P05
+    predicate: marksUnresolved
+    object: issueImmediatelyFulfilledOrder
+    support_type: UNRESOLVED
+    category: H
+    ofbiz_source: true
+    source_file: applications/order/entitydef/eecas.xml
+    source_location: "line 24-27, xpath /entity-eca/eca[1]"
+    notes: "Honest unresolved compliance statement."
+  - fact_id: GT-052
+    document_id: P05
+    statement: "createOrderItemShipGroup and resetGrandTotal anchor P05 controls."
+    subject: P05-controls
+    predicate: usesServices
+    object: createOrderItemShipGroup-resetGrandTotal
+    support_type: INDIRECT
+    category: I
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services_order.xml
+    source_location: "services_order.xml + services.xml definitions"
+    notes: "Services real; control semantics synthetic."
+  - fact_id: GT-053
+    document_id: S01
+    statement: "S01 operationalizes R01 and R02 under P01 and P04."
+    subject: S01
+    predicate: operationalizes
+    object: R01-R02
+    support_type: SYNTHETIC
+    category: N
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S01 section 1 (synthetic traceability)"
+    notes: "Cross-document link."
+  - fact_id: GT-054
+    document_id: S01
+    statement: "S01 intake follows the 56-input storeOrder definition."
+    subject: S01-intake
+    predicate: usesContract
+    object: storeOrder-inputs
+    support_type: INDIRECT
+    category: L
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "line 108, xpath /services/service[10]"
+    notes: "Contract real; intake procedure synthetic."
+  - fact_id: GT-055
+    document_id: S02
+    statement: "E-201/E-202/E-203 triage codes route validation failures."
+    subject: S02-triage
+    predicate: definesCodes
+    object: E201-E202-E203
+    support_type: SYNTHETIC
+    category: K
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S02 section 2 (synthetic codes)"
+    notes: "OFBiz has no exception codes."
+  - fact_id: GT-056
+    document_id: S02
+    statement: "Released-group cancellation needs approver consent per P03."
+    subject: S02-cancellation
+    predicate: constrainedBy
+    object: P03
+    support_type: SYNTHETIC
+    category: K
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S02 section 3 + P03 (synthetic workflow)"
+    notes: "Cross-document business rule."
+  - fact_id: GT-057
+    document_id: S03
+    statement: "S03 matches OrderPaymentPreference records against OrderStatus history."
+    subject: S03
+    predicate: reconciles
+    object: OrderPaymentPreference-OrderStatus
+    support_type: INDIRECT
+    category: L
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "entity definitions for both anchors"
+    notes: "Entities real; matching rules synthetic."
+  - fact_id: GT-058
+    document_id: S03
+    statement: "Unresolved dual-control breaches block period close."
+    subject: S03-breach
+    predicate: constrains
+    object: PeriodClose
+    support_type: SYNTHETIC
+    category: F
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S03 section 7 (synthetic control)"
+    notes: "Financial control with no OFBiz source."
+  - fact_id: GT-059
+    document_id: S04
+    statement: "Delays over 48 hours trigger coordinator review with manual inventory check."
+    subject: S04-escalation
+    predicate: definesThreshold
+    object: 48h-manual-check
+    support_type: SYNTHETIC
+    category: F
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S04 sections 2-3 (synthetic timers)"
+    notes: "Timers synthetic; manual check required by unresolved hand-off."
+  - fact_id: GT-060
+    document_id: S04
+    statement: "S04 inventory doubt consults the unresolved product hand-off log."
+    subject: S04
+    predicate: marksUnresolved
+    object: issueImmediatelyFulfilledOrder
+    support_type: UNRESOLVED
+    category: K
+    ofbiz_source: true
+    source_file: applications/order/entitydef/eecas.xml
+    source_location: "line 24-27, xpath /entity-eca/eca[1]"
+    notes: "Procedure honestly labels automated issuance claims unverified."
+  - fact_id: GT-061
+    document_id: S05
+    statement: "ADR-01 selects storeOrder as the single creation entry point."
+    subject: ADR-01
+    predicate: decides
+    object: storeOrder-single-entry
+    support_type: SYNTHETIC
+    category: M
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S05 section 2 (synthetic decision)"
+    notes: "Decision references real service; decision itself synthetic."
+  - fact_id: GT-062
+    document_id: S05
+    statement: "ADR-04 keeps the product hand-off unresolved rather than pretending resolution."
+    subject: ADR-04
+    predicate: decides
+    object: unresolved-handoff
+    support_type: UNRESOLVED
+    category: M
+    ofbiz_source: true
+    source_file: applications/order/entitydef/eecas.xml
+    source_location: "line 24-27, xpath /entity-eca/eca[1]"
+    notes: "Architecture honesty decision."
+  - fact_id: GT-063
+    document_id: R01
+    statement: "Order-to-cash is the business purpose framing order capture through settlement."
+    subject: OrderToCash
+    predicate: hasBusinessPurpose
+    object: capture-to-settlement
+    support_type: SYNTHETIC
+    category: A
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R01 sections 1-2 (synthetic purpose)"
+    notes: "Business purpose example (category A)."
+  - fact_id: GT-064
+    document_id: D01
+    statement: "checkUpdateQuoteStatus propagates quote state for quote-derived orders."
+    subject: checkUpdateQuoteStatus
+    predicate: supportsBusinessProcess
+    object: QuoteLineage
+    support_type: INDIRECT
+    category: I
+    ofbiz_source: true
+    source_file: applications/order/servicedef/services.xml
+    source_location: "services.xml service definition"
+    notes: "Service dependency example (category I)."
+  - fact_id: GT-065
+    document_id: R05
+    statement: "OrderItem depends on OrderHeader via the ORDER_ITEM_HDR relation."
+    subject: OrderItem
+    predicate: dependsOn
+    object: OrderHeader
+    support_type: DIRECT
+    category: J
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "OrderItem relation ORDER_ITEM_HDR"
+    notes: "Entity dependency example (category J, relationTo resolved)."
+  - fact_id: GT-066
+    document_id: R01
+    statement: "OrderHeader relates to OrderType via ORDER_HDR_TYPE."
+    subject: OrderHeader
+    predicate: relatesTo
+    object: OrderType
+    support_type: DIRECT
+    category: J
+    ofbiz_source: true
+    source_file: applications/datamodel/entitydef/order-entitymodel.xml
+    source_location: "line 450, xpath /entitymodel/entity[16]/relation[1]"
+    notes: "Resolved relation example."
+  - fact_id: GT-067
+    document_id: S01
+    statement: "The Customer Service Representative role performs intake and correction."
+    subject: CSR
+    predicate: performsRole
+    object: intake-correction
+    support_type: SYNTHETIC
+    category: E
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S01 sections 2-3 / P01 section 3 (synthetic roles)"
+    notes: "Role/actor example (category E)."
+  - fact_id: GT-068
+    document_id: P02
+    statement: "Dual control above 25,000 is a policy constraint on authorization."
+    subject: P02-dual-control
+    predicate: constrains
+    object: PaymentAuthorization
+    support_type: SYNTHETIC
+    category: H
+    ofbiz_source: false
+    source_file: ""
+    source_location: "P02 section 2 (synthetic constraint)"
+    notes: "Policy constraint example (category H)."
+  - fact_id: GT-069
+    document_id: R02
+    statement: "Empty item lists must be rejected (R02-VR2)."
+    subject: R02-VR2
+    predicate: constrains
+    object: orderItems
+    support_type: SYNTHETIC
+    category: F
+    ofbiz_source: false
+    source_file: ""
+    source_location: "R02 section 3 (synthetic rule)"
+    notes: "Business rule example (category F)."
+  - fact_id: GT-070
+    document_id: S02
+    statement: "S02 triage is the exception handling procedure for capture failures."
+    subject: S02
+    predicate: handlesExceptionsFor
+    object: order-capture
+    support_type: SYNTHETIC
+    category: K
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S02 sections 1-2 (synthetic procedure)"
+    notes: "Exception handling example (category K)."
+  - fact_id: GT-071
+    document_id: S03
+    statement: "S03 reconciliation is the operational procedure for payment matching."
+    subject: S03
+    predicate: isOperationalProcedureFor
+    object: payment-matching
+    support_type: SYNTHETIC
+    category: L
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S03 sections 1-2 (synthetic procedure)"
+    notes: "Operational procedure example (category L)."
+  - fact_id: GT-072
+    document_id: S05
+    statement: "S05 records the no-custom-shipment-entity architecture decision (ADR-03)."
+    subject: ADR-03
+    predicate: decides
+    object: reuse-OrderItemShipGroup
+    support_type: SYNTHETIC
+    category: M
+    ofbiz_source: false
+    source_file: ""
+    source_location: "S05 section 2 (synthetic decision)"
+    notes: "Architecture decision example (category M)."

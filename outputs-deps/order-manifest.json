@@ -1,0 +1,173 @@
+{
+  "component": "order",
+  "counts": {
+    "auto_attributes": 431,
+    "component": 2,
+    "condition": 86,
+    "eca": 111,
+    "eca_action": 150,
+    "edge": 3808,
+    "entity": 112,
+    "entity_field": 793,
+    "param_override": 50,
+    "permission_check": 21,
+    "relation": 567,
+    "resource": 62,
+    "resource_loader": 2,
+    "service": 468,
+    "service_param": 2797,
+    "view_alias": 423,
+    "view_entity": 55,
+    "view_link": 105,
+    "view_member": 160,
+    "webapp": 1
+  },
+  "errors": [],
+  "extracted_at": "2026-09-22T06:39:24.496925+00:00",
+  "extractor": "ofbiz-context-extractor",
+  "extractor_version": "0.1.0",
+  "files": [
+    {
+      "artifact_type": "entity-model",
+      "owner": "datamodel",
+      "relpath": "applications/datamodel/entitydef/order-entitymodel.xml",
+      "role": "entity",
+      "sha256": "f2ab886b766185ceeaae52c0124d90c3bf2caa2cab45afbba3c8ece5f7d4a976"
+    },
+    {
+      "artifact_type": "component-descriptor",
+      "owner": "datamodel",
+      "relpath": "applications/datamodel/ofbiz-component.xml",
+      "role": "component",
+      "sha256": "b86371caedb9f4139195de0551a7395edeb1be15c1d05c1fc85c194a09aaaa14"
+    },
+    {
+      "artifact_type": "entity-eca",
+      "owner": "order",
+      "relpath": "applications/order/entitydef/eecas.xml",
+      "role": "eca",
+      "sha256": "2917b532a321a375c8d669e3643f674870f0d7200068ef603da4d1e46999316c"
+    },
+    {
+      "artifact_type": "entity-model",
+      "owner": "order",
+      "relpath": "applications/order/entitydef/entitymodel_view.xml",
+      "role": "entity",
+      "sha256": "01c78e5572954266264e51885e634fba1bf009754e5c5d88e50529353f009b38"
+    },
+    {
+      "artifact_type": "component-descriptor",
+      "owner": "order",
+      "relpath": "applications/order/ofbiz-component.xml",
+      "role": "component",
+      "sha256": "7be96bafe86caa18a3ed6449e227fc4028d7294645379bb410663d08f3c8436c"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/orderProcessXPDL.xml",
+      "role": "service",
+      "sha256": "15f88f56a37e54fff3741a2231f7388c2508775c2174cf9c3b546fbc6aea5125"
+    },
+    {
+      "artifact_type": "service-eca",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/secas.xml",
+      "role": "eca",
+      "sha256": "cb998a98679a6a673714ccef700a764250b501fc9c01af898275a04366a585de"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services.xml",
+      "role": "service",
+      "sha256": "ea50e28f8256c8fdd4f71ef1cd20d16c4b56cec9c5e4edf2930bf7887f844151"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_cart.xml",
+      "role": "service",
+      "sha256": "6e131bdbd41c61371525b05091f82ab10a5bfe9486b4eebddc7eb5fd0bfe6e39"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_checkout.xml",
+      "role": "service",
+      "sha256": "ef0a0a85ad43aac66c1a80e55d913b73d958694a5425ed584338fc91aca9b93d"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_order.xml",
+      "role": "service",
+      "sha256": "028bb94c5b0727b3e524d09eac96c05b2b90b068fd45223ab2440afc1363235e"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_perm.xml",
+      "role": "service",
+      "sha256": "9590c0118ce74b3cd48276e4f6b62b0a325bba239eb73a0eb4e6c59d44a427a8"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_quote.xml",
+      "role": "service",
+      "sha256": "7f9db10f89ba6c182762e49c7c6cc8750d79fb032d05b3181ccedee210a47d49"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_request.xml",
+      "role": "service",
+      "sha256": "4854e7a2a75759476291ab5cf3b1a339fdadec6a9cfea055ee0a7e0696a3b511"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_requirement.xml",
+      "role": "service",
+      "sha256": "bed359c516e9b95778d3d47446f9b980a87d595cdbb5d13f047721cc61ff0e2d"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_reservations.xml",
+      "role": "service",
+      "sha256": "37201b40e8ff8da55137ebed77fafac8168c06bddb1a2739f4c6c991a096dba6"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_return.xml",
+      "role": "service",
+      "sha256": "77790fb7836abed20aef8262f68374ccc0128b8caf2e393b83e389507a121f5d"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_shoppinglist.xml",
+      "role": "service",
+      "sha256": "d97c86145b5a833b7d68d931d5d57b00f47fc2b0fc0072b20bfb3e619023f9e3"
+    },
+    {
+      "artifact_type": "service-def",
+      "owner": "order",
+      "relpath": "applications/order/servicedef/services_upgrade.xml",
+      "role": "service",
+      "sha256": "63b89e9164c8b0e37625f33704eb3510cceaaccfb34575c0da96ac3f7d4ad12c"
+    }
+  ],
+  "repository": "apache-ofbiz-24.09.07",
+  "scope": {
+    "dependency_files": [
+      "applications/datamodel/entitydef/order-entitymodel.xml",
+      "applications/datamodel/ofbiz-component.xml"
+    ],
+    "include_dependencies": true
+  },
+  "unresolved_count": 386
+}

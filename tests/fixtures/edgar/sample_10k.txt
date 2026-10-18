@@ -1,0 +1,26 @@
+FORM 10-K — ACME CORPORATION (CIK 0001234567), Fiscal Year Ended December 31, 2025.
+(Synthetic fixture modeled on SEC 10-K structure; all companies fictitious.)
+
+ITEM 1. BUSINESS.
+
+Acme Corporation sells outdoor equipment through retail stores and online
+channels. Order fulfilment runs on a central order management system that
+creates an order record before any shipment leaves the warehouse. Trade
+receivables are tracked in the accounting ledger (accounts receivable); invoices settle
+within thirty days. The procurement office oversees supplier onboarding.
+
+ITEM 1A. RISK FACTORS.
+
+Supply chain disruption could delay fulfilment during peak season, causing
+backorders across retail and online channels.
+
+A cybersecurity incident affecting the order management system could expose
+customer records and halt invoicing for several days.
+
+Changes in sales-tax rules across jurisdictions may raise compliance costs
+for the accounts receivable function.
+
+ITEM 7. MANAGEMENT'S DISCUSSION AND ANALYSIS.
+
+Revenue grew on higher order volume. Management strengthened inventory
+controls and added a second reviewer for refunds above $10,000.
